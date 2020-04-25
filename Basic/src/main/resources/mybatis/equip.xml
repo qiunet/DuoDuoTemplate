@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="equip">
+
+	<select id="selectEquipDo" parameterType="map" resultType="EquipDo">
+		SELECT * FROM equip WHERE id = #{id};
+	</select>
+
+	<update id="updateEquipDo" parameterType="EquipDo" >
+		UPDATE equip SET `playerId` = #{playerId}, `pos` = #{pos}, `gainTime` = #{gainTime}  WHERE id = #{id} AND equipId = #{equipId};
+	</update>
+
+	<insert id="insertEquipDo" parameterType="EquipDo" >
+		INSERT INTO equip (`id`, `equipId`, `playerId`, `pos`, `gainTime`) VALUES (#{id}, #{equipId}, #{playerId}, #{pos}, #{gainTime});
+	</insert>
+
+	<delete id="deleteEquipDo" parameterType="map" >
+		DELETE FROM equip  WHERE id = #{id} AND equipId = #{equipId};
+	</delete>
+</mapper>

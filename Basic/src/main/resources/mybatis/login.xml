@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="login">
+
+	<select id="selectLoginDo" parameterType="map" resultType="LoginDo">
+		SELECT * FROM login WHERE openId = #{openId};
+	</select>
+
+	<update id="updateLoginDo" parameterType="LoginDo" >
+		UPDATE login SET `playerId` = #{playerId}, `token` = #{token} WHERE openId = #{openId};
+	</update>
+
+	<insert id="insertLoginDo" parameterType="LoginDo" >
+		INSERT INTO login (`openId`, `playerId`, `token`) VALUES (#{openId}, #{playerId}, #{token});
+	</insert>
+
+	<delete id="deleteLoginDo" parameterType="map" >
+		DELETE FROM login WHERE openId = #{openId};
+	</delete>
+</mapper>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cache_entity key="type"
+			  name="ServerInfoDo"
+			  defaultDb="true"
+			  comment="存储服务器相关的信息.比如开服时间等"
+			  packageName="com.game.template.basic.id.global"
+			  xmlns="https://github.com/qiunet/DuoDuo/CacheEntity"
+			  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			  xsi:schemaLocation="https://github.com/qiunet/DuoDuo/CacheEntity
+			   https://raw.githubusercontent.com/qiunet/DuoDuo/master/ProjectInit/src/main/resources/xsd/CacheEntity.xsd"
+>
+	<field name="type" type="String" comment="类型" />
+	<field name="data" type="String" comment="值" />
+
+	<constructor>
+		<constructor_arg field="type"/>
+	</constructor>
+</cache_entity>

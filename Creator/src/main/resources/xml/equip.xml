@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cache_entity_list key="id"
+				   name="EquipDo"
+				   subKey="equipId"
+				   defaultDb="true"
+				   packageName="com.game.template.basic.equip"
+				   xmlns="https://github.com/qiunet/DuoDuo/CacheEntityList"
+				   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				   xsi:schemaLocation="https://github.com/qiunet/DuoDuo/CacheEntityList
+				https://raw.githubusercontent.com/qiunet/DuoDuo/master/ProjectInit/src/main/resources/xsd/CacheEntityList.xsd"
+>
+	<field name="id" type="int" comment="装备唯一id" />
+	<field name="equipId" type="int" comment="装备配置id" />
+	<field name="playerId" type="long" comment="玩家id" />
+	<field name="pos" type="int" comment="装备位置 背包或那个系统" />
+	<field name="gainTime" type="long" comment="装备获得时间" />
+</cache_entity_list>

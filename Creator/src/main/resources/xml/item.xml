@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cache_entity_list key="playerId"
+				   subKey="itemId"
+				   name="ItemDo"
+				   defaultDb="true"
+				   packageName="com.game.template.basic.item"
+				   xmlns="https://github.com/qiunet/DuoDuo/CacheEntityList"
+				   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				   xsi:schemaLocation="https://github.com/qiunet/DuoDuo/CacheEntityList
+				https://raw.githubusercontent.com/qiunet/DuoDuo/master/ProjectInit/src/main/resources/xsd/CacheEntityList.xsd"
+>
+	<field name="playerId" type="long" comment="玩家id" />
+	<field name="itemId" type="int" comment="物品id" />
+	<field name="count" type="int" comment="数量"/>
+	<constructor>
+		<constructor_arg field="playerId" />
+		<constructor_arg field="itemId" />
+	</constructor>
+</cache_entity_list>

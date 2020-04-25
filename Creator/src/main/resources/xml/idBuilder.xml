@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cache_entity_list key="playerId"
+				   subKey="type"
+				   name="IdBuilderDo"
+				   defaultDb="true"
+				   comment="个人相关的id生成表"
+				   packageName="com.game.template.basic.id.person"
+				   xmlns="https://github.com/qiunet/DuoDuo/CacheEntityList"
+				   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				   xsi:schemaLocation="https://github.com/qiunet/DuoDuo/CacheEntityList
+				https://raw.githubusercontent.com/qiunet/DuoDuo/master/ProjectInit/src/main/resources/xsd/CacheEntityList.xsd"
+>
+	<field name="playerId" type="long" comment="玩家id" />
+	<field name="type" type="int" comment="类型" />
+	<field name="idVal" type="int" comment="当前的id值"/>
+	<constructor>
+		<constructor_arg field="playerId" />
+		<constructor_arg field="idVal" />
+	</constructor>
+</cache_entity_list>

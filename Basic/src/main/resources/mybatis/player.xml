@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="player">
+
+	<select id="selectPlayerDo" parameterType="map" resultType="PlayerDo">
+		SELECT * FROM player WHERE playerId = #{playerId};
+	</select>
+
+	<update id="updatePlayerDo" parameterType="PlayerDo" >
+		UPDATE player SET `name` = #{name}, `exp` = #{exp}, `level` = #{level}, `m1` = #{m1}, `m2` = #{m2} WHERE playerId = #{playerId};
+	</update>
+
+	<insert id="insertPlayerDo" parameterType="PlayerDo" >
+		INSERT INTO player (`playerId`, `name`, `exp`, `level`, `m1`, `m2`) VALUES (#{playerId}, #{name}, #{exp}, #{level}, #{m1}, #{m2});
+	</insert>
+
+	<delete id="deletePlayerDo" parameterType="map" >
+		DELETE FROM player WHERE playerId = #{playerId};
+	</delete>
+</mapper>

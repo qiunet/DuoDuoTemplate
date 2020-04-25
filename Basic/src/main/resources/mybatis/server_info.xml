@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="server_info">
+
+	<select id="selectServerInfoDo" parameterType="map" resultType="ServerInfoDo">
+		SELECT * FROM server_info WHERE type = #{type};
+	</select>
+
+	<update id="updateServerInfoDo" parameterType="ServerInfoDo" >
+		UPDATE server_info SET `data` = #{data} WHERE type = #{type};
+	</update>
+
+	<insert id="insertServerInfoDo" parameterType="ServerInfoDo" >
+		INSERT INTO server_info (`type`, `data`) VALUES (#{type}, #{data});
+	</insert>
+
+	<delete id="deleteServerInfoDo" parameterType="map" >
+		DELETE FROM server_info WHERE type = #{type};
+	</delete>
+</mapper>
