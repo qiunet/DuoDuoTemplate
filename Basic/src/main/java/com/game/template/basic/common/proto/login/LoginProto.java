@@ -1937,26 +1937,11 @@ public final class LoginProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.ResponseHeader header = 1;</code>
-     * @return Whether the header field is set.
-     */
-    boolean hasHeader();
-    /**
-     * <code>.ResponseHeader header = 1;</code>
-     * @return The header.
-     */
-    com.game.template.basic.common.proto.common.CommonProto.ResponseHeader getHeader();
-    /**
-     * <code>.ResponseHeader header = 1;</code>
-     */
-    com.game.template.basic.common.proto.common.CommonProto.ResponseHeaderOrBuilder getHeaderOrBuilder();
-
-    /**
      * <pre>
      * 玩家的uid
      * </pre>
      *
-     * <code>int32 uid = 2;</code>
+     * <code>int32 uid = 1;</code>
      * @return The uid.
      */
     int getUid();
@@ -1966,7 +1951,7 @@ public final class LoginProto {
      * true需要走注册流程 false 不需要
      * </pre>
      *
-     * <code>bool needRegister = 3;</code>
+     * <code>bool needRegister = 2;</code>
      * @return The needRegister.
      */
     boolean getNeedRegister();
@@ -2020,25 +2005,12 @@ public final class LoginProto {
             case 0:
               done = true;
               break;
-            case 10: {
-              com.game.template.basic.common.proto.common.CommonProto.ResponseHeader.Builder subBuilder = null;
-              if (header_ != null) {
-                subBuilder = header_.toBuilder();
-              }
-              header_ = input.readMessage(com.game.template.basic.common.proto.common.CommonProto.ResponseHeader.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(header_);
-                header_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 16: {
+            case 8: {
 
               uid_ = input.readInt32();
               break;
             }
-            case 24: {
+            case 16: {
 
               needRegister_ = input.readBool();
               break;
@@ -2075,51 +2047,28 @@ public final class LoginProto {
               com.game.template.basic.common.proto.login.LoginProto.LoginResponse.class, com.game.template.basic.common.proto.login.LoginProto.LoginResponse.Builder.class);
     }
 
-    public static final int HEADER_FIELD_NUMBER = 1;
-    private com.game.template.basic.common.proto.common.CommonProto.ResponseHeader header_;
-    /**
-     * <code>.ResponseHeader header = 1;</code>
-     * @return Whether the header field is set.
-     */
-    public boolean hasHeader() {
-      return header_ != null;
-    }
-    /**
-     * <code>.ResponseHeader header = 1;</code>
-     * @return The header.
-     */
-    public com.game.template.basic.common.proto.common.CommonProto.ResponseHeader getHeader() {
-      return header_ == null ? com.game.template.basic.common.proto.common.CommonProto.ResponseHeader.getDefaultInstance() : header_;
-    }
-    /**
-     * <code>.ResponseHeader header = 1;</code>
-     */
-    public com.game.template.basic.common.proto.common.CommonProto.ResponseHeaderOrBuilder getHeaderOrBuilder() {
-      return getHeader();
-    }
-
-    public static final int UID_FIELD_NUMBER = 2;
+    public static final int UID_FIELD_NUMBER = 1;
     private int uid_;
     /**
      * <pre>
      * 玩家的uid
      * </pre>
      *
-     * <code>int32 uid = 2;</code>
+     * <code>int32 uid = 1;</code>
      * @return The uid.
      */
     public int getUid() {
       return uid_;
     }
 
-    public static final int NEEDREGISTER_FIELD_NUMBER = 3;
+    public static final int NEEDREGISTER_FIELD_NUMBER = 2;
     private boolean needRegister_;
     /**
      * <pre>
      * true需要走注册流程 false 不需要
      * </pre>
      *
-     * <code>bool needRegister = 3;</code>
+     * <code>bool needRegister = 2;</code>
      * @return The needRegister.
      */
     public boolean getNeedRegister() {
@@ -2140,14 +2089,11 @@ public final class LoginProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (header_ != null) {
-        output.writeMessage(1, getHeader());
-      }
       if (uid_ != 0) {
-        output.writeInt32(2, uid_);
+        output.writeInt32(1, uid_);
       }
       if (needRegister_ != false) {
-        output.writeBool(3, needRegister_);
+        output.writeBool(2, needRegister_);
       }
       unknownFields.writeTo(output);
     }
@@ -2158,17 +2104,13 @@ public final class LoginProto {
       if (size != -1) return size;
 
       size = 0;
-      if (header_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getHeader());
-      }
       if (uid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, uid_);
+          .computeInt32Size(1, uid_);
       }
       if (needRegister_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(3, needRegister_);
+          .computeBoolSize(2, needRegister_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2185,11 +2127,6 @@ public final class LoginProto {
       }
       com.game.template.basic.common.proto.login.LoginProto.LoginResponse other = (com.game.template.basic.common.proto.login.LoginProto.LoginResponse) obj;
 
-      if (hasHeader() != other.hasHeader()) return false;
-      if (hasHeader()) {
-        if (!getHeader()
-            .equals(other.getHeader())) return false;
-      }
       if (getUid()
           != other.getUid()) return false;
       if (getNeedRegister()
@@ -2205,10 +2142,6 @@ public final class LoginProto {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasHeader()) {
-        hash = (37 * hash) + HEADER_FIELD_NUMBER;
-        hash = (53 * hash) + getHeader().hashCode();
-      }
       hash = (37 * hash) + UID_FIELD_NUMBER;
       hash = (53 * hash) + getUid();
       hash = (37 * hash) + NEEDREGISTER_FIELD_NUMBER;
@@ -2351,12 +2284,6 @@ public final class LoginProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (headerBuilder_ == null) {
-          header_ = null;
-        } else {
-          header_ = null;
-          headerBuilder_ = null;
-        }
         uid_ = 0;
 
         needRegister_ = false;
@@ -2387,11 +2314,6 @@ public final class LoginProto {
       @java.lang.Override
       public com.game.template.basic.common.proto.login.LoginProto.LoginResponse buildPartial() {
         com.game.template.basic.common.proto.login.LoginProto.LoginResponse result = new com.game.template.basic.common.proto.login.LoginProto.LoginResponse(this);
-        if (headerBuilder_ == null) {
-          result.header_ = header_;
-        } else {
-          result.header_ = headerBuilder_.build();
-        }
         result.uid_ = uid_;
         result.needRegister_ = needRegister_;
         onBuilt();
@@ -2442,9 +2364,6 @@ public final class LoginProto {
 
       public Builder mergeFrom(com.game.template.basic.common.proto.login.LoginProto.LoginResponse other) {
         if (other == com.game.template.basic.common.proto.login.LoginProto.LoginResponse.getDefaultInstance()) return this;
-        if (other.hasHeader()) {
-          mergeHeader(other.getHeader());
-        }
         if (other.getUid() != 0) {
           setUid(other.getUid());
         }
@@ -2480,132 +2399,13 @@ public final class LoginProto {
         return this;
       }
 
-      private com.game.template.basic.common.proto.common.CommonProto.ResponseHeader header_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.game.template.basic.common.proto.common.CommonProto.ResponseHeader, com.game.template.basic.common.proto.common.CommonProto.ResponseHeader.Builder, com.game.template.basic.common.proto.common.CommonProto.ResponseHeaderOrBuilder> headerBuilder_;
-      /**
-       * <code>.ResponseHeader header = 1;</code>
-       * @return Whether the header field is set.
-       */
-      public boolean hasHeader() {
-        return headerBuilder_ != null || header_ != null;
-      }
-      /**
-       * <code>.ResponseHeader header = 1;</code>
-       * @return The header.
-       */
-      public com.game.template.basic.common.proto.common.CommonProto.ResponseHeader getHeader() {
-        if (headerBuilder_ == null) {
-          return header_ == null ? com.game.template.basic.common.proto.common.CommonProto.ResponseHeader.getDefaultInstance() : header_;
-        } else {
-          return headerBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.ResponseHeader header = 1;</code>
-       */
-      public Builder setHeader(com.game.template.basic.common.proto.common.CommonProto.ResponseHeader value) {
-        if (headerBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          header_ = value;
-          onChanged();
-        } else {
-          headerBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.ResponseHeader header = 1;</code>
-       */
-      public Builder setHeader(
-          com.game.template.basic.common.proto.common.CommonProto.ResponseHeader.Builder builderForValue) {
-        if (headerBuilder_ == null) {
-          header_ = builderForValue.build();
-          onChanged();
-        } else {
-          headerBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.ResponseHeader header = 1;</code>
-       */
-      public Builder mergeHeader(com.game.template.basic.common.proto.common.CommonProto.ResponseHeader value) {
-        if (headerBuilder_ == null) {
-          if (header_ != null) {
-            header_ =
-              com.game.template.basic.common.proto.common.CommonProto.ResponseHeader.newBuilder(header_).mergeFrom(value).buildPartial();
-          } else {
-            header_ = value;
-          }
-          onChanged();
-        } else {
-          headerBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.ResponseHeader header = 1;</code>
-       */
-      public Builder clearHeader() {
-        if (headerBuilder_ == null) {
-          header_ = null;
-          onChanged();
-        } else {
-          header_ = null;
-          headerBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.ResponseHeader header = 1;</code>
-       */
-      public com.game.template.basic.common.proto.common.CommonProto.ResponseHeader.Builder getHeaderBuilder() {
-        
-        onChanged();
-        return getHeaderFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.ResponseHeader header = 1;</code>
-       */
-      public com.game.template.basic.common.proto.common.CommonProto.ResponseHeaderOrBuilder getHeaderOrBuilder() {
-        if (headerBuilder_ != null) {
-          return headerBuilder_.getMessageOrBuilder();
-        } else {
-          return header_ == null ?
-              com.game.template.basic.common.proto.common.CommonProto.ResponseHeader.getDefaultInstance() : header_;
-        }
-      }
-      /**
-       * <code>.ResponseHeader header = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.game.template.basic.common.proto.common.CommonProto.ResponseHeader, com.game.template.basic.common.proto.common.CommonProto.ResponseHeader.Builder, com.game.template.basic.common.proto.common.CommonProto.ResponseHeaderOrBuilder> 
-          getHeaderFieldBuilder() {
-        if (headerBuilder_ == null) {
-          headerBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.game.template.basic.common.proto.common.CommonProto.ResponseHeader, com.game.template.basic.common.proto.common.CommonProto.ResponseHeader.Builder, com.game.template.basic.common.proto.common.CommonProto.ResponseHeaderOrBuilder>(
-                  getHeader(),
-                  getParentForChildren(),
-                  isClean());
-          header_ = null;
-        }
-        return headerBuilder_;
-      }
-
       private int uid_ ;
       /**
        * <pre>
        * 玩家的uid
        * </pre>
        *
-       * <code>int32 uid = 2;</code>
+       * <code>int32 uid = 1;</code>
        * @return The uid.
        */
       public int getUid() {
@@ -2616,7 +2416,7 @@ public final class LoginProto {
        * 玩家的uid
        * </pre>
        *
-       * <code>int32 uid = 2;</code>
+       * <code>int32 uid = 1;</code>
        * @param value The uid to set.
        * @return This builder for chaining.
        */
@@ -2631,7 +2431,7 @@ public final class LoginProto {
        * 玩家的uid
        * </pre>
        *
-       * <code>int32 uid = 2;</code>
+       * <code>int32 uid = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearUid() {
@@ -2647,7 +2447,7 @@ public final class LoginProto {
        * true需要走注册流程 false 不需要
        * </pre>
        *
-       * <code>bool needRegister = 3;</code>
+       * <code>bool needRegister = 2;</code>
        * @return The needRegister.
        */
       public boolean getNeedRegister() {
@@ -2658,7 +2458,7 @@ public final class LoginProto {
        * true需要走注册流程 false 不需要
        * </pre>
        *
-       * <code>bool needRegister = 3;</code>
+       * <code>bool needRegister = 2;</code>
        * @param value The needRegister to set.
        * @return This builder for chaining.
        */
@@ -2673,7 +2473,7 @@ public final class LoginProto {
        * true需要走注册流程 false 不需要
        * </pre>
        *
-       * <code>bool needRegister = 3;</code>
+       * <code>bool needRegister = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearNeedRegister() {
@@ -2764,19 +2564,17 @@ public final class LoginProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\013Login.proto\032\014Common.proto\"\020\n\016PollingRe" +
-      "quest\"&\n\017PollingResponse\022\023\n\013currSeconds\030" +
-      "\001 \001(\005\"=\n\014LoginRequest\022\016\n\006openid\030\001 \001(\t\022\r\n" +
-      "\005token\030\002 \001(\t\022\016\n\006secret\030\003 \001(\t\"S\n\rLoginRes" +
-      "ponse\022\037\n\006header\030\001 \001(\0132\017.ResponseHeader\022\013" +
-      "\n\003uid\030\002 \001(\005\022\024\n\014needRegister\030\003 \001(\010B8\n*com" +
-      ".game.template.basic.common.proto.loginB" +
-      "\nLoginProtob\006proto3"
+      "\n\013Login.proto\"\020\n\016PollingRequest\"&\n\017Polli" +
+      "ngResponse\022\023\n\013currSeconds\030\001 \001(\005\"=\n\014Login" +
+      "Request\022\016\n\006openid\030\001 \001(\t\022\r\n\005token\030\002 \001(\t\022\016" +
+      "\n\006secret\030\003 \001(\t\"2\n\rLoginResponse\022\013\n\003uid\030\001" +
+      " \001(\005\022\024\n\014needRegister\030\002 \001(\010B8\n*com.game.t" +
+      "emplate.basic.common.proto.loginB\nLoginP" +
+      "rotob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.game.template.basic.common.proto.common.CommonProto.getDescriptor(),
         });
     internal_static_PollingRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -2801,8 +2599,7 @@ public final class LoginProto {
     internal_static_LoginResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_LoginResponse_descriptor,
-        new java.lang.String[] { "Header", "Uid", "NeedRegister", });
-    com.game.template.basic.common.proto.common.CommonProto.getDescriptor();
+        new java.lang.String[] { "Uid", "NeedRegister", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

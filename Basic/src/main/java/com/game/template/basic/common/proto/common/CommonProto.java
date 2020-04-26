@@ -14,8 +14,8 @@ public final class CommonProto {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface ResponseHeaderOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:ResponseHeader)
+  public interface ErrorResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:ErrorResponse)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -53,18 +53,18 @@ public final class CommonProto {
    * 响应头. 每个协议都会给, protobuf 可能默认不传. 也认为是成功.
    * </pre>
    *
-   * Protobuf type {@code ResponseHeader}
+   * Protobuf type {@code ErrorResponse}
    */
-  public  static final class ResponseHeader extends
+  public  static final class ErrorResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:ResponseHeader)
-      ResponseHeaderOrBuilder {
+      // @@protoc_insertion_point(message_implements:ErrorResponse)
+      ErrorResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use ResponseHeader.newBuilder() to construct.
-    private ResponseHeader(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use ErrorResponse.newBuilder() to construct.
+    private ErrorResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private ResponseHeader() {
+    private ErrorResponse() {
       msg_ = "";
     }
 
@@ -72,7 +72,7 @@ public final class CommonProto {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new ResponseHeader();
+      return new ErrorResponse();
     }
 
     @java.lang.Override
@@ -80,7 +80,7 @@ public final class CommonProto {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ResponseHeader(
+    private ErrorResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -130,15 +130,15 @@ public final class CommonProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.game.template.basic.common.proto.common.CommonProto.internal_static_ResponseHeader_descriptor;
+      return com.game.template.basic.common.proto.common.CommonProto.internal_static_ErrorResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.game.template.basic.common.proto.common.CommonProto.internal_static_ResponseHeader_fieldAccessorTable
+      return com.game.template.basic.common.proto.common.CommonProto.internal_static_ErrorResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.game.template.basic.common.proto.common.CommonProto.ResponseHeader.class, com.game.template.basic.common.proto.common.CommonProto.ResponseHeader.Builder.class);
+              com.game.template.basic.common.proto.common.CommonProto.ErrorResponse.class, com.game.template.basic.common.proto.common.CommonProto.ErrorResponse.Builder.class);
     }
 
     public static final int RET_FIELD_NUMBER = 1;
@@ -245,10 +245,10 @@ public final class CommonProto {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.game.template.basic.common.proto.common.CommonProto.ResponseHeader)) {
+      if (!(obj instanceof com.game.template.basic.common.proto.common.CommonProto.ErrorResponse)) {
         return super.equals(obj);
       }
-      com.game.template.basic.common.proto.common.CommonProto.ResponseHeader other = (com.game.template.basic.common.proto.common.CommonProto.ResponseHeader) obj;
+      com.game.template.basic.common.proto.common.CommonProto.ErrorResponse other = (com.game.template.basic.common.proto.common.CommonProto.ErrorResponse) obj;
 
       if (getRet()
           != other.getRet()) return false;
@@ -274,69 +274,69 @@ public final class CommonProto {
       return hash;
     }
 
-    public static com.game.template.basic.common.proto.common.CommonProto.ResponseHeader parseFrom(
+    public static com.game.template.basic.common.proto.common.CommonProto.ErrorResponse parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.game.template.basic.common.proto.common.CommonProto.ResponseHeader parseFrom(
+    public static com.game.template.basic.common.proto.common.CommonProto.ErrorResponse parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.game.template.basic.common.proto.common.CommonProto.ResponseHeader parseFrom(
+    public static com.game.template.basic.common.proto.common.CommonProto.ErrorResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.game.template.basic.common.proto.common.CommonProto.ResponseHeader parseFrom(
+    public static com.game.template.basic.common.proto.common.CommonProto.ErrorResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.game.template.basic.common.proto.common.CommonProto.ResponseHeader parseFrom(byte[] data)
+    public static com.game.template.basic.common.proto.common.CommonProto.ErrorResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.game.template.basic.common.proto.common.CommonProto.ResponseHeader parseFrom(
+    public static com.game.template.basic.common.proto.common.CommonProto.ErrorResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.game.template.basic.common.proto.common.CommonProto.ResponseHeader parseFrom(java.io.InputStream input)
+    public static com.game.template.basic.common.proto.common.CommonProto.ErrorResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.game.template.basic.common.proto.common.CommonProto.ResponseHeader parseFrom(
+    public static com.game.template.basic.common.proto.common.CommonProto.ErrorResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.game.template.basic.common.proto.common.CommonProto.ResponseHeader parseDelimitedFrom(java.io.InputStream input)
+    public static com.game.template.basic.common.proto.common.CommonProto.ErrorResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.game.template.basic.common.proto.common.CommonProto.ResponseHeader parseDelimitedFrom(
+    public static com.game.template.basic.common.proto.common.CommonProto.ErrorResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.game.template.basic.common.proto.common.CommonProto.ResponseHeader parseFrom(
+    public static com.game.template.basic.common.proto.common.CommonProto.ErrorResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.game.template.basic.common.proto.common.CommonProto.ResponseHeader parseFrom(
+    public static com.game.template.basic.common.proto.common.CommonProto.ErrorResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -349,7 +349,7 @@ public final class CommonProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.game.template.basic.common.proto.common.CommonProto.ResponseHeader prototype) {
+    public static Builder newBuilder(com.game.template.basic.common.proto.common.CommonProto.ErrorResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -369,26 +369,26 @@ public final class CommonProto {
      * 响应头. 每个协议都会给, protobuf 可能默认不传. 也认为是成功.
      * </pre>
      *
-     * Protobuf type {@code ResponseHeader}
+     * Protobuf type {@code ErrorResponse}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:ResponseHeader)
-        com.game.template.basic.common.proto.common.CommonProto.ResponseHeaderOrBuilder {
+        // @@protoc_insertion_point(builder_implements:ErrorResponse)
+        com.game.template.basic.common.proto.common.CommonProto.ErrorResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.game.template.basic.common.proto.common.CommonProto.internal_static_ResponseHeader_descriptor;
+        return com.game.template.basic.common.proto.common.CommonProto.internal_static_ErrorResponse_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.game.template.basic.common.proto.common.CommonProto.internal_static_ResponseHeader_fieldAccessorTable
+        return com.game.template.basic.common.proto.common.CommonProto.internal_static_ErrorResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.game.template.basic.common.proto.common.CommonProto.ResponseHeader.class, com.game.template.basic.common.proto.common.CommonProto.ResponseHeader.Builder.class);
+                com.game.template.basic.common.proto.common.CommonProto.ErrorResponse.class, com.game.template.basic.common.proto.common.CommonProto.ErrorResponse.Builder.class);
       }
 
-      // Construct using com.game.template.basic.common.proto.common.CommonProto.ResponseHeader.newBuilder()
+      // Construct using com.game.template.basic.common.proto.common.CommonProto.ErrorResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -416,17 +416,17 @@ public final class CommonProto {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.game.template.basic.common.proto.common.CommonProto.internal_static_ResponseHeader_descriptor;
+        return com.game.template.basic.common.proto.common.CommonProto.internal_static_ErrorResponse_descriptor;
       }
 
       @java.lang.Override
-      public com.game.template.basic.common.proto.common.CommonProto.ResponseHeader getDefaultInstanceForType() {
-        return com.game.template.basic.common.proto.common.CommonProto.ResponseHeader.getDefaultInstance();
+      public com.game.template.basic.common.proto.common.CommonProto.ErrorResponse getDefaultInstanceForType() {
+        return com.game.template.basic.common.proto.common.CommonProto.ErrorResponse.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.game.template.basic.common.proto.common.CommonProto.ResponseHeader build() {
-        com.game.template.basic.common.proto.common.CommonProto.ResponseHeader result = buildPartial();
+      public com.game.template.basic.common.proto.common.CommonProto.ErrorResponse build() {
+        com.game.template.basic.common.proto.common.CommonProto.ErrorResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -434,8 +434,8 @@ public final class CommonProto {
       }
 
       @java.lang.Override
-      public com.game.template.basic.common.proto.common.CommonProto.ResponseHeader buildPartial() {
-        com.game.template.basic.common.proto.common.CommonProto.ResponseHeader result = new com.game.template.basic.common.proto.common.CommonProto.ResponseHeader(this);
+      public com.game.template.basic.common.proto.common.CommonProto.ErrorResponse buildPartial() {
+        com.game.template.basic.common.proto.common.CommonProto.ErrorResponse result = new com.game.template.basic.common.proto.common.CommonProto.ErrorResponse(this);
         result.ret_ = ret_;
         result.msg_ = msg_;
         onBuilt();
@@ -476,16 +476,16 @@ public final class CommonProto {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.game.template.basic.common.proto.common.CommonProto.ResponseHeader) {
-          return mergeFrom((com.game.template.basic.common.proto.common.CommonProto.ResponseHeader)other);
+        if (other instanceof com.game.template.basic.common.proto.common.CommonProto.ErrorResponse) {
+          return mergeFrom((com.game.template.basic.common.proto.common.CommonProto.ErrorResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.game.template.basic.common.proto.common.CommonProto.ResponseHeader other) {
-        if (other == com.game.template.basic.common.proto.common.CommonProto.ResponseHeader.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.game.template.basic.common.proto.common.CommonProto.ErrorResponse other) {
+        if (other == com.game.template.basic.common.proto.common.CommonProto.ErrorResponse.getDefaultInstance()) return this;
         if (other.getRet() != 0) {
           setRet(other.getRet());
         }
@@ -508,11 +508,11 @@ public final class CommonProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.game.template.basic.common.proto.common.CommonProto.ResponseHeader parsedMessage = null;
+        com.game.template.basic.common.proto.common.CommonProto.ErrorResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.game.template.basic.common.proto.common.CommonProto.ResponseHeader) e.getUnfinishedMessage();
+          parsedMessage = (com.game.template.basic.common.proto.common.CommonProto.ErrorResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -672,41 +672,41 @@ public final class CommonProto {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:ResponseHeader)
+      // @@protoc_insertion_point(builder_scope:ErrorResponse)
     }
 
-    // @@protoc_insertion_point(class_scope:ResponseHeader)
-    private static final com.game.template.basic.common.proto.common.CommonProto.ResponseHeader DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:ErrorResponse)
+    private static final com.game.template.basic.common.proto.common.CommonProto.ErrorResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.game.template.basic.common.proto.common.CommonProto.ResponseHeader();
+      DEFAULT_INSTANCE = new com.game.template.basic.common.proto.common.CommonProto.ErrorResponse();
     }
 
-    public static com.game.template.basic.common.proto.common.CommonProto.ResponseHeader getDefaultInstance() {
+    public static com.game.template.basic.common.proto.common.CommonProto.ErrorResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<ResponseHeader>
-        PARSER = new com.google.protobuf.AbstractParser<ResponseHeader>() {
+    private static final com.google.protobuf.Parser<ErrorResponse>
+        PARSER = new com.google.protobuf.AbstractParser<ErrorResponse>() {
       @java.lang.Override
-      public ResponseHeader parsePartialFrom(
+      public ErrorResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ResponseHeader(input, extensionRegistry);
+        return new ErrorResponse(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<ResponseHeader> parser() {
+    public static com.google.protobuf.Parser<ErrorResponse> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<ResponseHeader> getParserForType() {
+    public com.google.protobuf.Parser<ErrorResponse> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.game.template.basic.common.proto.common.CommonProto.ResponseHeader getDefaultInstanceForType() {
+    public com.game.template.basic.common.proto.common.CommonProto.ErrorResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -715,21 +715,6 @@ public final class CommonProto {
   public interface DefaultErrorResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:DefaultErrorResponse)
       com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>.ResponseHeader header = 1;</code>
-     * @return Whether the header field is set.
-     */
-    boolean hasHeader();
-    /**
-     * <code>.ResponseHeader header = 1;</code>
-     * @return The header.
-     */
-    com.game.template.basic.common.proto.common.CommonProto.ResponseHeader getHeader();
-    /**
-     * <code>.ResponseHeader header = 1;</code>
-     */
-    com.game.template.basic.common.proto.common.CommonProto.ResponseHeaderOrBuilder getHeaderOrBuilder();
   }
   /**
    * <pre>
@@ -780,19 +765,6 @@ public final class CommonProto {
             case 0:
               done = true;
               break;
-            case 10: {
-              com.game.template.basic.common.proto.common.CommonProto.ResponseHeader.Builder subBuilder = null;
-              if (header_ != null) {
-                subBuilder = header_.toBuilder();
-              }
-              header_ = input.readMessage(com.game.template.basic.common.proto.common.CommonProto.ResponseHeader.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(header_);
-                header_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -825,29 +797,6 @@ public final class CommonProto {
               com.game.template.basic.common.proto.common.CommonProto.DefaultErrorResponse.class, com.game.template.basic.common.proto.common.CommonProto.DefaultErrorResponse.Builder.class);
     }
 
-    public static final int HEADER_FIELD_NUMBER = 1;
-    private com.game.template.basic.common.proto.common.CommonProto.ResponseHeader header_;
-    /**
-     * <code>.ResponseHeader header = 1;</code>
-     * @return Whether the header field is set.
-     */
-    public boolean hasHeader() {
-      return header_ != null;
-    }
-    /**
-     * <code>.ResponseHeader header = 1;</code>
-     * @return The header.
-     */
-    public com.game.template.basic.common.proto.common.CommonProto.ResponseHeader getHeader() {
-      return header_ == null ? com.game.template.basic.common.proto.common.CommonProto.ResponseHeader.getDefaultInstance() : header_;
-    }
-    /**
-     * <code>.ResponseHeader header = 1;</code>
-     */
-    public com.game.template.basic.common.proto.common.CommonProto.ResponseHeaderOrBuilder getHeaderOrBuilder() {
-      return getHeader();
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -862,9 +811,6 @@ public final class CommonProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (header_ != null) {
-        output.writeMessage(1, getHeader());
-      }
       unknownFields.writeTo(output);
     }
 
@@ -874,10 +820,6 @@ public final class CommonProto {
       if (size != -1) return size;
 
       size = 0;
-      if (header_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getHeader());
-      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -893,11 +835,6 @@ public final class CommonProto {
       }
       com.game.template.basic.common.proto.common.CommonProto.DefaultErrorResponse other = (com.game.template.basic.common.proto.common.CommonProto.DefaultErrorResponse) obj;
 
-      if (hasHeader() != other.hasHeader()) return false;
-      if (hasHeader()) {
-        if (!getHeader()
-            .equals(other.getHeader())) return false;
-      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -909,10 +846,6 @@ public final class CommonProto {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasHeader()) {
-        hash = (37 * hash) + HEADER_FIELD_NUMBER;
-        hash = (53 * hash) + getHeader().hashCode();
-      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1050,12 +983,6 @@ public final class CommonProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (headerBuilder_ == null) {
-          header_ = null;
-        } else {
-          header_ = null;
-          headerBuilder_ = null;
-        }
         return this;
       }
 
@@ -1082,11 +1009,6 @@ public final class CommonProto {
       @java.lang.Override
       public com.game.template.basic.common.proto.common.CommonProto.DefaultErrorResponse buildPartial() {
         com.game.template.basic.common.proto.common.CommonProto.DefaultErrorResponse result = new com.game.template.basic.common.proto.common.CommonProto.DefaultErrorResponse(this);
-        if (headerBuilder_ == null) {
-          result.header_ = header_;
-        } else {
-          result.header_ = headerBuilder_.build();
-        }
         onBuilt();
         return result;
       }
@@ -1135,9 +1057,6 @@ public final class CommonProto {
 
       public Builder mergeFrom(com.game.template.basic.common.proto.common.CommonProto.DefaultErrorResponse other) {
         if (other == com.game.template.basic.common.proto.common.CommonProto.DefaultErrorResponse.getDefaultInstance()) return this;
-        if (other.hasHeader()) {
-          mergeHeader(other.getHeader());
-        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -1165,125 +1084,6 @@ public final class CommonProto {
           }
         }
         return this;
-      }
-
-      private com.game.template.basic.common.proto.common.CommonProto.ResponseHeader header_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.game.template.basic.common.proto.common.CommonProto.ResponseHeader, com.game.template.basic.common.proto.common.CommonProto.ResponseHeader.Builder, com.game.template.basic.common.proto.common.CommonProto.ResponseHeaderOrBuilder> headerBuilder_;
-      /**
-       * <code>.ResponseHeader header = 1;</code>
-       * @return Whether the header field is set.
-       */
-      public boolean hasHeader() {
-        return headerBuilder_ != null || header_ != null;
-      }
-      /**
-       * <code>.ResponseHeader header = 1;</code>
-       * @return The header.
-       */
-      public com.game.template.basic.common.proto.common.CommonProto.ResponseHeader getHeader() {
-        if (headerBuilder_ == null) {
-          return header_ == null ? com.game.template.basic.common.proto.common.CommonProto.ResponseHeader.getDefaultInstance() : header_;
-        } else {
-          return headerBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.ResponseHeader header = 1;</code>
-       */
-      public Builder setHeader(com.game.template.basic.common.proto.common.CommonProto.ResponseHeader value) {
-        if (headerBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          header_ = value;
-          onChanged();
-        } else {
-          headerBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.ResponseHeader header = 1;</code>
-       */
-      public Builder setHeader(
-          com.game.template.basic.common.proto.common.CommonProto.ResponseHeader.Builder builderForValue) {
-        if (headerBuilder_ == null) {
-          header_ = builderForValue.build();
-          onChanged();
-        } else {
-          headerBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.ResponseHeader header = 1;</code>
-       */
-      public Builder mergeHeader(com.game.template.basic.common.proto.common.CommonProto.ResponseHeader value) {
-        if (headerBuilder_ == null) {
-          if (header_ != null) {
-            header_ =
-              com.game.template.basic.common.proto.common.CommonProto.ResponseHeader.newBuilder(header_).mergeFrom(value).buildPartial();
-          } else {
-            header_ = value;
-          }
-          onChanged();
-        } else {
-          headerBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.ResponseHeader header = 1;</code>
-       */
-      public Builder clearHeader() {
-        if (headerBuilder_ == null) {
-          header_ = null;
-          onChanged();
-        } else {
-          header_ = null;
-          headerBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.ResponseHeader header = 1;</code>
-       */
-      public com.game.template.basic.common.proto.common.CommonProto.ResponseHeader.Builder getHeaderBuilder() {
-        
-        onChanged();
-        return getHeaderFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.ResponseHeader header = 1;</code>
-       */
-      public com.game.template.basic.common.proto.common.CommonProto.ResponseHeaderOrBuilder getHeaderOrBuilder() {
-        if (headerBuilder_ != null) {
-          return headerBuilder_.getMessageOrBuilder();
-        } else {
-          return header_ == null ?
-              com.game.template.basic.common.proto.common.CommonProto.ResponseHeader.getDefaultInstance() : header_;
-        }
-      }
-      /**
-       * <code>.ResponseHeader header = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.game.template.basic.common.proto.common.CommonProto.ResponseHeader, com.game.template.basic.common.proto.common.CommonProto.ResponseHeader.Builder, com.game.template.basic.common.proto.common.CommonProto.ResponseHeaderOrBuilder> 
-          getHeaderFieldBuilder() {
-        if (headerBuilder_ == null) {
-          headerBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.game.template.basic.common.proto.common.CommonProto.ResponseHeader, com.game.template.basic.common.proto.common.CommonProto.ResponseHeader.Builder, com.game.template.basic.common.proto.common.CommonProto.ResponseHeaderOrBuilder>(
-                  getHeader(),
-                  getParentForChildren(),
-                  isClean());
-          header_ = null;
-        }
-        return headerBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -2775,10 +2575,10 @@ public final class CommonProto {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_ResponseHeader_descriptor;
+    internal_static_ErrorResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_ResponseHeader_fieldAccessorTable;
+      internal_static_ErrorResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_DefaultErrorResponse_descriptor;
   private static final 
@@ -2803,31 +2603,30 @@ public final class CommonProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\014Common.proto\"*\n\016ResponseHeader\022\013\n\003ret\030" +
-      "\001 \001(\005\022\013\n\003msg\030\002 \001(\t\"7\n\024DefaultErrorRespon" +
-      "se\022\037\n\006header\030\001 \001(\0132\017.ResponseHeader\"A\n\010P" +
-      "layerTo\022\013\n\003uid\030\001 \001(\005\022\014\n\004nick\030\002 \001(\t\022\r\n\005le" +
-      "vel\030\003 \001(\005\022\013\n\003exp\030\004 \001(\005\"!\n\006ItemTo\022\n\n\002id\030\001" +
-      " \001(\005\022\013\n\003num\030\002 \001(\005B:\n+com.game.template.b" +
-      "asic.common.proto.commonB\013CommonProtob\006p" +
-      "roto3"
+      "\n\014Common.proto\")\n\rErrorResponse\022\013\n\003ret\030\001" +
+      " \001(\005\022\013\n\003msg\030\002 \001(\t\"\026\n\024DefaultErrorRespons" +
+      "e\"A\n\010PlayerTo\022\013\n\003uid\030\001 \001(\005\022\014\n\004nick\030\002 \001(\t" +
+      "\022\r\n\005level\030\003 \001(\005\022\013\n\003exp\030\004 \001(\005\"!\n\006ItemTo\022\n" +
+      "\n\002id\030\001 \001(\005\022\013\n\003num\030\002 \001(\005B:\n+com.game.temp" +
+      "late.basic.common.proto.commonB\013CommonPr" +
+      "otob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_ResponseHeader_descriptor =
+    internal_static_ErrorResponse_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_ResponseHeader_fieldAccessorTable = new
+    internal_static_ErrorResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_ResponseHeader_descriptor,
+        internal_static_ErrorResponse_descriptor,
         new java.lang.String[] { "Ret", "Msg", });
     internal_static_DefaultErrorResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_DefaultErrorResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_DefaultErrorResponse_descriptor,
-        new java.lang.String[] { "Header", });
+        new java.lang.String[] { });
     internal_static_PlayerTo_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_PlayerTo_fieldAccessorTable = new

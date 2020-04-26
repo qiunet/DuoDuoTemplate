@@ -4,14 +4,13 @@ option java_package = "com.game.template.basic.common.proto.common";
 option java_outer_classname = "CommonProto";
 
 // 响应头. 每个协议都会给, protobuf 可能默认不传. 也认为是成功.
-message ResponseHeader {
+message ErrorResponse {
 	int32 ret = 1;                      // 返回的ret 为 0 为正确, 其他错误
 	string msg = 2;                     // 如果 ret 不为0 则msg为错误描述
 }
 
 //协议下行 错误协议 500 404等
 message DefaultErrorResponse {
-	ResponseHeader header = 1;
 }
 
 //玩家对象

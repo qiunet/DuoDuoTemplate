@@ -2,7 +2,6 @@ syntax = "proto3";
 
 option java_package = "com.game.template.basic.common.proto.login";
 option java_outer_classname = "LoginProto";
-import "Common.proto";
 
 //维持连接的心跳  1000
 message PollingRequest {}
@@ -20,9 +19,8 @@ message LoginRequest {
 }
 //登录协议下行: 1001000
 message LoginResponse {
-	ResponseHeader header = 1;
-	int32 uid = 2;                  // 玩家的uid
-	bool needRegister = 3;         // true需要走注册流程 false 不需要
+	int32 uid = 1;                  // 玩家的uid
+	bool needRegister = 2;         // true需要走注册流程 false 不需要
 }
 
 
