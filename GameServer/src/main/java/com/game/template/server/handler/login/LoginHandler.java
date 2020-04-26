@@ -26,7 +26,7 @@ public class LoginHandler extends BaseHandler<LoginProto.LoginRequest> {
 	private ISimpleMapCfgWrapper<Integer, ResourceDataCfg> dataResourceWrapper;
 
 	@Override
-	public void handler(PlayerActor playerActor, IWebSocketRequest<LoginProto.LoginRequest> context) throws Exception {
+	public void handler0(PlayerActor playerActor, IWebSocketRequest<LoginProto.LoginRequest> context) throws Exception {
 		System.out.println("=========="+context.getRequestData().getOpenid());
 		IResourceCfg resourceCfg = ResourceManager.getInstance().getResourceCfg(1);
 		System.out.println(resourceCfg.type());
