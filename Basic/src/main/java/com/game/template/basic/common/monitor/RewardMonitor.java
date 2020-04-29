@@ -2,11 +2,11 @@ package com.game.template.basic.common.monitor;
 
 import com.game.template.basic.backpack.listener.GainRewardEventData;
 import com.game.template.basic.common.enums.OperationType;
+import com.game.template.basic.common.logger.GameLogger;
 import org.qiunet.utils.monitor.DefaultMonitor;
 import org.qiunet.utils.monitor.IMonitor;
 import org.qiunet.utils.monitor.IMonitorData;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.concurrent.TimeUnit;
 
@@ -17,7 +17,7 @@ import java.util.concurrent.TimeUnit;
  * 2020-04-17 07:36
  **/
 public class RewardMonitor implements GainRewardEventData.GainRewardDataListener {
-	private Logger logger = LoggerFactory.getLogger("monitor");
+	private Logger logger = GameLogger.GAME_MONITOR.getLogger();
 	private IMonitor<Long, OperationType> rewardMonitor = new DefaultMonitor<>(
 		OperationType::getCheckCount, this::handlerTrigger, 60, TimeUnit.SECONDS
 	);

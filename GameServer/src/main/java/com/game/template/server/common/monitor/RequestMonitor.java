@@ -1,11 +1,11 @@
 package com.game.template.server.common.monitor;
 
+import com.game.template.basic.common.logger.GameLogger;
 import org.qiunet.flash.handler.handler.mapping.RequestHandlerMapping;
 import org.qiunet.utils.monitor.DefaultMonitor;
 import org.qiunet.utils.monitor.IMonitor;
 import org.qiunet.utils.monitor.IMonitorData;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.concurrent.TimeUnit;
 
@@ -17,7 +17,7 @@ import java.util.concurrent.TimeUnit;
 public enum RequestMonitor {
 	instance;
 
-	private Logger logger = LoggerFactory.getLogger("monitor");
+	private Logger logger = GameLogger.GAME_MONITOR.getLogger();
 
 	private IMonitor<Long, Integer> requestMonitor = new DefaultMonitor<>(
 		this::getCheckCount, this::handlerTrigger, 60, TimeUnit.SECONDS

@@ -13,6 +13,7 @@ public enum  GameLogger implements ILoggerType {
 
 	COMM_LOGGER("CommLogger"),
 	GAME_HANDLER("GameHandler"),
+	GAME_MONITOR("GameMonitor"),
 	;
 	private String loogerName;
 
