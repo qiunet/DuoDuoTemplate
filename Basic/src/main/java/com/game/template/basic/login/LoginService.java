@@ -1,9 +1,8 @@
 package com.game.template.basic.login;
 
-import org.qiunet.data.support.CacheDataSupport;
-
 import com.game.template.basic.login.entity.LoginBo;
 import com.game.template.basic.login.entity.LoginDo;
+import org.qiunet.data.support.CacheDataSupport;
 
 public enum LoginService {
 	instance;
@@ -15,5 +14,12 @@ public enum LoginService {
 	*/
 	public LoginBo getLoginBo(String openId) {
 		return dataSupport.getBo(openId);
+	}
+
+	public LoginBo register(String openId, String secret) {
+		LoginDo loginDo = new LoginDo(openId);
+		loginDo.setToken(secret);
+
+		return loginDo.insert();
 	}
 }

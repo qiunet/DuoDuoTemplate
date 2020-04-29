@@ -15,6 +15,6 @@
 	<field name="idVal" type="int" comment="当前的id值"/>
 	<constructor>
 		<constructor_arg field="playerId" />
-		<constructor_arg field="idVal" />
+		<constructor_arg field="type" />
 	</constructor>
 </cache_entity_list>

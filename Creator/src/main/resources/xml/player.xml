@@ -10,6 +10,7 @@
 			   https://raw.githubusercontent.com/qiunet/DuoDuo/master/ProjectInit/src/main/resources/xsd/CacheEntity.xsd"
 >
 	<field name="playerId" type="long" comment="玩家id" />
+	<field name="openId" type="String" comment="玩家openId"/>
 	<field name="name" type="String" comment="玩家名称"/>
 	<field name="exp" type="long" comment="玩家经验" />
 	<field name="level" type="int" comment="玩家等级" />

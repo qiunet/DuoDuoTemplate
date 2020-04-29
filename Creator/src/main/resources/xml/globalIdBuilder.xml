@@ -10,7 +10,7 @@
 			   https://raw.githubusercontent.com/qiunet/DuoDuo/master/ProjectInit/src/main/resources/xsd/CacheEntity.xsd"
 >
 	<field name="type" type="int" comment="类型" />
-	<field name="idVal" type="int" comment="id值" />
+	<field name="idVal" type="long" comment="id值" />
 
 	<constructor>
 		<constructor_arg field="type"/>

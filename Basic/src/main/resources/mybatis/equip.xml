@@ -3,18 +3,18 @@
 <mapper namespace="equip">
 
 	<select id="selectEquipDo" parameterType="map" resultType="EquipDo">
-		SELECT * FROM equip WHERE id = #{id};
+		SELECT * FROM equip WHERE playerId = #{playerId};
 	</select>
 
 	<update id="updateEquipDo" parameterType="EquipDo" >
-		UPDATE equip SET `playerId` = #{playerId}, `pos` = #{pos}, `gainTime` = #{gainTime}  WHERE id = #{id} AND equipId = #{equipId};
+		UPDATE equip SET `equipId` = #{equipId}, `pos` = #{pos}, `gainTime` = #{gainTime}  WHERE playerId = #{playerId} AND id = #{id};
 	</update>
 
 	<insert id="insertEquipDo" parameterType="EquipDo" >
-		INSERT INTO equip (`id`, `equipId`, `playerId`, `pos`, `gainTime`) VALUES (#{id}, #{equipId}, #{playerId}, #{pos}, #{gainTime});
+		INSERT INTO equip (`playerId`, `id`, `equipId`, `pos`, `gainTime`) VALUES (#{playerId}, #{id}, #{equipId}, #{pos}, #{gainTime});
 	</insert>
 
 	<delete id="deleteEquipDo" parameterType="map" >
-		DELETE FROM equip  WHERE id = #{id} AND equipId = #{equipId};
+		DELETE FROM equip  WHERE playerId = #{playerId} AND id = #{id};
 	</delete>
 </mapper>

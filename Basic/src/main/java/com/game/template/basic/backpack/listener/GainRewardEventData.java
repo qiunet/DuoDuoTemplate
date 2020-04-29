@@ -2,9 +2,12 @@ package com.game.template.basic.backpack.listener;
 
 import com.game.template.basic.common.actor.PlayerActor;
 import com.game.template.basic.common.data.RewardData;
+import com.game.template.basic.common.data.result.IRewardResult;
 import com.game.template.basic.common.enums.OperationType;
 import org.qiunet.utils.listener.EventListener;
 import org.qiunet.utils.listener.IEventData;
+
+import java.util.List;
 
 /***
  * 获得RewardData 奖励的事件 以及事件数据
@@ -14,11 +17,12 @@ import org.qiunet.utils.listener.IEventData;
  **/
 @EventListener(GainRewardEventData.GainRewardDataListener.class)
 public class GainRewardEventData implements IEventData {
+	private List<IRewardResult> resultList;
 	private PlayerActor playerActor;
 	private RewardData rewardData;
 	private OperationType type;
 
-	public GainRewardEventData(PlayerActor playerActor, RewardData rewardData, OperationType type) {
+	public GainRewardEventData(PlayerActor playerActor, List<IRewardResult> resultList, RewardData rewardData, OperationType type) {
 		this.playerActor = playerActor;
 		this.rewardData = rewardData;
 		this.type = type;

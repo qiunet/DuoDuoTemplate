@@ -1,11 +1,13 @@
 package com.game.template.server.handler.login;
 
 import com.game.template.basic.common.actor.PlayerActor;
-import com.game.template.basic.common.cfg.resource.IResourceCfg;
 import com.game.template.basic.common.cfg.resource.ResourceDataCfg;
-import com.game.template.basic.common.cfg.resource.ResourceManager;
 import com.game.template.basic.common.contants.ProtocolId;
 import com.game.template.basic.common.proto.login.LoginProto;
+import com.game.template.basic.login.LoginService;
+import com.game.template.basic.login.entity.LoginBo;
+import com.game.template.basic.player.PlayerService;
+import com.game.template.basic.player.entity.PlayerBo;
 import com.game.template.server.common.handler.BaseHandler;
 import org.qiunet.cfg.annotation.CfgWrapperAutoWired;
 import org.qiunet.cfg.wrapper.ISimpleMapCfgWrapper;
@@ -27,13 +29,18 @@ public class LoginHandler extends BaseHandler<LoginProto.LoginRequest> {
 
 	@Override
 	public void handler0(PlayerActor playerActor, IWebSocketRequest<LoginProto.LoginRequest> context) throws Exception {
-		System.out.println("=========="+context.getRequestData().getOpenid());
-		IResourceCfg resourceCfg = ResourceManager.getInstance().getResourceCfg(1);
-		System.out.println(resourceCfg.type());
+		LoginProto.LoginRequest request = context.getRequestData();
+		LoginBo loginBo = LoginService.instance.getLoginBo(request.getOpenid());
+		if (loginBo == null) {
+			loginBo = LoginService.instance.register(request.getOpenid(), request.getSecret());
+			PlayerService.instance.register(loginBo);
+		}
+		PlayerBo playerBo = PlayerService.instance.getPlayerBo(loginBo.getDo().getPlayerId());
+		playerActor.auth(playerBo);
 
 		playerActor.sendPacket(ProtocolId.Login.RESP_LOGIN, LoginProto.LoginResponse.newBuilder()
+			.setUid(loginBo.getDo().getPlayerId())
 			.setNeedRegister(true)
-			.setUid(10000)
 			.build());
 	}
 

@@ -1,13 +1,19 @@
 package com.game.template.basic.common.enums;
 
+import com.game.template.basic.common.actor.PlayerActor;
 import com.game.template.basic.common.cfg.resource.IResourceCfg;
 import com.game.template.basic.common.cfg.resource.ResourceDataCfg;
 import com.game.template.basic.common.cfg.resource.ResourceEquipCfg;
 import com.game.template.basic.common.cfg.resource.ResourceItemCfg;
+import com.game.template.basic.common.data.result.IRewardResult;
+import com.game.template.basic.equip.EquipService;
+import com.game.template.basic.item.ItemService;
 import com.google.common.base.Preconditions;
 import org.qiunet.cfg.annotation.CfgWrapperAutoWired;
 import org.qiunet.cfg.wrapper.ISimpleMapCfgWrapper;
 import org.qiunet.utils.exceptions.EnumParseException;
+
+import java.util.List;
 
 /***
  * 资源类型
@@ -24,6 +30,17 @@ public enum ResourceType {
 		public IResourceCfg getResourceCfg(int resourceId) {
 			return dataCfgWrapper.getCfgById(resourceId);
 		}
+
+		@Override
+		public List<IRewardResult> addToPack(PlayerActor player, int resourceId, int num, OperationType operationType) {
+			DataResourceType.parse(resourceId).addResource(player, operationType, num);
+			return null;
+		}
+
+		@Override
+		public void deductFromPack(PlayerActor player, int resourceId, int num, OperationType operationType) {
+			DataResourceType.parse(resourceId).deductResource(player, operationType, num);
+		}
 	},
 	/**
 	 * 物品
@@ -33,6 +50,16 @@ public enum ResourceType {
 		public IResourceCfg getResourceCfg(int resourceId) {
 			return itemCfgWrapper.getCfgById(resourceId);
 		}
+
+		@Override
+		public List<IRewardResult> addToPack(PlayerActor player, int resourceId, int num, OperationType operationType) {
+			return ItemService.instance.addToPack(player, resourceId, num, operationType);
+		}
+
+		@Override
+		public void deductFromPack(PlayerActor player, int resourceId, int num, OperationType operationType) {
+			ItemService.instance.deductFromPack(player, resourceId, num, operationType);
+		}
 	},
 	/**
 	 * 装备
@@ -41,6 +68,16 @@ public enum ResourceType {
 		@Override
 		public IResourceCfg getResourceCfg(int resourceId) {
 			return equipCfgWrapper.getCfgById(resourceId);
+		}
+
+		@Override
+		public List<IRewardResult> addToPack(PlayerActor player, int resourceId, int num, OperationType operationType) {
+			return EquipService.instance.addToPack(player, resourceId, num, operationType);
+		}
+
+		@Override
+		public void deductFromPack(PlayerActor player, int resourceId, int num, OperationType operationType) {
+			EquipService.instance.deductFromPack(player, resourceId, num, operationType);
 		}
 	},
 	;
@@ -80,4 +117,8 @@ public enum ResourceType {
 		}
 		throw new EnumParseException(type);
 	}
+
+	public abstract List<IRewardResult> addToPack(PlayerActor player, int resourceId, int num, OperationType operationType);
+
+	public abstract void deductFromPack(PlayerActor player, int resourceId, int num, OperationType operationType);
 }

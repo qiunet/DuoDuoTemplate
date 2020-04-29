@@ -19,7 +19,7 @@ message LoginRequest {
 }
 //登录协议下行: 1001000
 message LoginResponse {
-	int32 uid = 1;                  // 玩家的uid
+	int64 uid = 1;                  // 玩家的uid
 	bool needRegister = 2;         // true需要走注册流程 false 不需要
 }
 

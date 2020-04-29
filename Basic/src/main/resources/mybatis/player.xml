@@ -7,11 +7,11 @@
 	</select>
 
 	<update id="updatePlayerDo" parameterType="PlayerDo" >
-		UPDATE player SET `name` = #{name}, `exp` = #{exp}, `level` = #{level}, `m1` = #{m1}, `m2` = #{m2} WHERE playerId = #{playerId};
+		UPDATE player SET `openId` = #{openId}, `name` = #{name}, `exp` = #{exp}, `level` = #{level}, `m1` = #{m1}, `m2` = #{m2} WHERE playerId = #{playerId};
 	</update>
 
 	<insert id="insertPlayerDo" parameterType="PlayerDo" >
-		INSERT INTO player (`playerId`, `name`, `exp`, `level`, `m1`, `m2`) VALUES (#{playerId}, #{name}, #{exp}, #{level}, #{m1}, #{m2});
+		INSERT INTO player (`playerId`, `openId`, `name`, `exp`, `level`, `m1`, `m2`) VALUES (#{playerId}, #{openId}, #{name}, #{exp}, #{level}, #{m1}, #{m2});
 	</insert>
 
 	<delete id="deletePlayerDo" parameterType="map" >

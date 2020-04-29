@@ -5,6 +5,7 @@ import com.game.template.basic.common.contants.CfgConstant;
 import com.game.template.basic.common.log.M1LogEvent;
 import com.game.template.basic.common.log.M2LogEvent;
 import com.google.common.base.Preconditions;
+import org.qiunet.utils.exceptions.EnumParseException;
 
 /***
  * 数据类型资源的枚举
@@ -59,11 +60,42 @@ public enum  DataResourceType {
 			return player.getPlayerBo().getDo().getM2();
 		}
 	},
+
+	/**人民币代币**/
+	EXP(3) {
+		@Override
+		public void addResource(PlayerActor player, OperationType operationType, int num) {
+			Preconditions.checkArgument(num > 0);
+			player.getPlayerBo().getDo().setExp(getResourceNum(player) + num);
+		}
+
+		@Override
+		public void deductResource(PlayerActor player, OperationType operationType, int num) {
+			// do nothing
+			// 不会减经验
+		}
+
+		@Override
+		public long getResourceNum(PlayerActor player) {
+			return player.getPlayerBo().getDo().getExp();
+		}
+	},
 	;
 
 	private int resourceId;
 	DataResourceType(int resourceId) {
 		this.resourceId = resourceId;
+	}
+
+	private static final DataResourceType [] values = values();
+
+	public static DataResourceType parse(int resourceId) {
+		for (DataResourceType value : values) {
+			if (value.resourceId == resourceId) {
+				return value;
+			}
+		}
+		throw new EnumParseException(resourceId);
 	}
 
 	public int getResourceId() {

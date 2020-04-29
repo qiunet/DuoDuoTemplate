@@ -1,13 +1,10 @@
 package com.game.template.basic.id.global;
 
-import com.game.template.basic.id.enums.GlobalIdType;
+import com.game.template.basic.id.global.entity.GlobalIdBuilderBo;
+import com.game.template.basic.id.global.entity.GlobalIdBuilderDo;
 import com.google.common.collect.Maps;
 import org.qiunet.data.support.CacheDataSupport;
 
-import com.game.template.basic.id.global.entity.GlobalIdBuilderBo;
-import com.game.template.basic.id.global.entity.GlobalIdBuilderDo;
-
-import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
 public enum GlobalIdBuilderService {
@@ -20,7 +17,7 @@ public enum GlobalIdBuilderService {
 	* @param type 获取对象的主键
 	* @return GlobalIdBuilderBo 对象
 	*/
-	public int getGlobalIdBuilderBo(int type) {
+	public long getGlobalIdBuilderBo(int type) {
 		GlobalIdBuilderBo bo = boMaps.computeIfAbsent(type, key -> {
 			GlobalIdBuilderBo bo0 = dataSupport.getBo(type);
 			if (bo0 == null) {

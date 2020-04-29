@@ -137,9 +137,8 @@ public final class LoginProto {
       }
       com.game.template.basic.common.proto.login.LoginProto.PollingRequest other = (com.game.template.basic.common.proto.login.LoginProto.PollingRequest) obj;
 
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
+		return unknownFields.equals(other.unknownFields);
+	}
 
     @java.lang.Override
     public int hashCode() {
@@ -601,9 +600,8 @@ public final class LoginProto {
 
       if (getCurrSeconds()
           != other.getCurrSeconds()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
+		return unknownFields.equals(other.unknownFields);
+	}
 
     @java.lang.Override
     public int hashCode() {
@@ -1314,9 +1312,8 @@ public final class LoginProto {
           .equals(other.getToken())) return false;
       if (!getSecret()
           .equals(other.getSecret())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
+		return unknownFields.equals(other.unknownFields);
+	}
 
     @java.lang.Override
     public int hashCode() {
@@ -1941,10 +1938,10 @@ public final class LoginProto {
      * 玩家的uid
      * </pre>
      *
-     * <code>int32 uid = 1;</code>
+     * <code>int64 uid = 1;</code>
      * @return The uid.
      */
-    int getUid();
+    long getUid();
 
     /**
      * <pre>
@@ -2007,7 +2004,7 @@ public final class LoginProto {
               break;
             case 8: {
 
-              uid_ = input.readInt32();
+              uid_ = input.readInt64();
               break;
             }
             case 16: {
@@ -2048,16 +2045,16 @@ public final class LoginProto {
     }
 
     public static final int UID_FIELD_NUMBER = 1;
-    private int uid_;
+    private long uid_;
     /**
      * <pre>
      * 玩家的uid
      * </pre>
      *
-     * <code>int32 uid = 1;</code>
+     * <code>int64 uid = 1;</code>
      * @return The uid.
      */
-    public int getUid() {
+    public long getUid() {
       return uid_;
     }
 
@@ -2089,8 +2086,8 @@ public final class LoginProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (uid_ != 0) {
-        output.writeInt32(1, uid_);
+      if (uid_ != 0L) {
+        output.writeInt64(1, uid_);
       }
       if (needRegister_ != false) {
         output.writeBool(2, needRegister_);
@@ -2104,9 +2101,9 @@ public final class LoginProto {
       if (size != -1) return size;
 
       size = 0;
-      if (uid_ != 0) {
+      if (uid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, uid_);
+          .computeInt64Size(1, uid_);
       }
       if (needRegister_ != false) {
         size += com.google.protobuf.CodedOutputStream
@@ -2131,9 +2128,8 @@ public final class LoginProto {
           != other.getUid()) return false;
       if (getNeedRegister()
           != other.getNeedRegister()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
+		return unknownFields.equals(other.unknownFields);
+	}
 
     @java.lang.Override
     public int hashCode() {
@@ -2143,7 +2139,8 @@ public final class LoginProto {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + UID_FIELD_NUMBER;
-      hash = (53 * hash) + getUid();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getUid());
       hash = (37 * hash) + NEEDREGISTER_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getNeedRegister());
@@ -2284,7 +2281,7 @@ public final class LoginProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        uid_ = 0;
+        uid_ = 0L;
 
         needRegister_ = false;
 
@@ -2364,7 +2361,7 @@ public final class LoginProto {
 
       public Builder mergeFrom(com.game.template.basic.common.proto.login.LoginProto.LoginResponse other) {
         if (other == com.game.template.basic.common.proto.login.LoginProto.LoginResponse.getDefaultInstance()) return this;
-        if (other.getUid() != 0) {
+        if (other.getUid() != 0L) {
           setUid(other.getUid());
         }
         if (other.getNeedRegister() != false) {
@@ -2399,16 +2396,16 @@ public final class LoginProto {
         return this;
       }
 
-      private int uid_ ;
+      private long uid_ ;
       /**
        * <pre>
        * 玩家的uid
        * </pre>
        *
-       * <code>int32 uid = 1;</code>
+       * <code>int64 uid = 1;</code>
        * @return The uid.
        */
-      public int getUid() {
+      public long getUid() {
         return uid_;
       }
       /**
@@ -2416,11 +2413,11 @@ public final class LoginProto {
        * 玩家的uid
        * </pre>
        *
-       * <code>int32 uid = 1;</code>
+       * <code>int64 uid = 1;</code>
        * @param value The uid to set.
        * @return This builder for chaining.
        */
-      public Builder setUid(int value) {
+      public Builder setUid(long value) {
         
         uid_ = value;
         onChanged();
@@ -2431,12 +2428,12 @@ public final class LoginProto {
        * 玩家的uid
        * </pre>
        *
-       * <code>int32 uid = 1;</code>
+       * <code>int64 uid = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearUid() {
         
-        uid_ = 0;
+        uid_ = 0L;
         onChanged();
         return this;
       }
@@ -2568,7 +2565,7 @@ public final class LoginProto {
       "ngResponse\022\023\n\013currSeconds\030\001 \001(\005\"=\n\014Login" +
       "Request\022\016\n\006openid\030\001 \001(\t\022\r\n\005token\030\002 \001(\t\022\016" +
       "\n\006secret\030\003 \001(\t\"2\n\rLoginResponse\022\013\n\003uid\030\001" +
-      " \001(\005\022\024\n\014needRegister\030\002 \001(\010B8\n*com.game.t" +
+      " \001(\003\022\024\n\014needRegister\030\002 \001(\010B8\n*com.game.t" +
       "emplate.basic.common.proto.loginB\nLoginP" +
       "rotob\006proto3"
     };

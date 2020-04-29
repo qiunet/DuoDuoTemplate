@@ -1,9 +1,9 @@
 package com.game.template.basic.id.person.entity;
 
-import org.qiunet.data.core.support.db.Table;
-import org.qiunet.data.core.support.db.Column;
 import org.apache.ibatis.type.Alias;
 import org.qiunet.data.cache.entity.CacheEntityList;
+import org.qiunet.data.core.support.db.Column;
+import org.qiunet.data.core.support.db.Table;
 /**
 * , comment="个人相关的id生成表"*
 * 对象为自动创建 不要修改
@@ -20,9 +20,9 @@ public class IdBuilderDo extends CacheEntityList<Long, Integer, IdBuilderBo> {
 
 	/**默认的构造函数**/
 	public IdBuilderDo(){}
-	public IdBuilderDo(long playerId,int idVal){
+	public IdBuilderDo(long playerId,int type){
 		this.playerId = playerId;
-		this.idVal = idVal;
+		this.type = type;
 	}
 
 	public long getPlayerId() {

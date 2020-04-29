@@ -1,10 +1,15 @@
 package com.game.template.basic.item;
 
-import org.qiunet.data.support.CacheDataListSupport;
-import java.util.Map;
-
+import com.game.template.basic.common.actor.PlayerActor;
+import com.game.template.basic.common.data.result.IRewardResult;
+import com.game.template.basic.common.enums.OperationType;
 import com.game.template.basic.item.entity.ItemBo;
 import com.game.template.basic.item.entity.ItemDo;
+import com.google.common.base.Preconditions;
+import org.qiunet.data.support.CacheDataListSupport;
+
+import java.util.List;
+import java.util.Map;
 
 public enum ItemService {
 	instance;
@@ -26,5 +31,53 @@ public enum ItemService {
 	**/
 	public ItemBo getItemBo(Long playerId, Integer itemId) {
 		return getItemBoMap(playerId).get(itemId);
+	}
+
+	public List<IRewardResult> addToPack(PlayerActor player, int resourceId, int num, OperationType type) {
+		ItemBo itemBo = getItemBo(player.getPlayerId(), resourceId);
+		if (itemBo == null) {
+			ItemDo itemDo = new ItemDo(player.getPlayerId(), resourceId);
+			itemDo.setCount(num);
+			itemBo = itemDo.insert();
+		}else {
+			if (itemBo.getCount() + (long)num > Integer.MAX_VALUE) {
+				itemBo.getDo().setCount(Integer.MAX_VALUE);
+			}else {
+				itemBo.getDo().setCount(itemBo.getCount() + num);
+			}
+			itemBo.update();
+		}
+		//TODO 日志
+		return null;
+	}
+
+	/**
+	 * 获得物品资源的数量
+	 * @param player
+	 * @param resourceId
+	 * @return
+	 */
+	public int getItemCount(PlayerActor player, int resourceId) {
+		ItemBo itemBo = getItemBo(player.getPlayerId(), resourceId);
+		if (itemBo == null) {
+			return 0;
+		}
+		return itemBo.getCount();
+	}
+
+	/**
+	 * 从背包扣减物品
+	 * @param player
+	 * @param resourceId
+	 * @param num
+	 * @param operationType
+	 */
+	public void deductFromPack(PlayerActor player, int resourceId, int num, OperationType operationType) {
+		ItemBo itemBo = getItemBo(player.getPlayerId(), resourceId);
+
+		Preconditions.checkArgument(itemBo.getCount() >= num, "itemCount %s, num %s", itemBo.getCount(), num);
+		itemBo.getDo().setCount(itemBo.getCount() - num);
+		itemBo.update();
+		// TODO 日志
 	}
 }

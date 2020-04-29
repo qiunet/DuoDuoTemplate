@@ -1,6 +1,8 @@
 package com.game.template.basic.common.data;
 
+import com.game.template.basic.common.actor.PlayerActor;
 import com.game.template.basic.common.contants.CfgConstant;
+import com.game.template.basic.common.enums.OperationType;
 import com.game.template.basic.common.logger.GameLogger;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Maps;
@@ -18,6 +20,17 @@ import java.util.StringJoiner;
 abstract class ResourceData<Data extends ResourceData> {
 
 	protected Map<Integer, Integer> resources = Maps.newHashMap();
+	/**
+	 * 是否只读. cfg的都是只读
+	 */
+	protected boolean readOnly;
+
+	/**
+	 * 是否已经走完判断流程
+	 * 走完流程 不为null
+	 */
+	protected PlayerActor player;
+	protected OperationType operationType;
 
 	/**
 	 * 返回resources
@@ -43,11 +56,17 @@ abstract class ResourceData<Data extends ResourceData> {
 	}
 
 	public void addResource(int resourceId, int num) {
+		Preconditions.checkState(operationType == null, "It it all checked , Can not add again!");
 		Preconditions.checkArgument(num > 0, "num %s must grant than 0", num);
+		Preconditions.checkState(! readOnly, "It is a readOnly data");
+
 		this.resources.merge(resourceId, num, Integer::sum);
 	}
 
 	public void merge(Data data) {
+		Preconditions.checkState(operationType == null, "It it all checked , Can not add again!");
+		Preconditions.checkState(! readOnly, "It is a readOnly data");
+
 		Map<Integer, Integer> resources = data.resources;
 		resources.forEach((key, val) -> this.resources.merge(key, val, Integer::sum));
 	}
@@ -81,6 +100,7 @@ abstract class ResourceData<Data extends ResourceData> {
 			this.addResource(ints[0], ints[1]);
 		}
 		this.resources = Collections.unmodifiableMap(this.resources);
+		this.readOnly = true;
 	}
 
 	@Override

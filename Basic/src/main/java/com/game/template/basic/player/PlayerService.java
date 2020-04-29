@@ -1,9 +1,10 @@
 package com.game.template.basic.player;
 
-import org.qiunet.data.support.CacheDataSupport;
-
+import com.game.template.basic.id.enums.GlobalIdType;
+import com.game.template.basic.login.entity.LoginBo;
 import com.game.template.basic.player.entity.PlayerBo;
 import com.game.template.basic.player.entity.PlayerDo;
+import org.qiunet.data.support.CacheDataSupport;
 
 public enum PlayerService {
 	instance;
@@ -15,5 +16,21 @@ public enum PlayerService {
 	*/
 	public PlayerBo getPlayerBo(Long playerId) {
 		return dataSupport.getBo(playerId);
+	}
+
+	/**
+	 * 注册一个新的玩家
+	 * @param loginBo
+	 * @return
+	 */
+	public PlayerBo register(LoginBo loginBo) {
+		long playerId = GlobalIdType.PLAYER.generatorId();
+		loginBo.getDo().setPlayerId(playerId);
+		loginBo.update();
+
+		PlayerDo playerDo = new PlayerDo(playerId);
+		playerDo.setOpenId(loginBo.getDo().getOpenId());
+		playerDo.setLevel(1);
+		return playerDo.insert();
 	}
 }

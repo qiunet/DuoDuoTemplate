@@ -1,9 +1,9 @@
 package com.game.template.basic.player.entity;
 
-import org.qiunet.data.core.support.db.Table;
-import org.qiunet.data.core.support.db.Column;
 import org.apache.ibatis.type.Alias;
 import org.qiunet.data.cache.entity.CacheEntity;
+import org.qiunet.data.core.support.db.Column;
+import org.qiunet.data.core.support.db.Table;
 /**
 * *
 * 对象为自动创建 不要修改
@@ -13,6 +13,8 @@ import org.qiunet.data.cache.entity.CacheEntity;
 public class PlayerDo extends CacheEntity<Long, PlayerBo> {
 	@Column(comment = "玩家id", isKey = true)
 	private long playerId;
+	@Column(comment = "玩家openId")
+	private String openId;
 	@Column(comment = "玩家名称")
 	private String name;
 	@Column(comment = "玩家经验")
@@ -36,6 +38,14 @@ public class PlayerDo extends CacheEntity<Long, PlayerBo> {
 
 	public void setPlayerId(long playerId) {
 		this.playerId = playerId;
+	}
+
+	public String getOpenId() {
+		return openId;
+	}
+
+	public void setOpenId(String openId) {
+		this.openId = openId;
 	}
 
 	public String getName() {

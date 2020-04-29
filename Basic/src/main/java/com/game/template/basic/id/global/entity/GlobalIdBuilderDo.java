@@ -1,9 +1,9 @@
 package com.game.template.basic.id.global.entity;
 
-import org.qiunet.data.core.support.db.Table;
-import org.qiunet.data.core.support.db.Column;
 import org.apache.ibatis.type.Alias;
 import org.qiunet.data.cache.entity.CacheEntity;
+import org.qiunet.data.core.support.db.Column;
+import org.qiunet.data.core.support.db.Table;
 /**
 * , comment="全局id生成表"*
 * 对象为自动创建 不要修改
@@ -14,7 +14,7 @@ public class GlobalIdBuilderDo extends CacheEntity<Integer, GlobalIdBuilderBo> {
 	@Column(comment = "类型", isKey = true)
 	private int type;
 	@Column(comment = "id值")
-	private int idVal;
+	private long idVal;
 
 	/**默认的构造函数**/
 	public GlobalIdBuilderDo(){}
@@ -30,11 +30,11 @@ public class GlobalIdBuilderDo extends CacheEntity<Integer, GlobalIdBuilderBo> {
 		this.type = type;
 	}
 
-	public int getIdVal() {
+	public long getIdVal() {
 		return idVal;
 	}
 
-	public void setIdVal(int idVal) {
+	public void setIdVal(long idVal) {
 		this.idVal = idVal;
 	}
 

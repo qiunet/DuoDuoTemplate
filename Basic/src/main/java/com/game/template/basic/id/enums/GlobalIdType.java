@@ -21,7 +21,7 @@ public enum  GlobalIdType {
 		return type;
 	}
 
-	public int generatorId(){
+	public long generatorId(){
 		return GlobalIdBuilderService.instance.getGlobalIdBuilderBo(getType());
 	}
 

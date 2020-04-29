@@ -14,6 +14,14 @@ public class ItemBo implements IEntityBo<ItemDo>{
 		return aDo;
 	}
 
+	public int getItemId(){
+		return getDo().getItemId();
+	}
+
+	public int getCount(){
+		return getDo().getCount();
+	}
+
 	@Override
 	public void serialize() {
 

@@ -2,12 +2,12 @@ package com.game.template.basic.id.global.entity;
 
 import org.qiunet.data.support.IEntityBo;
 
-import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLong;
 
 public class GlobalIdBuilderBo implements IEntityBo<GlobalIdBuilderDo>{
 	private GlobalIdBuilderDo aDo;
 
-	private AtomicInteger generator;
+	private AtomicLong generator;
 
 	public GlobalIdBuilderBo (GlobalIdBuilderDo aDo) {
 		this.aDo = aDo;
@@ -23,8 +23,8 @@ public class GlobalIdBuilderBo implements IEntityBo<GlobalIdBuilderDo>{
 
 	}
 
-	public int generatorId(){
-		int id = generator.incrementAndGet();
+	public long generatorId(){
+		long id = generator.incrementAndGet();
 		aDo.setIdVal(id);
 		this.update();
 		return id;
@@ -32,6 +32,6 @@ public class GlobalIdBuilderBo implements IEntityBo<GlobalIdBuilderDo>{
 
 	@Override
 	public void deserialize() {
-		this.generator = new AtomicInteger(aDo.getIdVal());
+		this.generator = new AtomicLong(aDo.getIdVal());
 	}
 }
