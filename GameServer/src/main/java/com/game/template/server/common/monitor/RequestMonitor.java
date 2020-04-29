@@ -20,7 +20,7 @@ public enum RequestMonitor {
 	private Logger logger = LoggerFactory.getLogger("monitor");
 
 	private IMonitor<Long, Integer> requestMonitor = new DefaultMonitor<>(
-		this::getCheckCount, this::handlerTrigger, 60, TimeUnit.MICROSECONDS
+		this::getCheckCount, this::handlerTrigger, 60, TimeUnit.SECONDS
 	);
 
 	private int getCheckCount(int requestId){
