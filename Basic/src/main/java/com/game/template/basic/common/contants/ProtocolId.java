@@ -16,10 +16,12 @@ package com.game.template.basic.common.contants;
  **/
 public class ProtocolId {
 	/***
-	 * 系统自留
+	 * 系统自留 一般为下行id
 	 * 模块 ID: 0 - 9
 	 */
 	public interface System {
+		/**1 上行协议有错误. 具体读取ErrorResponse 的desc**/
+		int PROTOCOL_ERROR = 1;
 		/** 404 */
 		int HANDLER_NOT_FIND = 404;
 		/** 500 **/
