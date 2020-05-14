@@ -4,6 +4,7 @@ import com.game.template.basic.backpack.listener.GainRewardEventData;
 import com.game.template.basic.common.actor.PlayerActor;
 import com.game.template.basic.common.cfg.resource.IResourceCfg;
 import com.game.template.basic.common.cfg.resource.ResourceManager;
+import com.game.template.basic.common.data.result.CheckPackResult;
 import com.game.template.basic.common.data.result.IRewardResult;
 import com.game.template.basic.common.deduct.IConditionDeduct;
 import com.game.template.basic.common.deduct.IDeduct;
@@ -80,12 +81,12 @@ public class RewardData extends ResourceData<RewardData> {
 	 * @param player
 	 * @return
 	 */
-	public boolean haveEnoughSpace(PlayerActor player, OperationType type){
+	public CheckPackResult haveEnoughSpace(PlayerActor player, OperationType type){
 		Preconditions.checkState(operationType == null);
 		//TODO 业务自己判断
 
 		super.operationType = type;
 		super.player = player;
-		return true;
+		return CheckPackResult.SUCCESS;
 	}
 }

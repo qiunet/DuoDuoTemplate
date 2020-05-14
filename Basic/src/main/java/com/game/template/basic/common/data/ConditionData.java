@@ -3,6 +3,7 @@ package com.game.template.basic.common.data;
 import com.game.template.basic.common.actor.PlayerActor;
 import com.game.template.basic.common.cfg.resource.IResourceCfg;
 import com.game.template.basic.common.cfg.resource.ResourceManager;
+import com.game.template.basic.common.data.result.CheckConditionResult;
 import com.game.template.basic.common.deduct.IConditionDeduct;
 import com.game.template.basic.common.deduct.IDeduct;
 import com.game.template.basic.common.enums.OperationType;
@@ -44,12 +45,12 @@ public class ConditionData extends ResourceData<ConditionData> implements ICondi
 	 * @param player
 	 * @return
 	 */
-	public boolean haveEnoughResource(PlayerActor player, OperationType type) {
+	public CheckConditionResult haveEnoughResource(PlayerActor player, OperationType type) {
 		Preconditions.checkState(operationType == null);
 		//TODO 业务自己判断
 		super.operationType = type;
 		super.player = player;
-		return true;
+		return CheckConditionResult.SUCCESS;
 	}
 
 	/**
