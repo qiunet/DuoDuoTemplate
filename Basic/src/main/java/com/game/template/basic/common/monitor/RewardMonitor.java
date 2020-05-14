@@ -19,7 +19,7 @@ import java.util.concurrent.TimeUnit;
 public class RewardMonitor implements GainRewardEventData.GainRewardDataListener {
 	private Logger logger = GameLogger.GAME_MONITOR.getLogger();
 	private IMonitor<Long, OperationType> rewardMonitor = new DefaultMonitor<>(
-		OperationType::getCheckCount, this::handlerTrigger, 60, TimeUnit.SECONDS
+		OperationType::getCheckCount, this::handlerTrigger, OperationType::getCheckTimeMillis
 	);
 
 	/***
