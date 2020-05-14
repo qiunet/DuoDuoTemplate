@@ -9,7 +9,7 @@ import org.qiunet.event.log.log.LogMessageBuilder;
  * @author qiunet
  * 2020-04-17 08:17
  **/
-public abstract class BasePlayerLogEvent extends BaseLogEvent {
+public abstract class BasePlayerLogEvent extends BaseLogEvent<LogType> {
 	protected PlayerActor player;
 
 	public BasePlayerLogEvent(LogType logType, PlayerActor player) {

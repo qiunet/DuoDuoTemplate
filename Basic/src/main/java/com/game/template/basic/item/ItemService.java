@@ -3,8 +3,10 @@ package com.game.template.basic.item;
 import com.game.template.basic.common.actor.PlayerActor;
 import com.game.template.basic.common.data.result.IRewardResult;
 import com.game.template.basic.common.enums.OperationType;
+import com.game.template.basic.common.enums.ResOperationType;
 import com.game.template.basic.item.entity.ItemBo;
 import com.game.template.basic.item.entity.ItemDo;
+import com.game.template.basic.item.log.ItemLogEvent;
 import com.google.common.base.Preconditions;
 import org.qiunet.data.support.CacheDataListSupport;
 
@@ -47,7 +49,7 @@ public enum ItemService {
 			}
 			itemBo.update();
 		}
-		//TODO 日志
+		new ItemLogEvent(player, resourceId, num, itemBo.getCount(), type, ResOperationType.ADD).send();
 		return null;
 	}
 
@@ -77,7 +79,11 @@ public enum ItemService {
 
 		Preconditions.checkArgument(itemBo.getCount() >= num, "itemCount %s, num %s", itemBo.getCount(), num);
 		itemBo.getDo().setCount(itemBo.getCount() - num);
-		itemBo.update();
-		// TODO 日志
+		if (itemBo.getCount() <= 0) {
+			itemBo.delete();
+		}else {
+			itemBo.update();
+		}
+		new ItemLogEvent(player, resourceId, num, itemBo.getCount(), operationType, ResOperationType.DEDUCT).send();
 	}
 }
