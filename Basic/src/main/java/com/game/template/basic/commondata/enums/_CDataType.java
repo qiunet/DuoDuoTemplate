@@ -22,7 +22,7 @@ public enum _CDataType {
 
 		@Override
 		public void writeVal(CommonDataBo commonDataBo) {
-			commonDataBo.getDo().setValue((String) commonDataBo.getObject(this));
+			commonDataBo.getDo().setValue((String) commonDataBo.getObject());
 		}
 
 		@Override
@@ -40,7 +40,7 @@ public enum _CDataType {
 
 		@Override
 		public void writeVal(CommonDataBo commonDataBo) {
-			commonDataBo.getDo().setValue(String.valueOf(commonDataBo.getObject(this)));
+			commonDataBo.getDo().setValue(String.valueOf(commonDataBo.getObject()));
 		}
 
 		@Override
@@ -58,7 +58,7 @@ public enum _CDataType {
 
 		@Override
 		public void writeVal(CommonDataBo commonDataBo) {
-			commonDataBo.getDo().setValue(String.valueOf(commonDataBo.getObject(this)));
+			commonDataBo.getDo().setValue(String.valueOf(commonDataBo.getObject()));
 		}
 
 		@Override
@@ -79,7 +79,7 @@ public enum _CDataType {
 
 		@Override
 		public void writeVal(CommonDataBo commonDataBo) {
-			commonDataBo.getDo().setValue(JsonUtil.toJsonString(commonDataBo.getObject(this)));
+			commonDataBo.getDo().setValue(JsonUtil.toJsonString(commonDataBo.getObject()));
 		}
 
 		@Override

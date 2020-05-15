@@ -15,7 +15,7 @@ import java.util.stream.Stream;
  * 2020-05-15 12:37
  ***/
 public enum  CommonDataType {
-	RECHARGE_INFO(1, "累计充值数据", "0"),
+	RECHARGE_INFO(1, "累计充值数据", () -> "0"),
 	;
 	private int type;
 	private String desc;
@@ -32,10 +32,6 @@ public enum  CommonDataType {
 		this.dailyClean = dailyClean;
 	}
 
-	CommonDataType(int type, String desc, Class<? extends CommonDataObj> aClass, String initVal, boolean dailyClean) {
-		this(type, desc, aClass, ()-> initVal, dailyClean);
-	}
-
 	CommonDataType(int type, String desc, Class<? extends CommonDataObj> aClass, Supplier<String> initVal) {
 		this(type, desc, aClass, initVal, false);
 	}
@@ -44,16 +40,8 @@ public enum  CommonDataType {
 		this(type, desc, null, initVal, dailyClean);
 	}
 
-	CommonDataType(int type, String desc, Class<? extends CommonDataObj> aClass, String initVal) {
-		this(type, desc, aClass, () -> initVal);
-	}
-
 	CommonDataType(int type, String desc, Supplier<String> initVal) {
 		this(type, desc, null, initVal, false);
-	}
-
-	CommonDataType(int type, String desc, String initVal) {
-		this(type, desc, null, () -> initVal);
 	}
 
 	public Class<? extends CommonDataObj> getaClass() {

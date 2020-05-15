@@ -7,11 +7,11 @@
 	</select>
 
 	<update id="updateCommonDataDo" parameterType="CommonDataDo" >
-		UPDATE common_data SET `updateTime` = #{updateTime}, `value` = #{value}  WHERE playerId = #{playerId} AND type = #{type};
+		UPDATE common_data SET `cType` = #{cType}, `updateTime` = #{updateTime}, `value` = #{value}  WHERE playerId = #{playerId} AND type = #{type};
 	</update>
 
 	<insert id="insertCommonDataDo" parameterType="CommonDataDo" >
-		INSERT INTO common_data (`playerId`, `type`, `updateTime`, `value`) VALUES (#{playerId}, #{type}, #{updateTime}, #{value});
+		INSERT INTO common_data (`playerId`, `type`, `cType`, `updateTime`, `value`) VALUES (#{playerId}, #{type}, #{cType}, #{updateTime}, #{value});
 	</insert>
 
 	<delete id="deleteCommonDataDo" parameterType="map" >

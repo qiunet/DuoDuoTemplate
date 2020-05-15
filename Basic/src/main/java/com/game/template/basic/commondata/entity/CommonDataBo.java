@@ -22,11 +22,7 @@ public class CommonDataBo implements IEntityBo<CommonDataDo>{
 		this.val = val;
 	}
 
-	public Object getObject(_CDataType cDataType) {
-		if (this.cDataType != null && cDataType != this.cDataType) {
-			throw new RuntimeException("Can not change dataType. current type "+this.cDataType+" new type "+cDataType+"!");
-		}
-		this.cDataType = cDataType;
+	public Object getObject() {
 		if (this.val != null) {
 			return this.val;
 		}
@@ -53,6 +49,7 @@ public class CommonDataBo implements IEntityBo<CommonDataDo>{
 	@Override
 	public void deserialize() {
 		this.commonDataType = CommonDataType.parse(aDo.getType());
-
+		this.cDataType = _CDataType.valueOf(aDo.getCType());
+		this.val = this.cDataType.getVal(this);
 	}
 }

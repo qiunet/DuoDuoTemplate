@@ -38,16 +38,24 @@ public enum CommonDataService {
 
 			CommonDataDo commonDataDo = new CommonDataDo();
 			commonDataDo.setUpdateTime(DateUtil.currSeconds());
+			commonDataDo.setCType(cDataType.name());
 			commonDataDo.setType(type.getType());
 			commonDataDo.setPlayerId(playerId);
 			commonDataDo.setValue(initVal);
 
 			commonDataBo = commonDataDo.insert();
 		}
+
+		if (type.isDailyClean()
+		&& ! DateUtil.isSameDay(DateUtil.currentTimeMillis(), 1000 * commonDataBo.getDo().getUpdateTime())) {
+			commonDataBo.getDo().setValue(type.getInitVal());
+			commonDataBo.deserialize();
+			commonDataBo.update();
+		}
 		return commonDataBo;
 	}
 	private Object getCommonData(Long playerId, CommonDataType type, _CDataType cDataType) {
-		return getCommonDataBo(playerId, type, cDataType).getObject(cDataType);
+		return getCommonDataBo(playerId, type, cDataType).getObject();
 	}
 
 	public long getLongVal(long playerId, CommonDataType type) {
@@ -77,7 +85,6 @@ public enum CommonDataService {
 		commonDataBo.setVal(val);
 		commonDataBo.update();
 	}
-
 
 	public void setStringVal(long playerId, CommonDataType type, String val) {
 		CommonDataBo commonDataBo = getCommonDataBo(playerId, type, _CDataType.STRING);

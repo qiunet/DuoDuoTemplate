@@ -11,6 +11,7 @@
 >
 	<field name="playerId" type="long" comment="玩家id" />
 	<field name="type" type="int" comment="类型" />
+	<field name="cType" type="String" comment="数据类型" />
 	<field name="updateTime" type="long" comment="最后的更新时间(秒)" />
 	<field name="value" type="String" jdbcType="LONGTEXT" comment="内容(可能json  数字 等等)" />
 </cache_entity_list>

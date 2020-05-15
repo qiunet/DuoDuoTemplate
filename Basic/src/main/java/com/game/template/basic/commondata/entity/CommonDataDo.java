@@ -16,6 +16,8 @@ public class CommonDataDo extends CacheEntityList<Long, Integer, CommonDataBo> {
 	private long playerId;
 	@Column(comment = "类型", isKey = true)
 	private int type;
+	@Column(comment = "数据类型")
+	private String cType;
 	@Column(comment = "最后的更新时间(秒)")
 	private long updateTime;
 	@Column(comment = "内容(可能json  数字 等等)", jdbcType = ColumnJdbcType.LONGTEXT)
@@ -38,6 +40,14 @@ public class CommonDataDo extends CacheEntityList<Long, Integer, CommonDataBo> {
 
 	public void setType(int type) {
 		this.type = type;
+	}
+
+	public String getCType() {
+		return cType;
+	}
+
+	public void setCType(String cType) {
+		this.cType = cType;
 	}
 
 	public long getUpdateTime() {
