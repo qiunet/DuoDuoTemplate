@@ -1,9 +1,9 @@
 package com.game.template.basic.login.entity;
 
-import org.qiunet.data.core.support.db.Table;
-import org.qiunet.data.core.support.db.Column;
 import org.apache.ibatis.type.Alias;
 import org.qiunet.data.cache.entity.CacheEntity;
+import org.qiunet.data.core.support.db.Column;
+import org.qiunet.data.core.support.db.Table;
 /**
 * *
 * 对象为自动创建 不要修改
