@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="common_data">
+
+	<select id="selectCommonDataDo" parameterType="map" resultType="CommonDataDo">
+		SELECT * FROM common_data WHERE playerId = #{playerId};
+	</select>
+
+	<update id="updateCommonDataDo" parameterType="CommonDataDo" >
+		UPDATE common_data SET `updateTime` = #{updateTime}, `value` = #{value}  WHERE playerId = #{playerId} AND type = #{type};
+	</update>
+
+	<insert id="insertCommonDataDo" parameterType="CommonDataDo" >
+		INSERT INTO common_data (`playerId`, `type`, `updateTime`, `value`) VALUES (#{playerId}, #{type}, #{updateTime}, #{value});
+	</insert>
+
+	<delete id="deleteCommonDataDo" parameterType="map" >
+		DELETE FROM common_data  WHERE playerId = #{playerId} AND type = #{type};
+	</delete>
+</mapper>

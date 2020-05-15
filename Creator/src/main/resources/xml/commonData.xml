@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cache_entity_list key="playerId"
+				   name="CommonDataDo"
+				   subKey="type"
+				   defaultDb="true"
+				   packageName="com.game.template.basic.commondata"
+				   xmlns="https://github.com/qiunet/DuoDuo/CacheEntityList"
+				   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				   xsi:schemaLocation="https://github.com/qiunet/DuoDuo/CacheEntityList
+				https://raw.githubusercontent.com/qiunet/DuoDuo/master/ProjectInit/src/main/resources/xsd/CacheEntityList.xsd"
+>
+	<field name="playerId" type="long" comment="玩家id" />
+	<field name="type" type="int" comment="类型" />
+	<field name="updateTime" type="int" comment="最后的更新时间(秒)" />
+	<field name="value" type="String" jdbcType="LONGTEXT" comment="内容(可能json  数字 等等)" />
+</cache_entity_list>
