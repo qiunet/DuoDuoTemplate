@@ -27,6 +27,10 @@ public enum  LogType implements IEventLogType {
 
 	/**人民币代币日志**/
 	M2,
+	/***
+	 * 一般数据资源
+	 */
+	COMMON_DATA_RESOURCE,
 	;
 
 	@Override

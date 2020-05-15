@@ -2,6 +2,7 @@ package com.game.template.basic.common.enums;
 
 import com.game.template.basic.common.actor.PlayerActor;
 import com.game.template.basic.common.contants.CfgConstant;
+import com.game.template.basic.common.log.CommonDataResourceLogEvent;
 import com.game.template.basic.common.log.M1LogEvent;
 import com.game.template.basic.common.log.M2LogEvent;
 import com.google.common.base.Preconditions;
@@ -67,6 +68,8 @@ public enum  DataResourceType {
 		public void addResource(PlayerActor player, OperationType operationType, int num) {
 			Preconditions.checkArgument(num > 0);
 			player.getPlayerBo().getDo().setExp(getResourceNum(player) + num);
+
+			new CommonDataResourceLogEvent(player, operationType, this, ResOperationType.ADD, num, player.getPlayerBo().getDo().getExp()).send();
 		}
 
 		@Override
