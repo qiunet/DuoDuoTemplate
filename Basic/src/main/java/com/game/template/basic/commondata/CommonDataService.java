@@ -1,10 +1,12 @@
 package com.game.template.basic.commondata;
 
+import com.game.template.basic.common.actor.PlayerActor;
 import com.game.template.basic.commondata.entity.CommonDataBo;
 import com.game.template.basic.commondata.entity.CommonDataDo;
 import com.game.template.basic.commondata.enums.CommonDataObj;
 import com.game.template.basic.commondata.enums.CommonDataType;
 import com.game.template.basic.commondata.enums._CDataType;
+import com.google.common.base.Preconditions;
 import org.qiunet.data.support.CacheDataListSupport;
 import org.qiunet.utils.date.DateUtil;
 
@@ -24,23 +26,23 @@ public enum CommonDataService {
 	}
 	/***
 	* 获得一个 type -> CommonDataBo  的bo对象
-	* @param playerId 获取对象的主键
+	* @param player 获取对象的主键
 	* @param type 获取对象的次主键
 	* @return CommonDataBo bo对象
 	**/
-	private CommonDataBo getCommonDataBo(Long playerId, CommonDataType type, _CDataType cDataType) {
-		CommonDataBo commonDataBo = getCommonDataBoMap(playerId).get(type.getType());
+	private CommonDataBo getCommonDataBo(PlayerActor player, CommonDataType type) {
+		CommonDataBo commonDataBo = getCommonDataBoMap(player.getPlayerId()).get(type.getType());
 		if (commonDataBo == null) {
-			String initVal = type.getInitVal();
-			if (! cDataType.regexMatch(initVal)) {
-				throw new RuntimeException("initVal "+initVal+" not match type "+cDataType+"!");
+			String initVal = type.getSetting().getDefaultVal().get();
+			if (! type.getSetting().getcDataType().regexMatch(initVal)) {
+				throw new RuntimeException("initVal "+initVal+" not match type "+type.getSetting().getcDataType()+"!");
 			}
 
 			CommonDataDo commonDataDo = new CommonDataDo();
+			commonDataDo.setCType(type.getSetting().getcDataType().name());
 			commonDataDo.setUpdateTime(DateUtil.currSeconds());
-			commonDataDo.setCType(cDataType.name());
+			commonDataDo.setPlayerId(player.getPlayerId());
 			commonDataDo.setType(type.getType());
-			commonDataDo.setPlayerId(playerId);
 			commonDataDo.setValue(initVal);
 
 			commonDataBo = commonDataDo.insert();
@@ -54,40 +56,48 @@ public enum CommonDataService {
 		}
 		return commonDataBo;
 	}
-	private Object getCommonData(Long playerId, CommonDataType type, _CDataType cDataType) {
-		return getCommonDataBo(playerId, type, cDataType).getObject();
+	private Object getCommonData(PlayerActor player, CommonDataType type) {
+		return getCommonDataBo(player, type).getObject();
 	}
 
-	public long getLongVal(long playerId, CommonDataType type) {
-		return (long) getCommonData(playerId, type, _CDataType.LONG);
+	public long getLongVal(PlayerActor player, CommonDataType type) {
+		Preconditions.checkArgument(type.getSetting().getcDataType() == _CDataType.LONG, "Type %s is long", type);
+		return (long) getCommonData(player, type);
+
 	}
 
-	public int getIntVal(long playerId, CommonDataType type) {
-		return (int) getCommonData(playerId, type, _CDataType.INT);
+	public int getIntVal(PlayerActor player, CommonDataType type) {
+		Preconditions.checkArgument(type.getSetting().getcDataType() == _CDataType.INT, "Type %s is int", type);
+		return (int) getCommonData(player, type);
 	}
 
-	public String getStrVal(long playerId, CommonDataType type) {
-		return (String) getCommonData(playerId, type, _CDataType.STRING);
+	public String getStrVal(PlayerActor player, CommonDataType type) {
+		Preconditions.checkArgument(type.getSetting().getcDataType() == _CDataType.STRING, "Type %s is String", type);
+		return (String) getCommonData(player, type);
 	}
 
-	public <T extends CommonDataObj> T getCommonObj(long playerId, CommonDataType type) {
-		return (T) getCommonData(playerId,type, _CDataType.JSON);
+	public <T extends CommonDataObj> T getCommonObj(PlayerActor player, CommonDataType type) {
+		Preconditions.checkArgument(type.getSetting().getcDataType() == _CDataType.LONG, "Type %s is CommonDataObj", type);
+		return (T) getCommonData(player, type);
 	}
 
-	public void setLongVal(long playerId, CommonDataType type, long val) {
-		CommonDataBo commonDataBo = getCommonDataBo(playerId, type, _CDataType.LONG);
+	public void setLongVal(PlayerActor player, CommonDataType type, long val) {
+		Preconditions.checkArgument(type.getSetting().getcDataType() == _CDataType.LONG, "Type %s is long", type);
+		CommonDataBo commonDataBo = getCommonDataBo(player, type);
 		commonDataBo.setVal(val);
 		commonDataBo.update();
 	}
 
-	public void setIntVal(long playerId, CommonDataType type, int val) {
-		CommonDataBo commonDataBo = getCommonDataBo(playerId, type, _CDataType.INT);
+	public void setIntVal(PlayerActor player, CommonDataType type, int val) {
+		Preconditions.checkArgument(type.getSetting().getcDataType() == _CDataType.INT, "Type %s is int", type);
+		CommonDataBo commonDataBo = getCommonDataBo(player, type);
 		commonDataBo.setVal(val);
 		commonDataBo.update();
 	}
 
-	public void setStringVal(long playerId, CommonDataType type, String val) {
-		CommonDataBo commonDataBo = getCommonDataBo(playerId, type, _CDataType.STRING);
+	public void setStringVal(PlayerActor player, CommonDataType type, String val) {
+		Preconditions.checkArgument(type.getSetting().getcDataType() == _CDataType.STRING, "Type %s is String", type);
+		CommonDataBo commonDataBo = getCommonDataBo(player, type);
 		commonDataBo.setVal(val);
 		commonDataBo.update();
 	}

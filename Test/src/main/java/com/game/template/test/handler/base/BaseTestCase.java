@@ -3,7 +3,6 @@ package com.game.template.test.handler.base;
 import com.game.template.test.robot.Robot;
 import com.game.template.test.server.ServerType;
 import com.google.protobuf.GeneratedMessageV3;
-import org.qiunet.test.server.IServer;
 import org.qiunet.test.testcase.LongConn.LongConnProtobufTestCase;
 
 /***
@@ -13,7 +12,7 @@ import org.qiunet.test.testcase.LongConn.LongConnProtobufTestCase;
  **/
 public abstract class BaseTestCase<Request extends GeneratedMessageV3> extends LongConnProtobufTestCase<Request, Robot> {
 	@Override
-	protected IServer getServer() {
+	protected ServerType getServer() {
 		return ServerType.WS_ONLINE;
 	}
 

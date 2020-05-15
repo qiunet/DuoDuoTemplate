@@ -9,11 +9,17 @@ import com.game.template.basic.commondata.enums._CDataType;
  * @author qiunet
  * 2020-05-15 18:57
  ***/
-public final class JsonCommonDataSetting extends CommonDataSetting<JsonCommonDataSetting> {
+public final class JsonCommonDataSettingBuilder extends BaseCommonDataSettingBuilder<JsonCommonDataSettingBuilder> {
 
 	private Class<? extends CommonDataObj> clazz;
 
-	 JsonCommonDataSetting() {
+	 JsonCommonDataSettingBuilder(Class<? extends CommonDataObj> clazz) {
 		super(_CDataType.JSON, ()->"{}");
+		this.clazz = clazz;
+	}
+
+	@Override
+	protected void build0(CommonDataSetting setting) {
+		setting.clazz = clazz;
 	}
 }

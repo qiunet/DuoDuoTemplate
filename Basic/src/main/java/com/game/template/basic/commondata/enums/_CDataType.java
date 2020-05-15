@@ -1,7 +1,6 @@
 package com.game.template.basic.commondata.enums;
 
 import com.game.template.basic.commondata.entity.CommonDataBo;
-import com.google.common.base.Preconditions;
 import org.qiunet.utils.json.JsonUtil;
 import org.qiunet.utils.string.StringUtil;
 
@@ -70,9 +69,8 @@ public enum _CDataType {
 	JSON {
 		@Override
 		public Object getVal(CommonDataBo commonDataBo) {
-			Preconditions.checkNotNull(commonDataBo.getCommonDataType().getaClass(),  "Type "+commonDataBo.getCommonDataType()+" need set class type");
 			String value = commonDataBo.getDo().getValue();
-			CommonDataObj commonDataObj = JsonUtil.getGeneralObject(value, commonDataBo.getCommonDataType().getaClass());
+			CommonDataObj commonDataObj = JsonUtil.getGeneralObject(value, commonDataBo.getCommonDataType().getSetting().getClazz());
 			commonDataObj.setCommonDataBo(commonDataBo);
 			return commonDataObj;
 		}

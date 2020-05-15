@@ -76,6 +76,6 @@ public class PlayerActor extends AbstractPlayerActor<GameSession, PlayerActor> {
 	}
 
 	public <T extends CommonDataObj> T getCommonDataObj(CommonDataType type) {
-		return CommonDataService.instance.getCommonObj(getPlayerId(), type);
+		return CommonDataService.instance.getCommonObj(this, type);
 	}
 }
