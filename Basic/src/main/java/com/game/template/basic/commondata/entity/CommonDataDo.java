@@ -17,7 +17,7 @@ public class CommonDataDo extends CacheEntityList<Long, Integer, CommonDataBo> {
 	@Column(comment = "类型", isKey = true)
 	private int type;
 	@Column(comment = "最后的更新时间(秒)")
-	private int updateTime;
+	private long updateTime;
 	@Column(comment = "内容(可能json  数字 等等)", jdbcType = ColumnJdbcType.LONGTEXT)
 	private String value;
 
@@ -40,11 +40,11 @@ public class CommonDataDo extends CacheEntityList<Long, Integer, CommonDataBo> {
 		this.type = type;
 	}
 
-	public int getUpdateTime() {
+	public long getUpdateTime() {
 		return updateTime;
 	}
 
-	public void setUpdateTime(int updateTime) {
+	public void setUpdateTime(long updateTime) {
 		this.updateTime = updateTime;
 	}
 

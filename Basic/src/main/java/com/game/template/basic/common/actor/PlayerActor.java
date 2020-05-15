@@ -2,6 +2,9 @@ package com.game.template.basic.common.actor;
 
 import com.game.template.basic.common.enums.CDType;
 import com.game.template.basic.common.session.GameSession;
+import com.game.template.basic.commondata.CommonDataService;
+import com.game.template.basic.commondata.enums.CommonDataObj;
+import com.game.template.basic.commondata.enums.CommonDataType;
 import com.game.template.basic.player.entity.PlayerBo;
 import com.google.protobuf.GeneratedMessageV3;
 import org.qiunet.flash.handler.common.player.AbstractPlayerActor;
@@ -70,5 +73,9 @@ public class PlayerActor extends AbstractPlayerActor<GameSession, PlayerActor> {
 	@Override
 	public String getOpenId() {
 		return null;
+	}
+
+	public <T extends CommonDataObj> T getCommonDataObj(CommonDataType type) {
+		return CommonDataService.instance.getCommonObj(getPlayerId(), type);
 	}
 }
