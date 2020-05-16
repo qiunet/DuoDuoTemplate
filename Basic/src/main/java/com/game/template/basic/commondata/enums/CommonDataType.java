@@ -1,5 +1,6 @@
 package com.game.template.basic.commondata.enums;
 
+import com.game.template.basic.common.actor.PlayerActor;
 import com.game.template.basic.commondata.setting.CommonDataSetting;
 import com.google.common.base.Preconditions;
 
@@ -60,7 +61,7 @@ public enum  CommonDataType {
 		return setting.isDailyClean();
 	}
 
-	public String getInitVal(){
-		return setting.getDefaultVal().get();
+	public String getInitVal(PlayerActor player){
+		return setting.getDefaultVal().get(player);
 	}
 }

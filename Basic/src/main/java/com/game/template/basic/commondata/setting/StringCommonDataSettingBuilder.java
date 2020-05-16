@@ -11,7 +11,7 @@ import com.game.template.basic.commondata.enums._CDataType;
 public final class StringCommonDataSettingBuilder extends BaseCommonDataSettingBuilder<StringCommonDataSettingBuilder> {
 
 	StringCommonDataSettingBuilder() {
-		super(_CDataType.STRING, ()->"");
+		super(_CDataType.STRING, p->"");
 	}
 
 	@Override

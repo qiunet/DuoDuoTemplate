@@ -33,7 +33,7 @@ public enum CommonDataService {
 	private CommonDataBo getCommonDataBo(PlayerActor player, CommonDataType type) {
 		CommonDataBo commonDataBo = getCommonDataBoMap(player.getPlayerId()).get(type.getType());
 		if (commonDataBo == null) {
-			String initVal = type.getSetting().getDefaultVal().get();
+			String initVal = type.getSetting().getDefaultVal().get(player);
 			if (! type.getSetting().getcDataType().regexMatch(initVal)) {
 				throw new RuntimeException("initVal "+initVal+" not match type "+type.getSetting().getcDataType()+"!");
 			}
@@ -50,7 +50,7 @@ public enum CommonDataService {
 
 		if (type.isDailyClean()
 		&& ! DateUtil.isSameDay(DateUtil.currentTimeMillis(), 1000 * commonDataBo.getDo().getUpdateTime())) {
-			commonDataBo.getDo().setValue(type.getInitVal());
+			commonDataBo.getDo().setValue(type.getInitVal(player));
 			commonDataBo.deserialize();
 			commonDataBo.update();
 		}

@@ -1,8 +1,8 @@
 package com.game.template.basic.commondata.setting;
 
+import com.game.template.basic.common.actor.PlayerActor;
 import com.game.template.basic.commondata.enums._CDataType;
-
-import java.util.function.Supplier;
+import org.qiunet.utils.common.functional.DSupplier1;
 
 /***
  *
@@ -11,13 +11,13 @@ import java.util.function.Supplier;
  **/
 abstract class BaseCommonDataSettingBuilder<T extends BaseCommonDataSettingBuilder> {
 
-	private Supplier<String> defaultVal;
+	private DSupplier1<PlayerActor, String> defaultVal;
 
 	private _CDataType cDataType;
 
 	private boolean dailyClean;
 
-	BaseCommonDataSettingBuilder(_CDataType cDataType, Supplier<String> defaultVal) {
+	BaseCommonDataSettingBuilder(_CDataType cDataType, DSupplier1<PlayerActor, String> defaultVal) {
 		this.cDataType = cDataType;
 		this.defaultVal = defaultVal;
 	}
@@ -27,7 +27,7 @@ abstract class BaseCommonDataSettingBuilder<T extends BaseCommonDataSettingBuild
 		return (T) this;
 	}
 
-	public T setDefaultVal(Supplier<String> defaultVal) {
+	public T setDefaultVal(DSupplier1<PlayerActor, String> defaultVal) {
 		this.defaultVal = defaultVal;
 		return (T)this;
 	}

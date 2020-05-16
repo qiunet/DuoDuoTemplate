@@ -11,7 +11,7 @@ import com.game.template.basic.commondata.enums._CDataType;
 public final class LongCommonDataSettingBuilder extends BaseCommonDataSettingBuilder<LongCommonDataSettingBuilder> {
 
 	 LongCommonDataSettingBuilder() {
-		super(_CDataType.LONG, ()->"0");
+		super(_CDataType.LONG, p->"0");
 	}
 
 	@Override

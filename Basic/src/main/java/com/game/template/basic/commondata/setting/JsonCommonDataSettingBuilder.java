@@ -14,7 +14,7 @@ public final class JsonCommonDataSettingBuilder extends BaseCommonDataSettingBui
 	private Class<? extends CommonDataObj> clazz;
 
 	 JsonCommonDataSettingBuilder(Class<? extends CommonDataObj> clazz) {
-		super(_CDataType.JSON, ()->"{}");
+		super(_CDataType.JSON, p->"{}");
 		this.clazz = clazz;
 	}
 

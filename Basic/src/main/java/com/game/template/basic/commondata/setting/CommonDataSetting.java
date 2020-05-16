@@ -1,9 +1,9 @@
 package com.game.template.basic.commondata.setting;
 
+import com.game.template.basic.common.actor.PlayerActor;
 import com.game.template.basic.commondata.enums.CommonDataObj;
 import com.game.template.basic.commondata.enums._CDataType;
-
-import java.util.function.Supplier;
+import org.qiunet.utils.common.functional.DSupplier1;
 
 /***
  *
@@ -14,11 +14,11 @@ import java.util.function.Supplier;
 public final class CommonDataSetting {
 
 	Class<? extends CommonDataObj> clazz;
-	Supplier<String> defaultVal;
+	DSupplier1<PlayerActor, String> defaultVal;
 	_CDataType cDataType;
 	boolean dailyClean;
 
-	CommonDataSetting(Supplier<String> defaultVal, _CDataType cDataType, boolean dailyClean) {
+	CommonDataSetting(DSupplier1<PlayerActor, String> defaultVal, _CDataType cDataType, boolean dailyClean) {
 		this.defaultVal = defaultVal;
 		this.cDataType = cDataType;
 		this.dailyClean = dailyClean;
@@ -44,7 +44,7 @@ public final class CommonDataSetting {
 		return clazz;
 	}
 
-	public Supplier<String> getDefaultVal() {
+	public DSupplier1<PlayerActor, String> getDefaultVal() {
 		return defaultVal;
 	}
 
