@@ -61,42 +61,42 @@ public enum CommonDataService {
 	}
 
 	public long getLongVal(PlayerActor player, CommonDataType type) {
-		Preconditions.checkArgument(type.getSetting().getcDataType() == _CDataType.LONG, "Type %s is long", type);
+		Preconditions.checkArgument(type.getSetting().getcDataType() == _CDataType.LONG, "Type %s is not long", type);
 		return (long) getCommonData(player, type);
 
 	}
 
 	public int getIntVal(PlayerActor player, CommonDataType type) {
-		Preconditions.checkArgument(type.getSetting().getcDataType() == _CDataType.INT, "Type %s is int", type);
+		Preconditions.checkArgument(type.getSetting().getcDataType() == _CDataType.INT, "Type %s is not int", type);
 		return (int) getCommonData(player, type);
 	}
 
 	public String getStrVal(PlayerActor player, CommonDataType type) {
-		Preconditions.checkArgument(type.getSetting().getcDataType() == _CDataType.STRING, "Type %s is String", type);
+		Preconditions.checkArgument(type.getSetting().getcDataType() == _CDataType.STRING, "Type %s is not String", type);
 		return (String) getCommonData(player, type);
 	}
 
 	public <T extends CommonDataObj> T getCommonObj(PlayerActor player, CommonDataType type) {
-		Preconditions.checkArgument(type.getSetting().getcDataType() == _CDataType.LONG, "Type %s is CommonDataObj", type);
+		Preconditions.checkArgument(type.getSetting().getcDataType() == _CDataType.LONG, "Type %s is not json", type);
 		return (T) getCommonData(player, type);
 	}
 
 	public void setLongVal(PlayerActor player, CommonDataType type, long val) {
-		Preconditions.checkArgument(type.getSetting().getcDataType() == _CDataType.LONG, "Type %s is long", type);
+		Preconditions.checkArgument(type.getSetting().getcDataType() == _CDataType.LONG, "Type %s is not long", type);
 		CommonDataBo commonDataBo = getCommonDataBo(player, type);
 		commonDataBo.setVal(val);
 		commonDataBo.update();
 	}
 
 	public void setIntVal(PlayerActor player, CommonDataType type, int val) {
-		Preconditions.checkArgument(type.getSetting().getcDataType() == _CDataType.INT, "Type %s is int", type);
+		Preconditions.checkArgument(type.getSetting().getcDataType() == _CDataType.INT, "Type %s is not int", type);
 		CommonDataBo commonDataBo = getCommonDataBo(player, type);
 		commonDataBo.setVal(val);
 		commonDataBo.update();
 	}
 
 	public void setStringVal(PlayerActor player, CommonDataType type, String val) {
-		Preconditions.checkArgument(type.getSetting().getcDataType() == _CDataType.STRING, "Type %s is String", type);
+		Preconditions.checkArgument(type.getSetting().getcDataType() == _CDataType.STRING, "Type %s is not String", type);
 		CommonDataBo commonDataBo = getCommonDataBo(player, type);
 		commonDataBo.setVal(val);
 		commonDataBo.update();
