@@ -37,7 +37,7 @@ public class CommonDataBo implements IEntityBo<CommonDataDo>{
 	@Override
 	public void serialize() {
 		cDataType.writeVal(this);
-		aDo.setUpdateTime(DateUtil.currSeconds());
+		aDo.setUpdateTime(DateUtil.currentTimeMillis());
 	}
 
 	public CommonDataType getCommonDataType() {

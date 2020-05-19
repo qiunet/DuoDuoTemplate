@@ -49,7 +49,7 @@ public enum CommonDataService {
 		}
 
 		if (type.isDailyClean()
-		&& ! DateUtil.isSameDay(DateUtil.currentTimeMillis(), 1000 * commonDataBo.getDo().getUpdateTime())) {
+		&& ! DateUtil.isSameDay(DateUtil.currentTimeMillis(), commonDataBo.getDo().getUpdateTime())) {
 			commonDataBo.getDo().setValue(type.getInitVal(player));
 			commonDataBo.deserialize();
 			commonDataBo.update();
