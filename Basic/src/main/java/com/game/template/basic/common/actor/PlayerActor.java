@@ -19,7 +19,7 @@ import java.util.concurrent.TimeUnit;
  * 2020-04-15 21:01
  **/
 public class PlayerActor extends AbstractPlayerActor<GameSession, PlayerActor> {
-	private CdTimer cdTimer = new CdTimer();
+	private CdTimer<CDType> cdTimer = new CdTimer<>();
 	private PlayerBo playerBo;
 
 	public PlayerActor(GameSession session) {
