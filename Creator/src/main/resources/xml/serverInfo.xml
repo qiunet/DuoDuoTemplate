@@ -3,7 +3,7 @@
 			  name="ServerInfoDo"
 			  defaultDb="true"
 			  comment="存储服务器相关的信息.比如开服时间等"
-			  packageName="com.game.template.basic.id.global"
+			  packageName="com.game.server.basic.id.global"
 			  xmlns="https://github.com/qiunet/DuoDuo/CacheEntity"
 			  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 			  xsi:schemaLocation="https://github.com/qiunet/DuoDuo/CacheEntity

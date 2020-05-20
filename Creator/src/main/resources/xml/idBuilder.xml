@@ -4,7 +4,7 @@
 				   name="IdBuilderDo"
 				   defaultDb="true"
 				   comment="个人相关的id生成表"
-				   packageName="com.game.template.basic.id.person"
+				   packageName="com.game.server.basic.id.person"
 				   xmlns="https://github.com/qiunet/DuoDuo/CacheEntityList"
 				   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 				   xsi:schemaLocation="https://github.com/qiunet/DuoDuo/CacheEntityList

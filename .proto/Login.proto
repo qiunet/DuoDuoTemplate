@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option java_package = "com.game.template.basic.common.proto.login";
+option java_package = "com.game.server.basic.common.proto.login";
 option java_outer_classname = "LoginProto";
 
 //维持连接的心跳  1000

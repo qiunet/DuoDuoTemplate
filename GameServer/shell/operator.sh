@@ -15,13 +15,13 @@ hookPort=1314
 start(){
         if [ ! -d 'logs' ];then mkdir logs ; fi
         cd classes
-        nohup java ${JAVA_OPTS}  -classpath .:../lib/* com.game.template.server.GameBootstrap --port=${port} --hookPort=${hookPort} start 2>1 &
+        nohup java ${JAVA_OPTS}  -classpath .:../lib/* com.game.server.server.GameBootstrap --port=${port} --hookPort=${hookPort} start 2>1 &
         cd -
 }
 
 other(){
         cd classes
-        java -classpath .:../lib/* com.interest.game.pet.server.BootStrap --port=${port} --hookPort=${hookPort} "$1"
+        java -classpath .:../lib/* com.game.server.server.GameBootstrap --port=${port} --hookPort=${hookPort} "$1"
         cd -
         sleep 3
 }

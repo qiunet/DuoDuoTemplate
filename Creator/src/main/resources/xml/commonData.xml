@@ -3,7 +3,7 @@
 				   name="CommonDataDo"
 				   subKey="type"
 				   defaultDb="true"
-				   packageName="com.game.template.basic.commondata"
+				   packageName="com.game.server.basic.commondata"
 				   xmlns="https://github.com/qiunet/DuoDuo/CacheEntityList"
 				   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 				   xsi:schemaLocation="https://github.com/qiunet/DuoDuo/CacheEntityList

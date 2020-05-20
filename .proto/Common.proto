@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option java_package = "com.game.template.basic.common.proto.common";
+option java_package = "com.game.server.basic.common.proto.common";
 option java_outer_classname = "CommonProto";
 
 // 响应头. 每个协议都会给, protobuf 可能默认不传. 也认为是成功.

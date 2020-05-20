@@ -3,7 +3,7 @@
 				   name="EquipDo"
 				   subKey="id"
 				   defaultDb="true"
-				   packageName="com.game.template.basic.equip"
+				   packageName="com.game.server.basic.equip"
 				   xmlns="https://github.com/qiunet/DuoDuo/CacheEntityList"
 				   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 				   xsi:schemaLocation="https://github.com/qiunet/DuoDuo/CacheEntityList
