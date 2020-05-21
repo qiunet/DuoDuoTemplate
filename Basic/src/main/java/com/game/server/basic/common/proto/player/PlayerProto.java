@@ -3,8 +3,6 @@
 
 package com.game.server.basic.common.proto.player;
 
-import com.game.server.basic.common.proto.common.CommonProto;
-
 public final class PlayerProto {
   private PlayerProto() {}
   public static void registerAllExtensions(
@@ -90,15 +88,15 @@ public final class PlayerProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return PlayerProto.internal_static_MainRequest_descriptor;
+      return com.game.server.basic.common.proto.player.PlayerProto.internal_static_MainRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return PlayerProto.internal_static_MainRequest_fieldAccessorTable
+      return com.game.server.basic.common.proto.player.PlayerProto.internal_static_MainRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              PlayerProto.MainRequest.class, PlayerProto.MainRequest.Builder.class);
+              com.game.server.basic.common.proto.player.PlayerProto.MainRequest.class, com.game.server.basic.common.proto.player.PlayerProto.MainRequest.Builder.class);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -134,14 +132,13 @@ public final class PlayerProto {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof PlayerProto.MainRequest)) {
+      if (!(obj instanceof com.game.server.basic.common.proto.player.PlayerProto.MainRequest)) {
         return super.equals(obj);
       }
-      PlayerProto.MainRequest other = (PlayerProto.MainRequest) obj;
+      com.game.server.basic.common.proto.player.PlayerProto.MainRequest other = (com.game.server.basic.common.proto.player.PlayerProto.MainRequest) obj;
 
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
+		return unknownFields.equals(other.unknownFields);
+	}
 
     @java.lang.Override
     public int hashCode() {
@@ -155,69 +152,69 @@ public final class PlayerProto {
       return hash;
     }
 
-    public static PlayerProto.MainRequest parseFrom(
+    public static com.game.server.basic.common.proto.player.PlayerProto.MainRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static PlayerProto.MainRequest parseFrom(
+    public static com.game.server.basic.common.proto.player.PlayerProto.MainRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static PlayerProto.MainRequest parseFrom(
+    public static com.game.server.basic.common.proto.player.PlayerProto.MainRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static PlayerProto.MainRequest parseFrom(
+    public static com.game.server.basic.common.proto.player.PlayerProto.MainRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static PlayerProto.MainRequest parseFrom(byte[] data)
+    public static com.game.server.basic.common.proto.player.PlayerProto.MainRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static PlayerProto.MainRequest parseFrom(
+    public static com.game.server.basic.common.proto.player.PlayerProto.MainRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static PlayerProto.MainRequest parseFrom(java.io.InputStream input)
+    public static com.game.server.basic.common.proto.player.PlayerProto.MainRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static PlayerProto.MainRequest parseFrom(
+    public static com.game.server.basic.common.proto.player.PlayerProto.MainRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static PlayerProto.MainRequest parseDelimitedFrom(java.io.InputStream input)
+    public static com.game.server.basic.common.proto.player.PlayerProto.MainRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static PlayerProto.MainRequest parseDelimitedFrom(
+    public static com.game.server.basic.common.proto.player.PlayerProto.MainRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static PlayerProto.MainRequest parseFrom(
+    public static com.game.server.basic.common.proto.player.PlayerProto.MainRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static PlayerProto.MainRequest parseFrom(
+    public static com.game.server.basic.common.proto.player.PlayerProto.MainRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -230,7 +227,7 @@ public final class PlayerProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(PlayerProto.MainRequest prototype) {
+    public static Builder newBuilder(com.game.server.basic.common.proto.player.PlayerProto.MainRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -255,21 +252,21 @@ public final class PlayerProto {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:MainRequest)
-        PlayerProto.MainRequestOrBuilder {
+        com.game.server.basic.common.proto.player.PlayerProto.MainRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return PlayerProto.internal_static_MainRequest_descriptor;
+        return com.game.server.basic.common.proto.player.PlayerProto.internal_static_MainRequest_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return PlayerProto.internal_static_MainRequest_fieldAccessorTable
+        return com.game.server.basic.common.proto.player.PlayerProto.internal_static_MainRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                PlayerProto.MainRequest.class, PlayerProto.MainRequest.Builder.class);
+                com.game.server.basic.common.proto.player.PlayerProto.MainRequest.class, com.game.server.basic.common.proto.player.PlayerProto.MainRequest.Builder.class);
       }
 
-      // Construct using PlayerProto.MainRequest.newBuilder()
+      // Construct using com.game.server.basic.common.proto.player.PlayerProto.MainRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -293,17 +290,17 @@ public final class PlayerProto {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return PlayerProto.internal_static_MainRequest_descriptor;
+        return com.game.server.basic.common.proto.player.PlayerProto.internal_static_MainRequest_descriptor;
       }
 
       @java.lang.Override
-      public PlayerProto.MainRequest getDefaultInstanceForType() {
-        return PlayerProto.MainRequest.getDefaultInstance();
+      public com.game.server.basic.common.proto.player.PlayerProto.MainRequest getDefaultInstanceForType() {
+        return com.game.server.basic.common.proto.player.PlayerProto.MainRequest.getDefaultInstance();
       }
 
       @java.lang.Override
-      public PlayerProto.MainRequest build() {
-        PlayerProto.MainRequest result = buildPartial();
+      public com.game.server.basic.common.proto.player.PlayerProto.MainRequest build() {
+        com.game.server.basic.common.proto.player.PlayerProto.MainRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -311,8 +308,8 @@ public final class PlayerProto {
       }
 
       @java.lang.Override
-      public PlayerProto.MainRequest buildPartial() {
-        PlayerProto.MainRequest result = new PlayerProto.MainRequest(this);
+      public com.game.server.basic.common.proto.player.PlayerProto.MainRequest buildPartial() {
+        com.game.server.basic.common.proto.player.PlayerProto.MainRequest result = new com.game.server.basic.common.proto.player.PlayerProto.MainRequest(this);
         onBuilt();
         return result;
       }
@@ -351,16 +348,16 @@ public final class PlayerProto {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof PlayerProto.MainRequest) {
-          return mergeFrom((PlayerProto.MainRequest)other);
+        if (other instanceof com.game.server.basic.common.proto.player.PlayerProto.MainRequest) {
+          return mergeFrom((com.game.server.basic.common.proto.player.PlayerProto.MainRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(PlayerProto.MainRequest other) {
-        if (other == PlayerProto.MainRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.game.server.basic.common.proto.player.PlayerProto.MainRequest other) {
+        if (other == com.game.server.basic.common.proto.player.PlayerProto.MainRequest.getDefaultInstance()) return this;
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -376,11 +373,11 @@ public final class PlayerProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        PlayerProto.MainRequest parsedMessage = null;
+        com.game.server.basic.common.proto.player.PlayerProto.MainRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (PlayerProto.MainRequest) e.getUnfinishedMessage();
+          parsedMessage = (com.game.server.basic.common.proto.player.PlayerProto.MainRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -406,12 +403,12 @@ public final class PlayerProto {
     }
 
     // @@protoc_insertion_point(class_scope:MainRequest)
-    private static final PlayerProto.MainRequest DEFAULT_INSTANCE;
+    private static final com.game.server.basic.common.proto.player.PlayerProto.MainRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new PlayerProto.MainRequest();
+      DEFAULT_INSTANCE = new com.game.server.basic.common.proto.player.PlayerProto.MainRequest();
     }
 
-    public static PlayerProto.MainRequest getDefaultInstance() {
+    public static com.game.server.basic.common.proto.player.PlayerProto.MainRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -436,7 +433,7 @@ public final class PlayerProto {
     }
 
     @java.lang.Override
-    public PlayerProto.MainRequest getDefaultInstanceForType() {
+    public com.game.server.basic.common.proto.player.PlayerProto.MainRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -463,7 +460,7 @@ public final class PlayerProto {
      * <code>.PlayerTo player = 1;</code>
      * @return The player.
      */
-    CommonProto.PlayerTo getPlayer();
+    com.game.server.basic.common.proto.common.CommonProto.PlayerTo getPlayer();
     /**
      * <pre>
      * 玩家信息
@@ -471,7 +468,7 @@ public final class PlayerProto {
      *
      * <code>.PlayerTo player = 1;</code>
      */
-    CommonProto.PlayerToOrBuilder getPlayerOrBuilder();
+    com.game.server.basic.common.proto.common.CommonProto.PlayerToOrBuilder getPlayerOrBuilder();
   }
   /**
    * <pre>
@@ -523,11 +520,11 @@ public final class PlayerProto {
               done = true;
               break;
             case 10: {
-              CommonProto.PlayerTo.Builder subBuilder = null;
+              com.game.server.basic.common.proto.common.CommonProto.PlayerTo.Builder subBuilder = null;
               if (player_ != null) {
                 subBuilder = player_.toBuilder();
               }
-              player_ = input.readMessage(CommonProto.PlayerTo.parser(), extensionRegistry);
+              player_ = input.readMessage(com.game.server.basic.common.proto.common.CommonProto.PlayerTo.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(player_);
                 player_ = subBuilder.buildPartial();
@@ -556,19 +553,19 @@ public final class PlayerProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return PlayerProto.internal_static_MainResponse_descriptor;
+      return com.game.server.basic.common.proto.player.PlayerProto.internal_static_MainResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return PlayerProto.internal_static_MainResponse_fieldAccessorTable
+      return com.game.server.basic.common.proto.player.PlayerProto.internal_static_MainResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              PlayerProto.MainResponse.class, PlayerProto.MainResponse.Builder.class);
+              com.game.server.basic.common.proto.player.PlayerProto.MainResponse.class, com.game.server.basic.common.proto.player.PlayerProto.MainResponse.Builder.class);
     }
 
     public static final int PLAYER_FIELD_NUMBER = 1;
-    private CommonProto.PlayerTo player_;
+    private com.game.server.basic.common.proto.common.CommonProto.PlayerTo player_;
     /**
      * <pre>
      * 玩家信息
@@ -588,8 +585,8 @@ public final class PlayerProto {
      * <code>.PlayerTo player = 1;</code>
      * @return The player.
      */
-    public CommonProto.PlayerTo getPlayer() {
-      return player_ == null ? CommonProto.PlayerTo.getDefaultInstance() : player_;
+    public com.game.server.basic.common.proto.common.CommonProto.PlayerTo getPlayer() {
+      return player_ == null ? com.game.server.basic.common.proto.common.CommonProto.PlayerTo.getDefaultInstance() : player_;
     }
     /**
      * <pre>
@@ -598,7 +595,7 @@ public final class PlayerProto {
      *
      * <code>.PlayerTo player = 1;</code>
      */
-    public CommonProto.PlayerToOrBuilder getPlayerOrBuilder() {
+    public com.game.server.basic.common.proto.common.CommonProto.PlayerToOrBuilder getPlayerOrBuilder() {
       return getPlayer();
     }
 
@@ -642,19 +639,18 @@ public final class PlayerProto {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof PlayerProto.MainResponse)) {
+      if (!(obj instanceof com.game.server.basic.common.proto.player.PlayerProto.MainResponse)) {
         return super.equals(obj);
       }
-      PlayerProto.MainResponse other = (PlayerProto.MainResponse) obj;
+      com.game.server.basic.common.proto.player.PlayerProto.MainResponse other = (com.game.server.basic.common.proto.player.PlayerProto.MainResponse) obj;
 
       if (hasPlayer() != other.hasPlayer()) return false;
       if (hasPlayer()) {
         if (!getPlayer()
             .equals(other.getPlayer())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
+		return unknownFields.equals(other.unknownFields);
+	}
 
     @java.lang.Override
     public int hashCode() {
@@ -672,69 +668,69 @@ public final class PlayerProto {
       return hash;
     }
 
-    public static PlayerProto.MainResponse parseFrom(
+    public static com.game.server.basic.common.proto.player.PlayerProto.MainResponse parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static PlayerProto.MainResponse parseFrom(
+    public static com.game.server.basic.common.proto.player.PlayerProto.MainResponse parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static PlayerProto.MainResponse parseFrom(
+    public static com.game.server.basic.common.proto.player.PlayerProto.MainResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static PlayerProto.MainResponse parseFrom(
+    public static com.game.server.basic.common.proto.player.PlayerProto.MainResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static PlayerProto.MainResponse parseFrom(byte[] data)
+    public static com.game.server.basic.common.proto.player.PlayerProto.MainResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static PlayerProto.MainResponse parseFrom(
+    public static com.game.server.basic.common.proto.player.PlayerProto.MainResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static PlayerProto.MainResponse parseFrom(java.io.InputStream input)
+    public static com.game.server.basic.common.proto.player.PlayerProto.MainResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static PlayerProto.MainResponse parseFrom(
+    public static com.game.server.basic.common.proto.player.PlayerProto.MainResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static PlayerProto.MainResponse parseDelimitedFrom(java.io.InputStream input)
+    public static com.game.server.basic.common.proto.player.PlayerProto.MainResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static PlayerProto.MainResponse parseDelimitedFrom(
+    public static com.game.server.basic.common.proto.player.PlayerProto.MainResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static PlayerProto.MainResponse parseFrom(
+    public static com.game.server.basic.common.proto.player.PlayerProto.MainResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static PlayerProto.MainResponse parseFrom(
+    public static com.game.server.basic.common.proto.player.PlayerProto.MainResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -747,7 +743,7 @@ public final class PlayerProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(PlayerProto.MainResponse prototype) {
+    public static Builder newBuilder(com.game.server.basic.common.proto.player.PlayerProto.MainResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -772,21 +768,21 @@ public final class PlayerProto {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:MainResponse)
-        PlayerProto.MainResponseOrBuilder {
+        com.game.server.basic.common.proto.player.PlayerProto.MainResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return PlayerProto.internal_static_MainResponse_descriptor;
+        return com.game.server.basic.common.proto.player.PlayerProto.internal_static_MainResponse_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return PlayerProto.internal_static_MainResponse_fieldAccessorTable
+        return com.game.server.basic.common.proto.player.PlayerProto.internal_static_MainResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                PlayerProto.MainResponse.class, PlayerProto.MainResponse.Builder.class);
+                com.game.server.basic.common.proto.player.PlayerProto.MainResponse.class, com.game.server.basic.common.proto.player.PlayerProto.MainResponse.Builder.class);
       }
 
-      // Construct using PlayerProto.MainResponse.newBuilder()
+      // Construct using com.game.server.basic.common.proto.player.PlayerProto.MainResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -816,17 +812,17 @@ public final class PlayerProto {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return PlayerProto.internal_static_MainResponse_descriptor;
+        return com.game.server.basic.common.proto.player.PlayerProto.internal_static_MainResponse_descriptor;
       }
 
       @java.lang.Override
-      public PlayerProto.MainResponse getDefaultInstanceForType() {
-        return PlayerProto.MainResponse.getDefaultInstance();
+      public com.game.server.basic.common.proto.player.PlayerProto.MainResponse getDefaultInstanceForType() {
+        return com.game.server.basic.common.proto.player.PlayerProto.MainResponse.getDefaultInstance();
       }
 
       @java.lang.Override
-      public PlayerProto.MainResponse build() {
-        PlayerProto.MainResponse result = buildPartial();
+      public com.game.server.basic.common.proto.player.PlayerProto.MainResponse build() {
+        com.game.server.basic.common.proto.player.PlayerProto.MainResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -834,8 +830,8 @@ public final class PlayerProto {
       }
 
       @java.lang.Override
-      public PlayerProto.MainResponse buildPartial() {
-        PlayerProto.MainResponse result = new PlayerProto.MainResponse(this);
+      public com.game.server.basic.common.proto.player.PlayerProto.MainResponse buildPartial() {
+        com.game.server.basic.common.proto.player.PlayerProto.MainResponse result = new com.game.server.basic.common.proto.player.PlayerProto.MainResponse(this);
         if (playerBuilder_ == null) {
           result.player_ = player_;
         } else {
@@ -879,16 +875,16 @@ public final class PlayerProto {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof PlayerProto.MainResponse) {
-          return mergeFrom((PlayerProto.MainResponse)other);
+        if (other instanceof com.game.server.basic.common.proto.player.PlayerProto.MainResponse) {
+          return mergeFrom((com.game.server.basic.common.proto.player.PlayerProto.MainResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(PlayerProto.MainResponse other) {
-        if (other == PlayerProto.MainResponse.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.game.server.basic.common.proto.player.PlayerProto.MainResponse other) {
+        if (other == com.game.server.basic.common.proto.player.PlayerProto.MainResponse.getDefaultInstance()) return this;
         if (other.hasPlayer()) {
           mergePlayer(other.getPlayer());
         }
@@ -907,11 +903,11 @@ public final class PlayerProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        PlayerProto.MainResponse parsedMessage = null;
+        com.game.server.basic.common.proto.player.PlayerProto.MainResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (PlayerProto.MainResponse) e.getUnfinishedMessage();
+          parsedMessage = (com.game.server.basic.common.proto.player.PlayerProto.MainResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -921,9 +917,9 @@ public final class PlayerProto {
         return this;
       }
 
-      private CommonProto.PlayerTo player_;
+      private com.game.server.basic.common.proto.common.CommonProto.PlayerTo player_;
       private com.google.protobuf.SingleFieldBuilderV3<
-		  CommonProto.PlayerTo, CommonProto.PlayerTo.Builder, CommonProto.PlayerToOrBuilder> playerBuilder_;
+          com.game.server.basic.common.proto.common.CommonProto.PlayerTo, com.game.server.basic.common.proto.common.CommonProto.PlayerTo.Builder, com.game.server.basic.common.proto.common.CommonProto.PlayerToOrBuilder> playerBuilder_;
       /**
        * <pre>
        * 玩家信息
@@ -943,9 +939,9 @@ public final class PlayerProto {
        * <code>.PlayerTo player = 1;</code>
        * @return The player.
        */
-      public CommonProto.PlayerTo getPlayer() {
+      public com.game.server.basic.common.proto.common.CommonProto.PlayerTo getPlayer() {
         if (playerBuilder_ == null) {
-          return player_ == null ? CommonProto.PlayerTo.getDefaultInstance() : player_;
+          return player_ == null ? com.game.server.basic.common.proto.common.CommonProto.PlayerTo.getDefaultInstance() : player_;
         } else {
           return playerBuilder_.getMessage();
         }
@@ -957,7 +953,7 @@ public final class PlayerProto {
        *
        * <code>.PlayerTo player = 1;</code>
        */
-      public Builder setPlayer(CommonProto.PlayerTo value) {
+      public Builder setPlayer(com.game.server.basic.common.proto.common.CommonProto.PlayerTo value) {
         if (playerBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -978,7 +974,7 @@ public final class PlayerProto {
        * <code>.PlayerTo player = 1;</code>
        */
       public Builder setPlayer(
-          CommonProto.PlayerTo.Builder builderForValue) {
+          com.game.server.basic.common.proto.common.CommonProto.PlayerTo.Builder builderForValue) {
         if (playerBuilder_ == null) {
           player_ = builderForValue.build();
           onChanged();
@@ -995,11 +991,11 @@ public final class PlayerProto {
        *
        * <code>.PlayerTo player = 1;</code>
        */
-      public Builder mergePlayer(CommonProto.PlayerTo value) {
+      public Builder mergePlayer(com.game.server.basic.common.proto.common.CommonProto.PlayerTo value) {
         if (playerBuilder_ == null) {
           if (player_ != null) {
             player_ =
-              CommonProto.PlayerTo.newBuilder(player_).mergeFrom(value).buildPartial();
+              com.game.server.basic.common.proto.common.CommonProto.PlayerTo.newBuilder(player_).mergeFrom(value).buildPartial();
           } else {
             player_ = value;
           }
@@ -1035,7 +1031,7 @@ public final class PlayerProto {
        *
        * <code>.PlayerTo player = 1;</code>
        */
-      public CommonProto.PlayerTo.Builder getPlayerBuilder() {
+      public com.game.server.basic.common.proto.common.CommonProto.PlayerTo.Builder getPlayerBuilder() {
         
         onChanged();
         return getPlayerFieldBuilder().getBuilder();
@@ -1047,12 +1043,12 @@ public final class PlayerProto {
        *
        * <code>.PlayerTo player = 1;</code>
        */
-      public CommonProto.PlayerToOrBuilder getPlayerOrBuilder() {
+      public com.game.server.basic.common.proto.common.CommonProto.PlayerToOrBuilder getPlayerOrBuilder() {
         if (playerBuilder_ != null) {
           return playerBuilder_.getMessageOrBuilder();
         } else {
           return player_ == null ?
-              CommonProto.PlayerTo.getDefaultInstance() : player_;
+              com.game.server.basic.common.proto.common.CommonProto.PlayerTo.getDefaultInstance() : player_;
         }
       }
       /**
@@ -1063,11 +1059,11 @@ public final class PlayerProto {
        * <code>.PlayerTo player = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-		  CommonProto.PlayerTo, CommonProto.PlayerTo.Builder, CommonProto.PlayerToOrBuilder>
+          com.game.server.basic.common.proto.common.CommonProto.PlayerTo, com.game.server.basic.common.proto.common.CommonProto.PlayerTo.Builder, com.game.server.basic.common.proto.common.CommonProto.PlayerToOrBuilder> 
           getPlayerFieldBuilder() {
         if (playerBuilder_ == null) {
           playerBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-			  CommonProto.PlayerTo, CommonProto.PlayerTo.Builder, CommonProto.PlayerToOrBuilder>(
+              com.game.server.basic.common.proto.common.CommonProto.PlayerTo, com.game.server.basic.common.proto.common.CommonProto.PlayerTo.Builder, com.game.server.basic.common.proto.common.CommonProto.PlayerToOrBuilder>(
                   getPlayer(),
                   getParentForChildren(),
                   isClean());
@@ -1092,12 +1088,12 @@ public final class PlayerProto {
     }
 
     // @@protoc_insertion_point(class_scope:MainResponse)
-    private static final PlayerProto.MainResponse DEFAULT_INSTANCE;
+    private static final com.game.server.basic.common.proto.player.PlayerProto.MainResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new PlayerProto.MainResponse();
+      DEFAULT_INSTANCE = new com.game.server.basic.common.proto.player.PlayerProto.MainResponse();
     }
 
-    public static PlayerProto.MainResponse getDefaultInstance() {
+    public static com.game.server.basic.common.proto.player.PlayerProto.MainResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1122,7 +1118,7 @@ public final class PlayerProto {
     }
 
     @java.lang.Override
-    public PlayerProto.MainResponse getDefaultInstanceForType() {
+    public com.game.server.basic.common.proto.player.PlayerProto.MainResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1149,13 +1145,13 @@ public final class PlayerProto {
     java.lang.String[] descriptorData = {
       "\n\014Player.proto\032\014Common.proto\"\r\n\013MainRequ" +
       "est\")\n\014MainResponse\022\031\n\006player\030\001 \001(\0132\t.Pl" +
-      "ayerToB:\n+com.game.server.basic.common" +
-      ".proto.playerB\013PlayerProtob\006proto3"
+      "ayerToB8\n)com.game.server.basic.common.p" +
+      "roto.playerB\013PlayerProtob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          CommonProto.getDescriptor(),
+          com.game.server.basic.common.proto.common.CommonProto.getDescriptor(),
         });
     internal_static_MainRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -1169,7 +1165,7 @@ public final class PlayerProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MainResponse_descriptor,
         new java.lang.String[] { "Player", });
-    CommonProto.getDescriptor();
+    com.game.server.basic.common.proto.common.CommonProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
