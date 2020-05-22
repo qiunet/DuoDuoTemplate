@@ -1,4 +1,4 @@
-package com.game.server.server.common.context;
+package com.game.server.common.context;
 
 import com.game.server.basic.common.actor.PlayerActor;
 import com.game.server.basic.common.contants.ProtocolId;

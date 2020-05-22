@@ -1,8 +1,8 @@
-package com.game.server.server.common.handler;
+package com.game.server.common.handler;
 
 import com.game.server.basic.common.actor.PlayerActor;
 import com.game.server.basic.common.logger.GameLogger;
-import com.game.server.server.common.monitor.RequestMonitor;
+import com.game.server.common.monitor.RequestMonitor;
 import com.google.protobuf.GeneratedMessageV3;
 import org.qiunet.flash.handler.context.request.websocket.IWebSocketRequest;
 import org.qiunet.flash.handler.handler.websocket.WebSocketProtobufHandler;

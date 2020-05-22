@@ -1,7 +1,7 @@
-package com.game.server.server;
+package com.game.server;
 
-import com.game.server.server.common.context.StartupContext;
-import com.game.server.server.common.hook.ServerHook;
+import com.game.server.common.context.StartupContext;
+import com.game.server.common.hook.ServerHook;
 import org.qiunet.flash.handler.netty.server.BootstrapServer;
 import org.qiunet.flash.handler.netty.server.param.HttpBootstrapParams;
 import org.qiunet.utils.args.ArgsMapping;
