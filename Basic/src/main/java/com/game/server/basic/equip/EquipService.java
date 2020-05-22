@@ -5,6 +5,8 @@ import com.game.server.basic.common.data.result.IRewardResult;
 import com.game.server.basic.common.enums.OperationType;
 import com.game.server.basic.equip.entity.EquipBo;
 import com.game.server.basic.equip.entity.EquipDo;
+import com.game.server.basic.equip.log.EquipAddLogEvent;
+import com.game.server.basic.equip.log.EquipDelLogEvent;
 import com.game.server.basic.id.enums.IDType;
 import com.google.common.collect.Lists;
 import org.qiunet.data.support.CacheDataListSupport;
@@ -45,8 +47,9 @@ public enum EquipService {
 			equipDo.setEquipId(resourceId);
 			EquipBo equipBo = equipDo.insert();
 			list.add(equipBo);
+
+			new EquipAddLogEvent(player, equipDo.getId(), resourceId, type).send();
 		}
-		//TODO 日志
 		return list;
 	}
 
@@ -57,7 +60,9 @@ public enum EquipService {
 	 * @param operationType
 	 */
 	public void deleteEquip(PlayerActor player, EquipBo equip, OperationType operationType) {
+		equip.delete();
 
+		new EquipDelLogEvent(player, equip.getDo().getId(), equip.getDo().getEquipId(), operationType).send();
 	}
 
 	/**
@@ -67,7 +72,7 @@ public enum EquipService {
 	 * @param operationType
 	 */
 	public void deleteEquips(PlayerActor player, List<EquipBo> equipList, OperationType operationType) {
-
+		equipList.forEach(equip -> deleteEquip(player, equip, operationType));
 	}
 
 	/**
