@@ -2,7 +2,6 @@
 <cache_entity_list key="playerId"
 				   name="CommonDataDo"
 				   subKey="type"
-				   defaultDb="true"
 				   packageName="com.game.server.basic.commondata"
 				   xmlns="https://github.com/qiunet/DuoDuo/CacheEntityList"
 				   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"

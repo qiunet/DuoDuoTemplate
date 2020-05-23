@@ -9,7 +9,7 @@ import org.qiunet.data.core.support.db.Table;
 * 对象为自动创建 不要修改
 */
 @Alias("IdBuilderDo")
-@Table(name = "id_builder", comment="个人相关的id生成表", defaultDb = true)
+@Table(name = "id_builder", comment="个人相关的id生成表")
 public class IdBuilderDo extends CacheEntityList<Long, Integer, IdBuilderBo> {
 	@Column(comment = "玩家id", isKey = true)
 	private long playerId;

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <cache_entity key="type"
 			  name="ServerInfoDo"
-			  defaultDb="true"
 			  comment="存储服务器相关的信息.比如开服时间等"
 			  packageName="com.game.server.basic.id.global"
 			  xmlns="https://github.com/qiunet/DuoDuo/CacheEntity"

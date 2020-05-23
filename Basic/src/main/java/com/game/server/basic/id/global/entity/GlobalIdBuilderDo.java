@@ -9,7 +9,7 @@ import org.qiunet.data.core.support.db.Table;
 * 对象为自动创建 不要修改
 */
 @Alias("GlobalIdBuilderDo")
-@Table(name = "global_id_builder", comment="全局id生成表", defaultDb = true)
+@Table(name = "global_id_builder", comment="全局id生成表")
 public class GlobalIdBuilderDo extends CacheEntity<Integer, GlobalIdBuilderBo> {
 	@Column(comment = "类型", isKey = true)
 	private int type;

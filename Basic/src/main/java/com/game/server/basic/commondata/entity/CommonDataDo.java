@@ -10,7 +10,7 @@ import org.qiunet.data.core.support.db.Table;
 * 对象为自动创建 不要修改
 */
 @Alias("CommonDataDo")
-@Table(name = "common_data", defaultDb = true)
+@Table(name = "common_data")
 public class CommonDataDo extends CacheEntityList<Long, Integer, CommonDataBo> {
 	@Column(comment = "玩家id", isKey = true)
 	private long playerId;

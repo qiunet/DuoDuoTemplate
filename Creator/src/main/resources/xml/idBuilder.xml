@@ -2,7 +2,6 @@
 <cache_entity_list key="playerId"
 				   subKey="type"
 				   name="IdBuilderDo"
-				   defaultDb="true"
 				   comment="个人相关的id生成表"
 				   packageName="com.game.server.basic.id.person"
 				   xmlns="https://github.com/qiunet/DuoDuo/CacheEntityList"
