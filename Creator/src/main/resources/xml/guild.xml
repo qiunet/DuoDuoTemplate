@@ -1,0 +1,16 @@
+<redis_entity key="guildId"
+			  name="GuildDo"
+			  packageName="com.game.server.basic.guild"
+			  redis="com.game.server.basic.common.redis.RedisDataUtil"
+			  xmlns="https://github.com/qiunet/DuoDuo/RedisEntity"
+			  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			  xsi:schemaLocation="https://github.com/qiunet/DuoDuo/RedisEntity
+		https://raw.githubusercontent.com/qiunet/DuoDuo/master/ProjectInit/src/main/resources/xsd/RedisEntity.xsd"
+>
+	<field name="guildId" type="long" comment="工会id" />
+	<field name="name" type="String" comment="名称"/>
+	<field name="level" type="int" comment="等级"/>
+	<constructor>
+		<constructor_arg field="guildId" />
+	</constructor>
+</redis_entity>
