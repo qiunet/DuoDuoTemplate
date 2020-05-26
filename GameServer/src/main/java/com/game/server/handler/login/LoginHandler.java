@@ -1,4 +1,4 @@
-package com.game.server.server.handler.login;
+package com.game.server.handler.login;
 
 import com.game.server.basic.common.actor.PlayerActor;
 import com.game.server.basic.common.cfg.resource.ResourceDataCfg;
@@ -8,7 +8,7 @@ import com.game.server.basic.login.LoginService;
 import com.game.server.basic.login.entity.LoginBo;
 import com.game.server.basic.player.PlayerService;
 import com.game.server.basic.player.entity.PlayerBo;
-import com.game.server.server.common.handler.BaseHandler;
+import com.game.server.common.handler.BaseHandler;
 import org.qiunet.cfg.annotation.CfgWrapperAutoWired;
 import org.qiunet.cfg.wrapper.ISimpleMapCfgWrapper;
 import org.qiunet.flash.handler.common.annotation.RequestHandler;

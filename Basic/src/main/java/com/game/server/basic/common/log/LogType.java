@@ -18,10 +18,6 @@ public enum  LogType implements IEventLogType {
 
 	/**物品日志*/
 	ITEM,
-
-	/**装备日志*/
-	EQUIP,
-
 	/**普通货币日志**/
 	M1,
 
@@ -31,6 +27,14 @@ public enum  LogType implements IEventLogType {
 	 * 一般数据资源
 	 */
 	COMMON_DATA_RESOURCE,
+	/**
+	 * 装备删除
+	 */
+	EQUIP_DELETE,
+	/**
+	 * 装备生成
+	 */
+	EQUIP_ADD,
 	;
 
 	@Override

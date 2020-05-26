@@ -1,4 +1,4 @@
-package com.game.server.server.common.hook;
+package com.game.server.common.hook;
 
 import com.game.server.basic.common.logger.GameLogger;
 import org.qiunet.cfg.manager.CfgManagers;

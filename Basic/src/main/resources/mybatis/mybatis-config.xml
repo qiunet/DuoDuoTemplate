@@ -25,14 +25,15 @@
 		<setting name="lazyLoadTriggerMethods" value="equals,clone,hashCode,toString"/>
 	</settings>
 	<typeAliases>
-		<package name="com.game.server.basic.commondata" />
 		<package name="com.game.server.basic.equip" />
+		<package name="com.game.server.basic.login" />
+		<package name="com.game.server.basic.id.global" />
+		<package name="com.game.server.basic.commondata" />
+		<package name="com.game.server.basic.item" />
+		<package name="com.game.server.basic.guild" />
 		<package name="com.game.server.basic.id.global" />
 		<package name="com.game.server.basic.id.person" />
-		<package name="com.game.server.basic.item" />
-		<package name="com.game.server.basic.login" />
 		<package name="com.game.server.basic.player" />
-		<package name="com.game.server.basic.id.global" />
 	</typeAliases>
     <plugins>
         <plugin interceptor="org.qiunet.data.core.support.db.plugins.MybatisInterceptor" />
@@ -42,6 +43,7 @@
         <mapper resource="mybatis/common_data.xml" />
         <mapper resource="mybatis/equip.xml" />
         <mapper resource="mybatis/global_id_builder.xml" />
+        <mapper resource="mybatis/guild.xml" />
         <mapper resource="mybatis/id_builder.xml" />
         <mapper resource="mybatis/item.xml" />
         <mapper resource="mybatis/login.xml" />

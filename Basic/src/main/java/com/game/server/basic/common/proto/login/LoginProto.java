@@ -88,15 +88,15 @@ public final class LoginProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return LoginProto.internal_static_PollingRequest_descriptor;
+      return com.game.server.basic.common.proto.login.LoginProto.internal_static_PollingRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return LoginProto.internal_static_PollingRequest_fieldAccessorTable
+      return com.game.server.basic.common.proto.login.LoginProto.internal_static_PollingRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              LoginProto.PollingRequest.class, LoginProto.PollingRequest.Builder.class);
+              com.game.server.basic.common.proto.login.LoginProto.PollingRequest.class, com.game.server.basic.common.proto.login.LoginProto.PollingRequest.Builder.class);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -132,10 +132,10 @@ public final class LoginProto {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof LoginProto.PollingRequest)) {
+      if (!(obj instanceof com.game.server.basic.common.proto.login.LoginProto.PollingRequest)) {
         return super.equals(obj);
       }
-      LoginProto.PollingRequest other = (LoginProto.PollingRequest) obj;
+      com.game.server.basic.common.proto.login.LoginProto.PollingRequest other = (com.game.server.basic.common.proto.login.LoginProto.PollingRequest) obj;
 
 		return unknownFields.equals(other.unknownFields);
 	}
@@ -152,69 +152,69 @@ public final class LoginProto {
       return hash;
     }
 
-    public static LoginProto.PollingRequest parseFrom(
+    public static com.game.server.basic.common.proto.login.LoginProto.PollingRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static LoginProto.PollingRequest parseFrom(
+    public static com.game.server.basic.common.proto.login.LoginProto.PollingRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static LoginProto.PollingRequest parseFrom(
+    public static com.game.server.basic.common.proto.login.LoginProto.PollingRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static LoginProto.PollingRequest parseFrom(
+    public static com.game.server.basic.common.proto.login.LoginProto.PollingRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static LoginProto.PollingRequest parseFrom(byte[] data)
+    public static com.game.server.basic.common.proto.login.LoginProto.PollingRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static LoginProto.PollingRequest parseFrom(
+    public static com.game.server.basic.common.proto.login.LoginProto.PollingRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static LoginProto.PollingRequest parseFrom(java.io.InputStream input)
+    public static com.game.server.basic.common.proto.login.LoginProto.PollingRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static LoginProto.PollingRequest parseFrom(
+    public static com.game.server.basic.common.proto.login.LoginProto.PollingRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static LoginProto.PollingRequest parseDelimitedFrom(java.io.InputStream input)
+    public static com.game.server.basic.common.proto.login.LoginProto.PollingRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static LoginProto.PollingRequest parseDelimitedFrom(
+    public static com.game.server.basic.common.proto.login.LoginProto.PollingRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static LoginProto.PollingRequest parseFrom(
+    public static com.game.server.basic.common.proto.login.LoginProto.PollingRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static LoginProto.PollingRequest parseFrom(
+    public static com.game.server.basic.common.proto.login.LoginProto.PollingRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -227,7 +227,7 @@ public final class LoginProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(LoginProto.PollingRequest prototype) {
+    public static Builder newBuilder(com.game.server.basic.common.proto.login.LoginProto.PollingRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -252,21 +252,21 @@ public final class LoginProto {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:PollingRequest)
-        LoginProto.PollingRequestOrBuilder {
+        com.game.server.basic.common.proto.login.LoginProto.PollingRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return LoginProto.internal_static_PollingRequest_descriptor;
+        return com.game.server.basic.common.proto.login.LoginProto.internal_static_PollingRequest_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return LoginProto.internal_static_PollingRequest_fieldAccessorTable
+        return com.game.server.basic.common.proto.login.LoginProto.internal_static_PollingRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                LoginProto.PollingRequest.class, LoginProto.PollingRequest.Builder.class);
+                com.game.server.basic.common.proto.login.LoginProto.PollingRequest.class, com.game.server.basic.common.proto.login.LoginProto.PollingRequest.Builder.class);
       }
 
-      // Construct using LoginProto.PollingRequest.newBuilder()
+      // Construct using com.game.server.basic.common.proto.login.LoginProto.PollingRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -290,17 +290,17 @@ public final class LoginProto {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return LoginProto.internal_static_PollingRequest_descriptor;
+        return com.game.server.basic.common.proto.login.LoginProto.internal_static_PollingRequest_descriptor;
       }
 
       @java.lang.Override
-      public LoginProto.PollingRequest getDefaultInstanceForType() {
-        return LoginProto.PollingRequest.getDefaultInstance();
+      public com.game.server.basic.common.proto.login.LoginProto.PollingRequest getDefaultInstanceForType() {
+        return com.game.server.basic.common.proto.login.LoginProto.PollingRequest.getDefaultInstance();
       }
 
       @java.lang.Override
-      public LoginProto.PollingRequest build() {
-        LoginProto.PollingRequest result = buildPartial();
+      public com.game.server.basic.common.proto.login.LoginProto.PollingRequest build() {
+        com.game.server.basic.common.proto.login.LoginProto.PollingRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -308,8 +308,8 @@ public final class LoginProto {
       }
 
       @java.lang.Override
-      public LoginProto.PollingRequest buildPartial() {
-        LoginProto.PollingRequest result = new LoginProto.PollingRequest(this);
+      public com.game.server.basic.common.proto.login.LoginProto.PollingRequest buildPartial() {
+        com.game.server.basic.common.proto.login.LoginProto.PollingRequest result = new com.game.server.basic.common.proto.login.LoginProto.PollingRequest(this);
         onBuilt();
         return result;
       }
@@ -348,16 +348,16 @@ public final class LoginProto {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof LoginProto.PollingRequest) {
-          return mergeFrom((LoginProto.PollingRequest)other);
+        if (other instanceof com.game.server.basic.common.proto.login.LoginProto.PollingRequest) {
+          return mergeFrom((com.game.server.basic.common.proto.login.LoginProto.PollingRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(LoginProto.PollingRequest other) {
-        if (other == LoginProto.PollingRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.game.server.basic.common.proto.login.LoginProto.PollingRequest other) {
+        if (other == com.game.server.basic.common.proto.login.LoginProto.PollingRequest.getDefaultInstance()) return this;
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -373,11 +373,11 @@ public final class LoginProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        LoginProto.PollingRequest parsedMessage = null;
+        com.game.server.basic.common.proto.login.LoginProto.PollingRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (LoginProto.PollingRequest) e.getUnfinishedMessage();
+          parsedMessage = (com.game.server.basic.common.proto.login.LoginProto.PollingRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -403,12 +403,12 @@ public final class LoginProto {
     }
 
     // @@protoc_insertion_point(class_scope:PollingRequest)
-    private static final LoginProto.PollingRequest DEFAULT_INSTANCE;
+    private static final com.game.server.basic.common.proto.login.LoginProto.PollingRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new LoginProto.PollingRequest();
+      DEFAULT_INSTANCE = new com.game.server.basic.common.proto.login.LoginProto.PollingRequest();
     }
 
-    public static LoginProto.PollingRequest getDefaultInstance() {
+    public static com.game.server.basic.common.proto.login.LoginProto.PollingRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -433,7 +433,7 @@ public final class LoginProto {
     }
 
     @java.lang.Override
-    public LoginProto.PollingRequest getDefaultInstanceForType() {
+    public com.game.server.basic.common.proto.login.LoginProto.PollingRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -528,15 +528,15 @@ public final class LoginProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return LoginProto.internal_static_PollingResponse_descriptor;
+      return com.game.server.basic.common.proto.login.LoginProto.internal_static_PollingResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return LoginProto.internal_static_PollingResponse_fieldAccessorTable
+      return com.game.server.basic.common.proto.login.LoginProto.internal_static_PollingResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              LoginProto.PollingResponse.class, LoginProto.PollingResponse.Builder.class);
+              com.game.server.basic.common.proto.login.LoginProto.PollingResponse.class, com.game.server.basic.common.proto.login.LoginProto.PollingResponse.Builder.class);
     }
 
     public static final int CURRSECONDS_FIELD_NUMBER = 1;
@@ -593,10 +593,10 @@ public final class LoginProto {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof LoginProto.PollingResponse)) {
+      if (!(obj instanceof com.game.server.basic.common.proto.login.LoginProto.PollingResponse)) {
         return super.equals(obj);
       }
-      LoginProto.PollingResponse other = (LoginProto.PollingResponse) obj;
+      com.game.server.basic.common.proto.login.LoginProto.PollingResponse other = (com.game.server.basic.common.proto.login.LoginProto.PollingResponse) obj;
 
       if (getCurrSeconds()
           != other.getCurrSeconds()) return false;
@@ -617,69 +617,69 @@ public final class LoginProto {
       return hash;
     }
 
-    public static LoginProto.PollingResponse parseFrom(
+    public static com.game.server.basic.common.proto.login.LoginProto.PollingResponse parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static LoginProto.PollingResponse parseFrom(
+    public static com.game.server.basic.common.proto.login.LoginProto.PollingResponse parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static LoginProto.PollingResponse parseFrom(
+    public static com.game.server.basic.common.proto.login.LoginProto.PollingResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static LoginProto.PollingResponse parseFrom(
+    public static com.game.server.basic.common.proto.login.LoginProto.PollingResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static LoginProto.PollingResponse parseFrom(byte[] data)
+    public static com.game.server.basic.common.proto.login.LoginProto.PollingResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static LoginProto.PollingResponse parseFrom(
+    public static com.game.server.basic.common.proto.login.LoginProto.PollingResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static LoginProto.PollingResponse parseFrom(java.io.InputStream input)
+    public static com.game.server.basic.common.proto.login.LoginProto.PollingResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static LoginProto.PollingResponse parseFrom(
+    public static com.game.server.basic.common.proto.login.LoginProto.PollingResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static LoginProto.PollingResponse parseDelimitedFrom(java.io.InputStream input)
+    public static com.game.server.basic.common.proto.login.LoginProto.PollingResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static LoginProto.PollingResponse parseDelimitedFrom(
+    public static com.game.server.basic.common.proto.login.LoginProto.PollingResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static LoginProto.PollingResponse parseFrom(
+    public static com.game.server.basic.common.proto.login.LoginProto.PollingResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static LoginProto.PollingResponse parseFrom(
+    public static com.game.server.basic.common.proto.login.LoginProto.PollingResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -692,7 +692,7 @@ public final class LoginProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(LoginProto.PollingResponse prototype) {
+    public static Builder newBuilder(com.game.server.basic.common.proto.login.LoginProto.PollingResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -717,21 +717,21 @@ public final class LoginProto {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:PollingResponse)
-        LoginProto.PollingResponseOrBuilder {
+        com.game.server.basic.common.proto.login.LoginProto.PollingResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return LoginProto.internal_static_PollingResponse_descriptor;
+        return com.game.server.basic.common.proto.login.LoginProto.internal_static_PollingResponse_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return LoginProto.internal_static_PollingResponse_fieldAccessorTable
+        return com.game.server.basic.common.proto.login.LoginProto.internal_static_PollingResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                LoginProto.PollingResponse.class, LoginProto.PollingResponse.Builder.class);
+                com.game.server.basic.common.proto.login.LoginProto.PollingResponse.class, com.game.server.basic.common.proto.login.LoginProto.PollingResponse.Builder.class);
       }
 
-      // Construct using LoginProto.PollingResponse.newBuilder()
+      // Construct using com.game.server.basic.common.proto.login.LoginProto.PollingResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -757,17 +757,17 @@ public final class LoginProto {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return LoginProto.internal_static_PollingResponse_descriptor;
+        return com.game.server.basic.common.proto.login.LoginProto.internal_static_PollingResponse_descriptor;
       }
 
       @java.lang.Override
-      public LoginProto.PollingResponse getDefaultInstanceForType() {
-        return LoginProto.PollingResponse.getDefaultInstance();
+      public com.game.server.basic.common.proto.login.LoginProto.PollingResponse getDefaultInstanceForType() {
+        return com.game.server.basic.common.proto.login.LoginProto.PollingResponse.getDefaultInstance();
       }
 
       @java.lang.Override
-      public LoginProto.PollingResponse build() {
-        LoginProto.PollingResponse result = buildPartial();
+      public com.game.server.basic.common.proto.login.LoginProto.PollingResponse build() {
+        com.game.server.basic.common.proto.login.LoginProto.PollingResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -775,8 +775,8 @@ public final class LoginProto {
       }
 
       @java.lang.Override
-      public LoginProto.PollingResponse buildPartial() {
-        LoginProto.PollingResponse result = new LoginProto.PollingResponse(this);
+      public com.game.server.basic.common.proto.login.LoginProto.PollingResponse buildPartial() {
+        com.game.server.basic.common.proto.login.LoginProto.PollingResponse result = new com.game.server.basic.common.proto.login.LoginProto.PollingResponse(this);
         result.currSeconds_ = currSeconds_;
         onBuilt();
         return result;
@@ -816,16 +816,16 @@ public final class LoginProto {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof LoginProto.PollingResponse) {
-          return mergeFrom((LoginProto.PollingResponse)other);
+        if (other instanceof com.game.server.basic.common.proto.login.LoginProto.PollingResponse) {
+          return mergeFrom((com.game.server.basic.common.proto.login.LoginProto.PollingResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(LoginProto.PollingResponse other) {
-        if (other == LoginProto.PollingResponse.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.game.server.basic.common.proto.login.LoginProto.PollingResponse other) {
+        if (other == com.game.server.basic.common.proto.login.LoginProto.PollingResponse.getDefaultInstance()) return this;
         if (other.getCurrSeconds() != 0) {
           setCurrSeconds(other.getCurrSeconds());
         }
@@ -844,11 +844,11 @@ public final class LoginProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        LoginProto.PollingResponse parsedMessage = null;
+        com.game.server.basic.common.proto.login.LoginProto.PollingResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (LoginProto.PollingResponse) e.getUnfinishedMessage();
+          parsedMessage = (com.game.server.basic.common.proto.login.LoginProto.PollingResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -916,12 +916,12 @@ public final class LoginProto {
     }
 
     // @@protoc_insertion_point(class_scope:PollingResponse)
-    private static final LoginProto.PollingResponse DEFAULT_INSTANCE;
+    private static final com.game.server.basic.common.proto.login.LoginProto.PollingResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new LoginProto.PollingResponse();
+      DEFAULT_INSTANCE = new com.game.server.basic.common.proto.login.LoginProto.PollingResponse();
     }
 
-    public static LoginProto.PollingResponse getDefaultInstance() {
+    public static com.game.server.basic.common.proto.login.LoginProto.PollingResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -946,7 +946,7 @@ public final class LoginProto {
     }
 
     @java.lang.Override
-    public LoginProto.PollingResponse getDefaultInstanceForType() {
+    public com.game.server.basic.common.proto.login.LoginProto.PollingResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1107,15 +1107,15 @@ public final class LoginProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return LoginProto.internal_static_LoginRequest_descriptor;
+      return com.game.server.basic.common.proto.login.LoginProto.internal_static_LoginRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return LoginProto.internal_static_LoginRequest_fieldAccessorTable
+      return com.game.server.basic.common.proto.login.LoginProto.internal_static_LoginRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              LoginProto.LoginRequest.class, LoginProto.LoginRequest.Builder.class);
+              com.game.server.basic.common.proto.login.LoginProto.LoginRequest.class, com.game.server.basic.common.proto.login.LoginProto.LoginRequest.Builder.class);
     }
 
     public static final int OPENID_FIELD_NUMBER = 1;
@@ -1301,10 +1301,10 @@ public final class LoginProto {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof LoginProto.LoginRequest)) {
+      if (!(obj instanceof com.game.server.basic.common.proto.login.LoginProto.LoginRequest)) {
         return super.equals(obj);
       }
-      LoginProto.LoginRequest other = (LoginProto.LoginRequest) obj;
+      com.game.server.basic.common.proto.login.LoginProto.LoginRequest other = (com.game.server.basic.common.proto.login.LoginProto.LoginRequest) obj;
 
       if (!getOpenid()
           .equals(other.getOpenid())) return false;
@@ -1333,69 +1333,69 @@ public final class LoginProto {
       return hash;
     }
 
-    public static LoginProto.LoginRequest parseFrom(
+    public static com.game.server.basic.common.proto.login.LoginProto.LoginRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static LoginProto.LoginRequest parseFrom(
+    public static com.game.server.basic.common.proto.login.LoginProto.LoginRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static LoginProto.LoginRequest parseFrom(
+    public static com.game.server.basic.common.proto.login.LoginProto.LoginRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static LoginProto.LoginRequest parseFrom(
+    public static com.game.server.basic.common.proto.login.LoginProto.LoginRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static LoginProto.LoginRequest parseFrom(byte[] data)
+    public static com.game.server.basic.common.proto.login.LoginProto.LoginRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static LoginProto.LoginRequest parseFrom(
+    public static com.game.server.basic.common.proto.login.LoginProto.LoginRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static LoginProto.LoginRequest parseFrom(java.io.InputStream input)
+    public static com.game.server.basic.common.proto.login.LoginProto.LoginRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static LoginProto.LoginRequest parseFrom(
+    public static com.game.server.basic.common.proto.login.LoginProto.LoginRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static LoginProto.LoginRequest parseDelimitedFrom(java.io.InputStream input)
+    public static com.game.server.basic.common.proto.login.LoginProto.LoginRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static LoginProto.LoginRequest parseDelimitedFrom(
+    public static com.game.server.basic.common.proto.login.LoginProto.LoginRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static LoginProto.LoginRequest parseFrom(
+    public static com.game.server.basic.common.proto.login.LoginProto.LoginRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static LoginProto.LoginRequest parseFrom(
+    public static com.game.server.basic.common.proto.login.LoginProto.LoginRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1408,7 +1408,7 @@ public final class LoginProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(LoginProto.LoginRequest prototype) {
+    public static Builder newBuilder(com.game.server.basic.common.proto.login.LoginProto.LoginRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -1433,21 +1433,21 @@ public final class LoginProto {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:LoginRequest)
-        LoginProto.LoginRequestOrBuilder {
+        com.game.server.basic.common.proto.login.LoginProto.LoginRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return LoginProto.internal_static_LoginRequest_descriptor;
+        return com.game.server.basic.common.proto.login.LoginProto.internal_static_LoginRequest_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return LoginProto.internal_static_LoginRequest_fieldAccessorTable
+        return com.game.server.basic.common.proto.login.LoginProto.internal_static_LoginRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                LoginProto.LoginRequest.class, LoginProto.LoginRequest.Builder.class);
+                com.game.server.basic.common.proto.login.LoginProto.LoginRequest.class, com.game.server.basic.common.proto.login.LoginProto.LoginRequest.Builder.class);
       }
 
-      // Construct using LoginProto.LoginRequest.newBuilder()
+      // Construct using com.game.server.basic.common.proto.login.LoginProto.LoginRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -1477,17 +1477,17 @@ public final class LoginProto {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return LoginProto.internal_static_LoginRequest_descriptor;
+        return com.game.server.basic.common.proto.login.LoginProto.internal_static_LoginRequest_descriptor;
       }
 
       @java.lang.Override
-      public LoginProto.LoginRequest getDefaultInstanceForType() {
-        return LoginProto.LoginRequest.getDefaultInstance();
+      public com.game.server.basic.common.proto.login.LoginProto.LoginRequest getDefaultInstanceForType() {
+        return com.game.server.basic.common.proto.login.LoginProto.LoginRequest.getDefaultInstance();
       }
 
       @java.lang.Override
-      public LoginProto.LoginRequest build() {
-        LoginProto.LoginRequest result = buildPartial();
+      public com.game.server.basic.common.proto.login.LoginProto.LoginRequest build() {
+        com.game.server.basic.common.proto.login.LoginProto.LoginRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -1495,8 +1495,8 @@ public final class LoginProto {
       }
 
       @java.lang.Override
-      public LoginProto.LoginRequest buildPartial() {
-        LoginProto.LoginRequest result = new LoginProto.LoginRequest(this);
+      public com.game.server.basic.common.proto.login.LoginProto.LoginRequest buildPartial() {
+        com.game.server.basic.common.proto.login.LoginProto.LoginRequest result = new com.game.server.basic.common.proto.login.LoginProto.LoginRequest(this);
         result.openid_ = openid_;
         result.token_ = token_;
         result.secret_ = secret_;
@@ -1538,16 +1538,16 @@ public final class LoginProto {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof LoginProto.LoginRequest) {
-          return mergeFrom((LoginProto.LoginRequest)other);
+        if (other instanceof com.game.server.basic.common.proto.login.LoginProto.LoginRequest) {
+          return mergeFrom((com.game.server.basic.common.proto.login.LoginProto.LoginRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(LoginProto.LoginRequest other) {
-        if (other == LoginProto.LoginRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.game.server.basic.common.proto.login.LoginProto.LoginRequest other) {
+        if (other == com.game.server.basic.common.proto.login.LoginProto.LoginRequest.getDefaultInstance()) return this;
         if (!other.getOpenid().isEmpty()) {
           openid_ = other.openid_;
           onChanged();
@@ -1575,11 +1575,11 @@ public final class LoginProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        LoginProto.LoginRequest parsedMessage = null;
+        com.game.server.basic.common.proto.login.LoginProto.LoginRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (LoginProto.LoginRequest) e.getUnfinishedMessage();
+          parsedMessage = (com.game.server.basic.common.proto.login.LoginProto.LoginRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1893,12 +1893,12 @@ public final class LoginProto {
     }
 
     // @@protoc_insertion_point(class_scope:LoginRequest)
-    private static final LoginProto.LoginRequest DEFAULT_INSTANCE;
+    private static final com.game.server.basic.common.proto.login.LoginProto.LoginRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new LoginProto.LoginRequest();
+      DEFAULT_INSTANCE = new com.game.server.basic.common.proto.login.LoginProto.LoginRequest();
     }
 
-    public static LoginProto.LoginRequest getDefaultInstance() {
+    public static com.game.server.basic.common.proto.login.LoginProto.LoginRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1923,7 +1923,7 @@ public final class LoginProto {
     }
 
     @java.lang.Override
-    public LoginProto.LoginRequest getDefaultInstanceForType() {
+    public com.game.server.basic.common.proto.login.LoginProto.LoginRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -2033,15 +2033,15 @@ public final class LoginProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return LoginProto.internal_static_LoginResponse_descriptor;
+      return com.game.server.basic.common.proto.login.LoginProto.internal_static_LoginResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return LoginProto.internal_static_LoginResponse_fieldAccessorTable
+      return com.game.server.basic.common.proto.login.LoginProto.internal_static_LoginResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              LoginProto.LoginResponse.class, LoginProto.LoginResponse.Builder.class);
+              com.game.server.basic.common.proto.login.LoginProto.LoginResponse.class, com.game.server.basic.common.proto.login.LoginProto.LoginResponse.Builder.class);
     }
 
     public static final int UID_FIELD_NUMBER = 1;
@@ -2119,10 +2119,10 @@ public final class LoginProto {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof LoginProto.LoginResponse)) {
+      if (!(obj instanceof com.game.server.basic.common.proto.login.LoginProto.LoginResponse)) {
         return super.equals(obj);
       }
-      LoginProto.LoginResponse other = (LoginProto.LoginResponse) obj;
+      com.game.server.basic.common.proto.login.LoginProto.LoginResponse other = (com.game.server.basic.common.proto.login.LoginProto.LoginResponse) obj;
 
       if (getUid()
           != other.getUid()) return false;
@@ -2149,69 +2149,69 @@ public final class LoginProto {
       return hash;
     }
 
-    public static LoginProto.LoginResponse parseFrom(
+    public static com.game.server.basic.common.proto.login.LoginProto.LoginResponse parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static LoginProto.LoginResponse parseFrom(
+    public static com.game.server.basic.common.proto.login.LoginProto.LoginResponse parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static LoginProto.LoginResponse parseFrom(
+    public static com.game.server.basic.common.proto.login.LoginProto.LoginResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static LoginProto.LoginResponse parseFrom(
+    public static com.game.server.basic.common.proto.login.LoginProto.LoginResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static LoginProto.LoginResponse parseFrom(byte[] data)
+    public static com.game.server.basic.common.proto.login.LoginProto.LoginResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static LoginProto.LoginResponse parseFrom(
+    public static com.game.server.basic.common.proto.login.LoginProto.LoginResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static LoginProto.LoginResponse parseFrom(java.io.InputStream input)
+    public static com.game.server.basic.common.proto.login.LoginProto.LoginResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static LoginProto.LoginResponse parseFrom(
+    public static com.game.server.basic.common.proto.login.LoginProto.LoginResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static LoginProto.LoginResponse parseDelimitedFrom(java.io.InputStream input)
+    public static com.game.server.basic.common.proto.login.LoginProto.LoginResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static LoginProto.LoginResponse parseDelimitedFrom(
+    public static com.game.server.basic.common.proto.login.LoginProto.LoginResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static LoginProto.LoginResponse parseFrom(
+    public static com.game.server.basic.common.proto.login.LoginProto.LoginResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static LoginProto.LoginResponse parseFrom(
+    public static com.game.server.basic.common.proto.login.LoginProto.LoginResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2224,7 +2224,7 @@ public final class LoginProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(LoginProto.LoginResponse prototype) {
+    public static Builder newBuilder(com.game.server.basic.common.proto.login.LoginProto.LoginResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -2249,21 +2249,21 @@ public final class LoginProto {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:LoginResponse)
-        LoginProto.LoginResponseOrBuilder {
+        com.game.server.basic.common.proto.login.LoginProto.LoginResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return LoginProto.internal_static_LoginResponse_descriptor;
+        return com.game.server.basic.common.proto.login.LoginProto.internal_static_LoginResponse_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return LoginProto.internal_static_LoginResponse_fieldAccessorTable
+        return com.game.server.basic.common.proto.login.LoginProto.internal_static_LoginResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                LoginProto.LoginResponse.class, LoginProto.LoginResponse.Builder.class);
+                com.game.server.basic.common.proto.login.LoginProto.LoginResponse.class, com.game.server.basic.common.proto.login.LoginProto.LoginResponse.Builder.class);
       }
 
-      // Construct using LoginProto.LoginResponse.newBuilder()
+      // Construct using com.game.server.basic.common.proto.login.LoginProto.LoginResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -2291,17 +2291,17 @@ public final class LoginProto {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return LoginProto.internal_static_LoginResponse_descriptor;
+        return com.game.server.basic.common.proto.login.LoginProto.internal_static_LoginResponse_descriptor;
       }
 
       @java.lang.Override
-      public LoginProto.LoginResponse getDefaultInstanceForType() {
-        return LoginProto.LoginResponse.getDefaultInstance();
+      public com.game.server.basic.common.proto.login.LoginProto.LoginResponse getDefaultInstanceForType() {
+        return com.game.server.basic.common.proto.login.LoginProto.LoginResponse.getDefaultInstance();
       }
 
       @java.lang.Override
-      public LoginProto.LoginResponse build() {
-        LoginProto.LoginResponse result = buildPartial();
+      public com.game.server.basic.common.proto.login.LoginProto.LoginResponse build() {
+        com.game.server.basic.common.proto.login.LoginProto.LoginResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -2309,8 +2309,8 @@ public final class LoginProto {
       }
 
       @java.lang.Override
-      public LoginProto.LoginResponse buildPartial() {
-        LoginProto.LoginResponse result = new LoginProto.LoginResponse(this);
+      public com.game.server.basic.common.proto.login.LoginProto.LoginResponse buildPartial() {
+        com.game.server.basic.common.proto.login.LoginProto.LoginResponse result = new com.game.server.basic.common.proto.login.LoginProto.LoginResponse(this);
         result.uid_ = uid_;
         result.needRegister_ = needRegister_;
         onBuilt();
@@ -2351,16 +2351,16 @@ public final class LoginProto {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof LoginProto.LoginResponse) {
-          return mergeFrom((LoginProto.LoginResponse)other);
+        if (other instanceof com.game.server.basic.common.proto.login.LoginProto.LoginResponse) {
+          return mergeFrom((com.game.server.basic.common.proto.login.LoginProto.LoginResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(LoginProto.LoginResponse other) {
-        if (other == LoginProto.LoginResponse.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.game.server.basic.common.proto.login.LoginProto.LoginResponse other) {
+        if (other == com.game.server.basic.common.proto.login.LoginProto.LoginResponse.getDefaultInstance()) return this;
         if (other.getUid() != 0L) {
           setUid(other.getUid());
         }
@@ -2382,11 +2382,11 @@ public final class LoginProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        LoginProto.LoginResponse parsedMessage = null;
+        com.game.server.basic.common.proto.login.LoginProto.LoginResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (LoginProto.LoginResponse) e.getUnfinishedMessage();
+          parsedMessage = (com.game.server.basic.common.proto.login.LoginProto.LoginResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -2496,12 +2496,12 @@ public final class LoginProto {
     }
 
     // @@protoc_insertion_point(class_scope:LoginResponse)
-    private static final LoginProto.LoginResponse DEFAULT_INSTANCE;
+    private static final com.game.server.basic.common.proto.login.LoginProto.LoginResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new LoginProto.LoginResponse();
+      DEFAULT_INSTANCE = new com.game.server.basic.common.proto.login.LoginProto.LoginResponse();
     }
 
-    public static LoginProto.LoginResponse getDefaultInstance() {
+    public static com.game.server.basic.common.proto.login.LoginProto.LoginResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -2526,7 +2526,7 @@ public final class LoginProto {
     }
 
     @java.lang.Override
-    public LoginProto.LoginResponse getDefaultInstanceForType() {
+    public com.game.server.basic.common.proto.login.LoginProto.LoginResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -2565,9 +2565,9 @@ public final class LoginProto {
       "ngResponse\022\023\n\013currSeconds\030\001 \001(\005\"=\n\014Login" +
       "Request\022\016\n\006openid\030\001 \001(\t\022\r\n\005token\030\002 \001(\t\022\016" +
       "\n\006secret\030\003 \001(\t\"2\n\rLoginResponse\022\013\n\003uid\030\001" +
-      " \001(\003\022\024\n\014needRegister\030\002 \001(\010B8\n*com.game.t" +
-      "emplate.basic.common.proto.loginB\nLoginP" +
-      "rotob\006proto3"
+      " \001(\003\022\024\n\014needRegister\030\002 \001(\010B6\n(com.game.s" +
+      "erver.basic.common.proto.loginB\nLoginPro" +
+      "tob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -2,7 +2,6 @@
 <cache_entity_list key="playerId"
 				   subKey="itemId"
 				   name="ItemDo"
-				   defaultDb="true"
 				   packageName="com.game.server.basic.item"
 				   xmlns="https://github.com/qiunet/DuoDuo/CacheEntityList"
 				   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"

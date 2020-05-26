@@ -1,4 +1,4 @@
-package com.game.server.server.common.monitor;
+package com.game.server.common.monitor;
 
 import com.game.server.basic.common.logger.GameLogger;
 import org.qiunet.flash.handler.handler.mapping.RequestHandlerMapping;

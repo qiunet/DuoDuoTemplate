@@ -9,7 +9,7 @@ import org.qiunet.data.core.support.db.Table;
 * 对象为自动创建 不要修改
 */
 @Alias("ServerInfoDo")
-@Table(name = "server_info", comment="存储服务器相关的信息.比如开服时间等", defaultDb = true)
+@Table(name = "server_info", comment="存储服务器相关的信息.比如开服时间等")
 public class ServerInfoDo extends CacheEntity<String, ServerInfoBo> {
 	@Column(comment = "类型", isKey = true)
 	private String type;

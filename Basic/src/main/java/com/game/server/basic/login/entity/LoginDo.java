@@ -9,7 +9,7 @@ import org.qiunet.data.core.support.db.Table;
 * 对象为自动创建 不要修改
 */
 @Alias("LoginDo")
-@Table(name = "login", defaultDb = true)
+@Table(name = "login")
 public class LoginDo extends CacheEntity<String, LoginBo> {
 	@Column(comment = "玩家openId account", isKey = true)
 	private String openId;

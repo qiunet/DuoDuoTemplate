@@ -9,7 +9,7 @@ import org.qiunet.data.core.support.db.Table;
 * 对象为自动创建 不要修改
 */
 @Alias("PlayerDo")
-@Table(name = "player", defaultDb = true)
+@Table(name = "player")
 public class PlayerDo extends CacheEntity<Long, PlayerBo> {
 	@Column(comment = "玩家id", isKey = true)
 	private long playerId;
