@@ -1,6 +1,6 @@
 package com.game.server.basic.common.monitor;
 
-import com.game.server.basic.backpack.listener.GainRewardEventData;
+import com.game.server.basic.bag.listener.GainRewardEventData;
 import com.game.server.basic.common.enums.OperationType;
 import com.game.server.basic.common.logger.GameLogger;
 import org.qiunet.utils.monitor.DefaultMonitor;
