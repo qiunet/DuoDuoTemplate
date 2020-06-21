@@ -1,4 +1,4 @@
-package com.game.server.basic.backpack.listener;
+package com.game.server.basic.bag.listener;
 
 import com.game.server.basic.common.actor.PlayerActor;
 import com.game.server.basic.common.data.RewardData;

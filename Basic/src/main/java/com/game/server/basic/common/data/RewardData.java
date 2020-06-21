@@ -1,6 +1,6 @@
 package com.game.server.basic.common.data;
 
-import com.game.server.basic.backpack.listener.GainRewardEventData;
+import com.game.server.basic.bag.listener.GainRewardEventData;
 import com.game.server.basic.common.actor.PlayerActor;
 import com.game.server.basic.common.cfg.resource.IResourceCfg;
 import com.game.server.basic.common.cfg.resource.ResourceManager;
