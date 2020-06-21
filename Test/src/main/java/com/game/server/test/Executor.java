@@ -18,7 +18,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @author qiunet
  * 2020-04-25 17:19
  **/
-public class Excutor {
+public class Executor {
 	public static void main(String[] args) throws Exception {
 		ClassScanner.getInstance(ScannerType.TESTER).scanner("com.game.server");
 		RobotExecutor.custom(new RobotFactory())
