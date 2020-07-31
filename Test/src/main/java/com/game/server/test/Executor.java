@@ -3,7 +3,6 @@ package com.game.server.test;
 import com.game.server.test.handler.login.TestLogin;
 import com.game.server.test.robot.Robot;
 import org.qiunet.test.executor.RobotExecutor;
-import org.qiunet.test.executor.params.ExecutorParams;
 import org.qiunet.test.robot.IRobot;
 import org.qiunet.test.robot.init.DefaultRobotInfo;
 import org.qiunet.test.robot.init.IRobotFactory;
@@ -19,16 +18,12 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @author qiunet
  * 2020-04-25 17:19
  **/
-public class Excutor {
+public class Executor {
 	public static void main(String[] args) throws Exception {
 		ClassScanner.getInstance(ScannerType.TESTER).scanner("com.game.server");
-		new RobotExecutor(
-			ExecutorParams.custom()
-				.setRobotFactory(new RobotFactory())
-				.setInitializer(() -> {})
-				.addTestCase(TestLogin.class)
-				.build()
-		).testing();
+		RobotExecutor.custom(new RobotFactory())
+		.addTestCase(TestLogin.class)
+		.testing();
 	}
 
 	/***
