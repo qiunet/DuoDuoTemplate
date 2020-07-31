@@ -42,7 +42,7 @@
             <dependency>
                 <groupId>org.qiunet</groupId>
                 <artifactId>duoduo-all</artifactId>
-                <version>6.0.0</version>
+                <version>6.0.1</version>
             </dependency>
 			<dependency>
                 <groupId>ch.qos.logback</groupId>
