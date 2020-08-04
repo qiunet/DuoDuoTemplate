@@ -30,7 +30,7 @@
 				<exclude>server.properties</exclude>
 				<exclude>logback-test.xml</exclude>
 			</excludes>
-			<outputDirectory>resources</outputDirectory>
+			<outputDirectory>conf</outputDirectory>
 		</fileSet>
 		<fileSet>
 			<directory>${basedir}/shell/</directory>
