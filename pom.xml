@@ -7,7 +7,6 @@
     <artifactId>DuoDuoTemplate</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>com.game.server.basic.test.creator.Creator</module>
 		<module>Basic</module>
 		<module>Test</module>
 		<module>BackSupport</module>

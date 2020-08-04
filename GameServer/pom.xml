@@ -12,6 +12,52 @@
 	<artifactId>GameServer</artifactId>
 	<version>1.0-SNAPSHOT</version>
 
+	<build>
+		<finalName>GameServer</finalName>
+		<plugins>
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+					<executions>
+						<execution>
+						<id>copy-xmls</id>
+						<phase>process-sources</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${basedir}/target/classes</outputDirectory>
+							<resources>
+								<resource>
+									<directory>${basedir}/../Basic/src/main/resources</directory>
+									<includes>
+										<include>config/**/*.xd</include>
+									</includes>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>3.0.0</version>
+				<executions>
+					<execution>
+						<id>packageToZip</id>
+						<goals><goal>single</goal></goals>
+						<phase>package</phase>
+					</execution>
+				</executions>
+				<configuration>
+					<appendAssemblyId>false</appendAssemblyId>
+					<descriptors>
+						<descriptor>asserbly/assembly.xml</descriptor>
+					</descriptors>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	
 	<dependencies>
 		<dependency>
 			<groupId>com.game.template</groupId>

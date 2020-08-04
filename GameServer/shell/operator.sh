@@ -5,23 +5,33 @@
 #
 #---------------BODY-----------------
 cd `dirname $0`
+GAME_HOME=`pwd`
+GAME_LOGS=${GAME_HOME}/logs
+if [[ ! -d ${GAME_LOGS} ]];then mkdir -p ${GAME_LOGS} ; fi
 
-JAVA_OPTS="-server -Xmx512m -Xms512m -Xmn300m -Xss256k -XX:MaxDirectMemorySize=1g -XX:+UseParallelGC -XX:+UseParallelOldGC -XX:-OmitStackTraceInFastThrow -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=logs/"
-# 服务监听端口
-port=29001
-# 钩子服务监听端口
-hookPort=1314
+JAVA_OPTS="-server\
+ -Xmx512m -Xms512m\
+ -Xmn300m -Xss256k\
+ -XX:MaxDirectMemorySize=1g\
+ -XX:+UseParallelGC\
+ -XX:+UseParallelOldGC\
+ -XX:-OmitStackTraceInFastThrow\
+ -XX:+HeapDumpOnOutOfMemoryError\
+ -XX:HeapDumpPath=dumps/"
+
+CLASSPATH=.:"${GAME_HOME}/lib/*
+CLASSPATH=${CLASSPATH}:${GAME_HOME}/resources
+
+BOOTSTRAP_CLASS="com.game.server.GameBootstrap"
+
 
 start(){
-        if [ ! -d 'logs' ];then mkdir logs ; fi
-        cd classes
-        nohup java ${JAVA_OPTS}  -classpath .:../lib/* com.game.server.server.GameBootstrap --port=${port} --hookPort=${hookPort} start 2>1 &
+        nohup java ${JAVA_OPTS}  -classpath ${CLASSPATH} ${BOOTSTRAP_CLASS} start 2>1 &
         cd -
 }
 
 other(){
-        cd classes
-        java -classpath .:../lib/* com.game.server.server.GameBootstrap --port=${port} --hookPort=${hookPort} "$1"
+        java -classpath ${CLASSPATH} ${BOOTSTRAP_CLASS} "$1"
         cd -
         sleep 3
 }

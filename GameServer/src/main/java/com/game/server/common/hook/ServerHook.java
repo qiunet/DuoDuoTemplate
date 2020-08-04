@@ -1,6 +1,7 @@
 package com.game.server.common.hook;
 
 import com.game.server.basic.common.logger.GameLogger;
+import com.game.server.common.server.ServerConfig;
 import org.qiunet.cfg.manager.CfgManagers;
 import org.qiunet.flash.handler.netty.server.hook.Hook;
 import org.qiunet.utils.args.ArgsMapping;
@@ -34,7 +35,7 @@ public class ServerHook implements Hook {
 
 	@Override
 	public int getHookPort() {
-		return mapping.getInt("hookPort", 1314);
+		return ServerConfig.getInstance().getHookPort();
 	}
 
 	@Override

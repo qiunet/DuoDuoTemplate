@@ -1,0 +1,36 @@
+<assembly xmlns="http://maven.apache.org/ASSEMBLY/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		  xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.0.0 http://maven.apache.org/xsd/assembly-2.0.0.xsd">
+	<id>1.0.0.release</id>
+	<formats>
+		<format>zip</format>
+	</formats>
+	<includeBaseDirectory>false</includeBaseDirectory>
+	<dependencySets>
+		<dependencySet>
+			<useProjectArtifact>true</useProjectArtifact>
+			<outputDirectory>lib</outputDirectory>
+			<!--指定只打包多多的jar, 如果注释,则将所有lib打包-->
+<!--			<includes>-->
+<!--				<include>org.qiunet:duoduo-all</include>-->
+<!--				<include>com.game.template:Basic</include>-->
+<!--				<include>com.game.template:GameServer</include>-->
+<!--			</includes>-->
+		</dependencySet>
+	</dependencySets>
+	<fileSets>
+		<fileSet>
+			<directory>${project.build.outputDirectory}</directory>
+			<includes>
+				<include>config/**</include>
+				<include>*.properties</include>
+				<include>*.xml</include>
+			</includes>
+			<outputDirectory>resources</outputDirectory>
+		</fileSet>
+		<fileSet>
+			<directory>${basedir}/shell/</directory>
+			<outputDirectory>\</outputDirectory>
+			<fileMode>0755</fileMode>
+		</fileSet>
+	</fileSets>
+</assembly>
