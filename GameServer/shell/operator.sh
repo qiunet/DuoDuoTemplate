@@ -29,8 +29,7 @@ JAVA_OPTS="-server\
  -XX:+HeapDumpOnOutOfMemoryError\
  -XX:HeapDumpPath=dumps/"
 
-CLASSPATH="${GAME_HOME}"
-CLASSPATH=${CLASSPATH}:"${GAME_HOME}/lib/*"
+CLASSPATH="${GAME_HOME}/lib/*"
 CLASSPATH=${CLASSPATH}:"${GAME_HOME}/conf"
 
 BOOTSTRAP_CLASS="com.game.server.GameBootstrap"
