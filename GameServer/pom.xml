@@ -17,13 +17,8 @@
 		<plugins>
 			<plugin>
 				<artifactId>maven-resources-plugin</artifactId>
-					<executions>
-						<execution>
-						<id>copy-xmls</id>
-						<phase>process-sources</phase>
-						<goals>
-							<goal>copy-resources</goal>
-						</goals>
+				<executions>
+					<execution>
 						<configuration>
 							<outputDirectory>${basedir}/target/classes</outputDirectory>
 							<resources>
