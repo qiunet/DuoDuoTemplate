@@ -3,6 +3,7 @@ package com.game.server.basic.common.log;
 import com.game.server.basic.common.actor.PlayerActor;
 import org.qiunet.event.log.log.BaseLogEvent;
 import org.qiunet.event.log.log.LogMessageBuilder;
+import org.qiunet.utils.date.DateUtil;
 
 /***
  *
@@ -20,7 +21,7 @@ public abstract class BasePlayerLogEvent extends BaseLogEvent<LogType> {
 	protected LogMessageBuilder buildMessage() {
 		LogMessageBuilder sj = new LogMessageBuilder("|");
 
-		sj.add(createTime)
+		sj.add(DateUtil.dateToString(createTime))
 		.add(player.getOpenId())
 		.add(player.getPlayerId())
 		.add(player.getPlayerBo().getDo().getName())
