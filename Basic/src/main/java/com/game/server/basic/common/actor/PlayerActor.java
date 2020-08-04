@@ -72,7 +72,7 @@ public class PlayerActor extends AbstractPlayerActor<GameSession, PlayerActor> {
 
 	@Override
 	public String getOpenId() {
-		return null;
+		return playerBo.getDo().getOpenId();
 	}
 
 	public <T extends CommonDataObj> T getCommonDataObj(CommonDataType type) {
