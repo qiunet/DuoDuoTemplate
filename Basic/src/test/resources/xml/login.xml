@@ -7,7 +7,7 @@
 			  xsi:schemaLocation="https://github.com/qiunet/DuoDuo/CacheEntity
 			   https://raw.githubusercontent.com/qiunet/DuoDuo/master/ProjectInit/src/main/resources/xsd/CacheEntity.xsd"
 >
-	<field name="openId" type="String" comment="玩家openId account" />
+	<field name="openId" type="String" jdbcType="VARCHAR190" comment="玩家openId account" />
 	<field name="playerId" type="long" comment="玩家id"/>
 	<field name="token" type="String" comment="平台token" />
 

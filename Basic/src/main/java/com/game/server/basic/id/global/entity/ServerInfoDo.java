@@ -2,6 +2,7 @@ package com.game.server.basic.id.global.entity;
 
 import org.apache.ibatis.type.Alias;
 import org.qiunet.data.cache.entity.CacheEntity;
+import org.qiunet.data.core.enums.ColumnJdbcType;
 import org.qiunet.data.core.support.db.Column;
 import org.qiunet.data.core.support.db.Table;
 /**
@@ -11,7 +12,7 @@ import org.qiunet.data.core.support.db.Table;
 @Alias("ServerInfoDo")
 @Table(name = "server_info", comment="存储服务器相关的信息.比如开服时间等")
 public class ServerInfoDo extends CacheEntity<String, ServerInfoBo> {
-	@Column(comment = "类型", isKey = true)
+	@Column(comment = "类型", jdbcType = ColumnJdbcType.VARCHAR190, isKey = true)
 	private String type;
 	@Column(comment = "值")
 	private String data;

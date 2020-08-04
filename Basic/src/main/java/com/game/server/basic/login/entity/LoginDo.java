@@ -2,6 +2,7 @@ package com.game.server.basic.login.entity;
 
 import org.apache.ibatis.type.Alias;
 import org.qiunet.data.cache.entity.CacheEntity;
+import org.qiunet.data.core.enums.ColumnJdbcType;
 import org.qiunet.data.core.support.db.Column;
 import org.qiunet.data.core.support.db.Table;
 /**
@@ -11,7 +12,7 @@ import org.qiunet.data.core.support.db.Table;
 @Alias("LoginDo")
 @Table(name = "login")
 public class LoginDo extends CacheEntity<String, LoginBo> {
-	@Column(comment = "玩家openId account", isKey = true)
+	@Column(comment = "玩家openId account", jdbcType = ColumnJdbcType.VARCHAR190, isKey = true)
 	private String openId;
 	@Column(comment = "玩家id")
 	private long playerId;

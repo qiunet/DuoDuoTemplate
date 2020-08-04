@@ -8,7 +8,7 @@
 			  xsi:schemaLocation="https://github.com/qiunet/DuoDuo/CacheEntity
 			   https://raw.githubusercontent.com/qiunet/DuoDuo/master/ProjectInit/src/main/resources/xsd/CacheEntity.xsd"
 >
-	<field name="type" type="String" comment="类型" />
+	<field name="type" type="String" jdbcType="VARCHAR190" comment="类型" />
 	<field name="data" type="String" comment="值" />
 
 	<constructor>

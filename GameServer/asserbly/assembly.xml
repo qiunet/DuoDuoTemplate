@@ -22,12 +22,13 @@
 			<directory>${project.build.outputDirectory}</directory>
 			<includes>
 				<include>config/**</include>
-				<include>*.properties</include>
 				<include>*.xml</include>
+				<include>*.properties</include>
 			</includes>
 			<excludes>
-				<exclude>logback-test.xml</exclude>
 				<exclude>db.properties</exclude>
+				<exclude>server.properties</exclude>
+				<exclude>logback-test.xml</exclude>
 			</excludes>
 			<outputDirectory>resources</outputDirectory>
 		</fileSet>
