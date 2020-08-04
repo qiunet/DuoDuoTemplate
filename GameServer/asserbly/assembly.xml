@@ -10,11 +10,11 @@
 			<useProjectArtifact>true</useProjectArtifact>
 			<outputDirectory>lib</outputDirectory>
 			<!--指定只打包多多的jar, 如果注释,则将所有lib打包-->
-<!--			<includes>-->
-<!--				<include>org.qiunet:duoduo-all</include>-->
-<!--				<include>com.game.template:Basic</include>-->
-<!--				<include>com.game.template:GameServer</include>-->
-<!--			</includes>-->
+			<includes>
+				<include>org.qiunet:duoduo-all</include>
+				<include>com.game.template:Basic</include>
+				<include>com.game.template:GameServer</include>
+			</includes>
 		</dependencySet>
 	</dependencySets>
 	<fileSets>
@@ -25,11 +25,15 @@
 				<include>*.properties</include>
 				<include>*.xml</include>
 			</includes>
+			<excludes>
+				<exclude>logback-test.xml</exclude>
+				<exclude>db.properties</exclude>
+			</excludes>
 			<outputDirectory>resources</outputDirectory>
 		</fileSet>
 		<fileSet>
 			<directory>${basedir}/shell/</directory>
-			<outputDirectory>\</outputDirectory>
+			<outputDirectory>bin</outputDirectory>
 			<fileMode>0755</fileMode>
 		</fileSet>
 	</fileSets>

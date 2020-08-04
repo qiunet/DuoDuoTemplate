@@ -5,9 +5,17 @@
 #
 #---------------BODY-----------------
 cd `dirname $0`
-GAME_HOME=`pwd`
+GAME_HOME=$(dirname $(pwd))
+# 玩家行为日志目录
 GAME_LOGS=${GAME_HOME}/logs
+# 系统打印的日志
+GAME_SYS_LOGS=${GAME_HOME}/sysLogs
+# 热更新目录
+GAME_SWAP=${GAME_HOME}/classes
+
 if [[ ! -d ${GAME_LOGS} ]];then mkdir -p ${GAME_LOGS} ; fi
+if [[ ! -d ${GAME_SWAP} ]];then mkdir -p ${GAME_SWAP} ; fi
+if [[ ! -d ${GAME_SYS_LOGS} ]];then mkdir -p ${GAME_SYS_LOGS} ; fi
 
 JAVA_OPTS="-server\
  -Xmx512m -Xms512m\
@@ -15,18 +23,21 @@ JAVA_OPTS="-server\
  -XX:MaxDirectMemorySize=1g\
  -XX:+UseParallelGC\
  -XX:+UseParallelOldGC\
+ -Dlog.dir=${GAME_LOGS}\
+ -DsysLogs.dir=${GAME_SYS_LOGS}\
  -XX:-OmitStackTraceInFastThrow\
  -XX:+HeapDumpOnOutOfMemoryError\
  -XX:HeapDumpPath=dumps/"
 
-CLASSPATH=.:"${GAME_HOME}/lib/*
-CLASSPATH=${CLASSPATH}:${GAME_HOME}/resources
+CLASSPATH="${GAME_HOME}"
+CLASSPATH=${CLASSPATH}:"${GAME_HOME}/lib/*"
+CLASSPATH=${CLASSPATH}:"${GAME_HOME}/resources"
 
 BOOTSTRAP_CLASS="com.game.server.GameBootstrap"
 
 
 start(){
-        nohup java ${JAVA_OPTS}  -classpath ${CLASSPATH} ${BOOTSTRAP_CLASS} start 2>1 &
+        java ${JAVA_OPTS}  -classpath ${CLASSPATH} ${BOOTSTRAP_CLASS} start &
         cd -
 }
 

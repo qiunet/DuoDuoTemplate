@@ -9,7 +9,6 @@
     <modules>
 		<module>Basic</module>
 		<module>Test</module>
-		<module>BackSupport</module>
 		<module>GameServer</module>
 	</modules>
     <packaging>pom</packaging>

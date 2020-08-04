@@ -9,6 +9,7 @@ import com.game.server.basic.login.entity.LoginBo;
 import com.game.server.basic.player.PlayerService;
 import com.game.server.basic.player.entity.PlayerBo;
 import com.game.server.common.handler.BaseHandler;
+import com.game.server.handler.login.log.LoginLogEvent;
 import org.qiunet.cfg.annotation.CfgWrapperAutoWired;
 import org.qiunet.cfg.wrapper.ISimpleMapCfgWrapper;
 import org.qiunet.flash.handler.common.annotation.RequestHandler;
@@ -37,6 +38,8 @@ public class LoginHandler extends BaseHandler<LoginProto.LoginRequest> {
 		}
 		PlayerBo playerBo = PlayerService.instance.getPlayerBo(loginBo.getDo().getPlayerId());
 		playerActor.auth(playerBo);
+
+		new LoginLogEvent(playerActor).send();
 
 		playerActor.sendPacket(ProtocolId.Login.RESP_LOGIN, LoginProto.LoginResponse.newBuilder()
 			.setUid(loginBo.getDo().getPlayerId())
