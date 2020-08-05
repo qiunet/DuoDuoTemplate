@@ -24,6 +24,7 @@ JAVA_OPTS="-server\
  -XX:+UseParallelGC\
  -XX:+UseParallelOldGC\
  -Dlog.dir=${GAME_LOGS}\
+ --HotSwapDir=${GAME_SWAP}\
  -DsysLogs.dir=${GAME_SYS_LOGS}\
  -XX:-OmitStackTraceInFastThrow\
  -XX:+HeapDumpOnOutOfMemoryError\
@@ -55,6 +56,9 @@ case "$1" in
                 other "$1"
         ;;
         reload)
+                other "$1"
+        ;;
+        hotswap)
                 other "$1"
         ;;
         *)

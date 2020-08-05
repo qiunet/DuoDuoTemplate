@@ -4,7 +4,6 @@ import com.game.server.basic.common.logger.GameLogger;
 import com.game.server.common.server.ServerConfig;
 import org.qiunet.cfg.manager.CfgManagers;
 import org.qiunet.flash.handler.netty.server.hook.Hook;
-import org.qiunet.utils.args.ArgsMapping;
 import org.qiunet.utils.listener.data.ServerShutdownEventData;
 
 /***
@@ -13,10 +12,6 @@ import org.qiunet.utils.listener.data.ServerShutdownEventData;
  * 2020-04-25 15:43
  **/
 public class ServerHook implements Hook {
-	private ArgsMapping mapping;
-	public ServerHook(ArgsMapping mapping) {
-		this.mapping = mapping;
-	}
 
 
 	@Override
@@ -45,12 +40,11 @@ public class ServerHook implements Hook {
 
 	@Override
 	public void shutdown() {
-
+		// 触发停服监听
+		ServerShutdownEventData.fireShutdownEventHandler();
 	}
 
 	@Override
 	public void custom(String msg) {
-		// 触发停服监听
-		ServerShutdownEventData.fireShutdownEventHandler();
 	}
 }

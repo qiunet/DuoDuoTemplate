@@ -6,7 +6,10 @@ import com.game.server.common.server.ServerConfig;
 import org.qiunet.flash.handler.netty.server.BootstrapServer;
 import org.qiunet.flash.handler.netty.server.param.HttpBootstrapParams;
 import org.qiunet.utils.args.ArgsMapping;
+import org.qiunet.utils.classLoader.ClassHotSwap;
 import org.qiunet.utils.classScanner.ClassScanner;
+
+import java.nio.file.Paths;
 
 /***
  *
@@ -17,8 +20,7 @@ public class GameBootstrap {
 
 	public static void main(String[] args) throws Exception {
 		ArgsMapping argsMapping  = new ArgsMapping(args);
-
-		ServerHook hook = new ServerHook(argsMapping);
+		ServerHook hook = new ServerHook();
 
 		String cmd = "start";
 		if (args.length >= 1) cmd = args[args.length - 1];
@@ -36,6 +38,9 @@ public class GameBootstrap {
 				break;
 			case "stop":
 				BootstrapServer.sendHookMsg(hook.getHookPort(), hook.getShutdownMsg());
+				break;
+			case "hotSwap":
+				ClassHotSwap.hotSwap(Paths.get(argsMapping.getString("HotSwapDir")));
 				break;
 			default:
 				BootstrapServer.sendHookMsg(hook.getHookPort(), cmd);
