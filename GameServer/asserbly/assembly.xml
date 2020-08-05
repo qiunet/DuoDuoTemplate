@@ -16,6 +16,21 @@
 				<include>com.game.template:GameServer</include>
 			</includes>
 		</dependencySet>
+		<!-- 热更的类在这里指定. 不需要热更. 屏蔽该dependencySet -->
+<!--		<dependencySet>-->
+<!--			<useProjectArtifact>true</useProjectArtifact>-->
+<!--			<outputDirectory>classes</outputDirectory>-->
+<!--			<includes>-->
+<!--				<include>com.game.template:Basic</include>-->
+<!--				<include>com.game.template:GameServer</include>-->
+<!--			</includes>-->
+<!--			<unpack>true</unpack>-->
+<!--			<unpackOptions>-->
+<!--				<includes>-->
+<!--					<include>com/game/server/GameBootstrap.class</include>-->
+<!--				</includes>-->
+<!--			</unpackOptions>-->
+<!--		</dependencySet>-->
 	</dependencySets>
 	<fileSets>
 		<fileSet>
