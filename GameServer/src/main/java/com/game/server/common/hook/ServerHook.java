@@ -4,7 +4,10 @@ import com.game.server.basic.common.logger.GameLogger;
 import com.game.server.common.server.ServerConfig;
 import org.qiunet.cfg.manager.CfgManagers;
 import org.qiunet.flash.handler.netty.server.hook.Hook;
+import org.qiunet.utils.classLoader.ClassHotSwap;
 import org.qiunet.utils.listener.data.ServerShutdownEventData;
+
+import java.nio.file.Paths;
 
 /***
  *
@@ -46,5 +49,10 @@ public class ServerHook implements Hook {
 
 	@Override
 	public void custom(String msg) {
+		switch (msg) {
+			case "hotSwap":
+				ClassHotSwap.hotSwap(Paths.get(System.getProperty("hotSwap.dir")));
+				break;
+		}
 	}
 }
