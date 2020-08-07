@@ -12,6 +12,7 @@
 			<!--指定只打包多多的jar, 如果注释,则将所有lib打包-->
 			<includes>
 				<include>org.qiunet:duoduo-all</include>
+				<include>org.qiunet:JavaAgent</include>
 				<include>com.game.template:Basic</include>
 				<include>com.game.template:GameServer</include>
 			</includes>
