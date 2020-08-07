@@ -24,13 +24,15 @@ JAVA_OPTS="-server\
  -XX:+UseParallelGC\
  -XX:+UseParallelOldGC\
  -Dlog.dir=${GAME_LOGS}\
- --HotSwapDir=${GAME_SWAP}\
+ -DhotSwap.dir=${GAME_SWAP}\
  -DsysLogs.dir=${GAME_SYS_LOGS}\
  -XX:-OmitStackTraceInFastThrow\
  -XX:+HeapDumpOnOutOfMemoryError\
  -XX:HeapDumpPath=dumps/"
 
-CLASSPATH="${GAME_HOME}/lib/*"
+CLASSPATH="."
+CLASSPATH="${CLASSPATH}:${JAVA_HOME}/lib/tools.jar"
+CLASSPATH="${CLASSPATH}:${GAME_HOME}/lib/*"
 CLASSPATH=${CLASSPATH}:"${GAME_HOME}/conf"
 
 BOOTSTRAP_CLASS="com.game.server.GameBootstrap"
@@ -42,7 +44,7 @@ start(){
 }
 
 other(){
-        java -classpath ${CLASSPATH} ${BOOTSTRAP_CLASS} "$1"
+        java ${JAVA_OPTS} -classpath ${CLASSPATH} ${BOOTSTRAP_CLASS} "$1"
         cd -
         sleep 3
 }
