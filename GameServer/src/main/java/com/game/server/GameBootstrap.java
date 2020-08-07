@@ -5,10 +5,7 @@ import com.game.server.common.hook.ServerHook;
 import com.game.server.common.server.ServerConfig;
 import org.qiunet.flash.handler.netty.server.BootstrapServer;
 import org.qiunet.flash.handler.netty.server.param.HttpBootstrapParams;
-import org.qiunet.utils.classLoader.ClassHotSwap;
 import org.qiunet.utils.classScanner.ClassScanner;
-
-import java.nio.file.Paths;
 
 /***
  *
@@ -36,9 +33,6 @@ public class GameBootstrap {
 				break;
 			case "stop":
 				BootstrapServer.sendHookMsg(hook.getHookPort(), hook.getShutdownMsg());
-				break;
-			case "hotSwap":
-				ClassHotSwap.hotSwap(Paths.get(System.getProperty("hotSwap.dir")));
 				break;
 			default:
 				BootstrapServer.sendHookMsg(hook.getHookPort(), cmd);
