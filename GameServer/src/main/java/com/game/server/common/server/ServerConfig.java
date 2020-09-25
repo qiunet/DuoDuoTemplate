@@ -1,6 +1,7 @@
 package com.game.server.common.server;
 
-import org.qiunet.utils.properties.LoaderProperties;
+import org.qiunet.utils.properties.anno.DProperties;
+import org.qiunet.utils.properties.anno.DPropertiesValue;
 
 /***
  *
@@ -8,27 +9,26 @@ import org.qiunet.utils.properties.LoaderProperties;
  * @author qiunet
  * 2020-08-04 10:50
  ***/
-public class ServerConfig extends LoaderProperties {
-	private volatile static ServerConfig instance = new ServerConfig();
-	public static ServerConfig getInstance() {
-		return instance;
-	}
-	/***
-	 * 要求相对 classpath的地址
-	 */
-	public ServerConfig() {
-		super("server.properties");
+@DProperties("server.properties")
+public class ServerConfig {
+	@DPropertiesValue("hook.port")
+	private static int hookPort;
+
+	@DPropertiesValue("server.port")
+	private static int serverPort;
+
+	@DPropertiesValue("communication.port")
+	private static int commnicationPort;
+
+	public static int getHookPort() {
+		return hookPort;
 	}
 
-	public int getHookPort(){
-		return getInt("hook.port");
+	public static int getServerPort() {
+		return serverPort;
 	}
 
-	public int getServerPort(){
-		return getInt("server.port");
-	}
-
-	public int getCommunicationPort() {
-		return getInt("communication.port");
+	public static int getCommnicationPort() {
+		return commnicationPort;
 	}
 }

@@ -5,7 +5,7 @@ import com.game.server.common.hook.ServerHook;
 import com.game.server.common.server.ServerConfig;
 import org.qiunet.flash.handler.netty.server.BootstrapServer;
 import org.qiunet.flash.handler.netty.server.param.HttpBootstrapParams;
-import org.qiunet.utils.classScanner.ClassScanner;
+import org.qiunet.utils.scanner.ClassScanner;
 
 /***
  *
@@ -25,7 +25,7 @@ public class GameBootstrap {
 				BootstrapServer server = BootstrapServer.createBootstrap(hook);
 				ClassScanner.getInstance().scanner("com.game.server");
 				server.httpListener(HttpBootstrapParams.custom()
-					.setPort(ServerConfig.getInstance().getServerPort())
+					.setPort(ServerConfig.getServerPort())
 					.setStartupContext(new StartupContext())
 					.setWebsocketPath("/ws")
 					.build())

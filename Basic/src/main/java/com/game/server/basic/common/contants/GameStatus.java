@@ -1,5 +1,6 @@
 package com.game.server.basic.common.contants;
 
+import com.baidu.bjf.remoting.protobuf.EnumReadable;
 import org.qiunet.flash.handler.context.status.IGameStatus;
 
 /***
@@ -8,7 +9,7 @@ import org.qiunet.flash.handler.context.status.IGameStatus;
  * @author qiunet
  * 2020-04-30 08:05
  **/
-public enum  GameStatus implements IGameStatus {
+public enum  GameStatus implements IGameStatus, EnumReadable {
 	LOGIN_AUTH_ERROR(1001000, "登录鉴权失败"),
 
 	PLAYER_STATUS_EXAMPLE(1101000, "玩家的某个状态示例"),
@@ -30,5 +31,10 @@ public enum  GameStatus implements IGameStatus {
 	@Override
 	public String getDesc() {
 		return desc;
+	}
+
+	@Override
+	public int value() {
+		return status;
 	}
 }

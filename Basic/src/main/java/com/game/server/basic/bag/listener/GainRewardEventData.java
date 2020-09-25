@@ -1,11 +1,9 @@
 package com.game.server.basic.bag.listener;
 
-import com.game.server.basic.common.actor.PlayerActor;
 import com.game.server.basic.common.data.RewardData;
 import com.game.server.basic.common.data.result.IRewardResult;
 import com.game.server.basic.common.enums.OperationType;
-import org.qiunet.utils.listener.EventListener;
-import org.qiunet.utils.listener.IEventData;
+import com.game.server.basic.common.event.BasePlayerEventData;
 
 import java.util.List;
 
@@ -15,21 +13,17 @@ import java.util.List;
  * @author qiunet
  * 2020-04-17 07:59
  **/
-@EventListener(GainRewardEventData.GainRewardDataListener.class)
-public class GainRewardEventData implements IEventData {
+public class GainRewardEventData extends BasePlayerEventData {
 	private List<IRewardResult> resultList;
-	private PlayerActor playerActor;
 	private RewardData rewardData;
 	private OperationType type;
 
-	public GainRewardEventData(PlayerActor playerActor, List<IRewardResult> resultList, RewardData rewardData, OperationType type) {
-		this.playerActor = playerActor;
-		this.rewardData = rewardData;
-		this.type = type;
-	}
-
-	public PlayerActor getPlayerActor() {
-		return playerActor;
+	public static GainRewardEventData valueOf(List<IRewardResult> resultList, RewardData rewardData, OperationType type) {
+		GainRewardEventData eventData = new GainRewardEventData();
+		eventData.resultList = resultList;
+		eventData.rewardData = rewardData;
+		eventData.type = type;
+		return eventData;
 	}
 
 	public RewardData getRewardData() {
@@ -38,10 +32,5 @@ public class GainRewardEventData implements IEventData {
 
 	public OperationType getType() {
 		return type;
-	}
-
-	public interface GainRewardDataListener {
-
-		void onGainRewardData(GainRewardEventData data);
 	}
 }

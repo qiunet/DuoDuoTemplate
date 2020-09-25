@@ -3,7 +3,7 @@ package com.game.server.common.handler;
 import com.game.server.basic.common.actor.PlayerActor;
 import com.game.server.basic.common.logger.GameLogger;
 import com.game.server.common.monitor.RequestMonitor;
-import com.google.protobuf.GeneratedMessageV3;
+import org.qiunet.flash.handler.context.request.data.pb.IpbRequestData;
 import org.qiunet.flash.handler.context.request.websocket.IWebSocketRequest;
 import org.qiunet.flash.handler.handler.websocket.WebSocketProtobufHandler;
 import org.slf4j.Logger;
@@ -13,7 +13,7 @@ import org.slf4j.Logger;
  * @author qiunet
  * 2020-04-25 17:06
  **/
-public abstract class BaseHandler<RequestData extends GeneratedMessageV3> extends WebSocketProtobufHandler<PlayerActor, RequestData> {
+public abstract class BaseHandler<RequestData extends IpbRequestData> extends WebSocketProtobufHandler<PlayerActor, RequestData> {
 
 	protected Logger logger = GameLogger.GAME_HANDLER.getLogger();
 

@@ -1,13 +1,11 @@
 package com.game.server.common.context;
 
 import com.game.server.basic.common.actor.PlayerActor;
-import com.game.server.basic.common.contants.ProtocolId;
-import com.game.server.basic.common.proto.common.CommonProto;
-import com.game.server.basic.common.session.GameSession;
-import io.netty.channel.Channel;
-import org.qiunet.flash.handler.context.response.push.DefaultProtobufMessage;
+import com.game.server.basic.common.message.HandlerNotFoundResponse;
+import com.game.server.basic.common.message.ServerExceptionResponse;
+import org.qiunet.flash.handler.context.request.data.pb.IpbResponseData;
 import org.qiunet.flash.handler.context.response.push.IResponseMessage;
-import org.qiunet.flash.handler.context.session.ISession;
+import org.qiunet.flash.handler.context.session.DSession;
 import org.qiunet.flash.handler.netty.server.param.adapter.IStartupContext;
 
 /***
@@ -15,29 +13,20 @@ import org.qiunet.flash.handler.netty.server.param.adapter.IStartupContext;
  * @author qiunet
  * 2020-04-25 15:15
  **/
-public class StartupContext implements IStartupContext<GameSession, PlayerActor> {
+public class StartupContext implements IStartupContext<PlayerActor> {
 
 	@Override
-	public GameSession buildSession(Channel channel) {
-		return new GameSession(channel);
+	public PlayerActor buildPlayerActor(DSession session) {
+		return new PlayerActor(session);
 	}
 
 	@Override
-	public PlayerActor buildPlayerActor(ISession session) {
-		return new PlayerActor((GameSession) session);
+	public IResponseMessage<IpbResponseData> getHandlerNotFound() {
+		return new HandlerNotFoundResponse().buildResponseMessage();
 	}
 
 	@Override
-	public IResponseMessage getHandlerNotFound() {
-		return new DefaultProtobufMessage(ProtocolId.System.HANDLER_NOT_FIND,
-			CommonProto.DefaultErrorResponse.newBuilder()
-				.build());
-	}
-
-	@Override
-	public IResponseMessage exception(Throwable cause) {
-		return new DefaultProtobufMessage(ProtocolId.System.SERVER_EXCEPTION,
-			CommonProto.DefaultErrorResponse.newBuilder()
-				.build());
+	public IResponseMessage<IpbResponseData> exception(Throwable cause) {
+		return new ServerExceptionResponse().buildResponseMessage();
 	}
 }

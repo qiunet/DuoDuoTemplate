@@ -7,8 +7,8 @@ import org.qiunet.test.robot.IRobot;
 import org.qiunet.test.robot.init.DefaultRobotInfo;
 import org.qiunet.test.robot.init.IRobotFactory;
 import org.qiunet.test.testcase.ITestCase;
-import org.qiunet.utils.classScanner.ClassScanner;
-import org.qiunet.utils.classScanner.ScannerType;
+import org.qiunet.utils.scanner.ClassScanner;
+import org.qiunet.utils.scanner.ScannerType;
 
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;

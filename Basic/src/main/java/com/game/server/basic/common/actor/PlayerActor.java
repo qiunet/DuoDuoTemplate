@@ -1,14 +1,14 @@
 package com.game.server.basic.common.actor;
 
 import com.game.server.basic.common.enums.CDType;
-import com.game.server.basic.common.session.GameSession;
+import com.game.server.basic.common.event.BasePlayerEventData;
 import com.game.server.basic.commondata.CommonDataService;
 import com.game.server.basic.commondata.enums.CommonDataObj;
 import com.game.server.basic.commondata.enums.CommonDataType;
 import com.game.server.basic.player.entity.PlayerBo;
-import com.google.protobuf.GeneratedMessageV3;
 import org.qiunet.flash.handler.common.player.AbstractPlayerActor;
-import org.qiunet.flash.handler.context.response.push.DefaultProtobufMessage;
+import org.qiunet.flash.handler.context.request.data.pb.IpbResponseData;
+import org.qiunet.flash.handler.context.session.DSession;
 import org.qiunet.utils.timer.cd.CdTimer;
 
 import java.util.concurrent.TimeUnit;
@@ -18,11 +18,11 @@ import java.util.concurrent.TimeUnit;
  * @author qiunet
  * 2020-04-15 21:01
  **/
-public class PlayerActor extends AbstractPlayerActor<GameSession, PlayerActor> {
+public class PlayerActor extends AbstractPlayerActor<PlayerActor> {
 	private CdTimer<CDType> cdTimer = new CdTimer<>();
 	private PlayerBo playerBo;
 
-	public PlayerActor(GameSession session) {
+	public PlayerActor(DSession session) {
 		super(session);
 	}
 
@@ -48,8 +48,8 @@ public class PlayerActor extends AbstractPlayerActor<GameSession, PlayerActor> {
 		return cdTimer.isTimeout(cdType);
 	}
 
-	public void sendPacket(int protocolId, GeneratedMessageV3 message) {
-		this.send(new DefaultProtobufMessage(protocolId, message));
+	public void sendPacket(IpbResponseData message) {
+		this.send(message.buildResponseMessage());
 	}
 
 	public PlayerBo getPlayerBo() {
@@ -77,5 +77,14 @@ public class PlayerActor extends AbstractPlayerActor<GameSession, PlayerActor> {
 
 	public <T extends CommonDataObj> T getCommonDataObj(CommonDataType type) {
 		return CommonDataService.instance.getCommonObj(this, type);
+	}
+
+	/**
+	 * 触发一个player事件.
+	 * @param eventData
+	 */
+	public void submitEvent(BasePlayerEventData eventData) {
+		eventData.setPlayerActor(this);
+		eventData.fireEventHandler();
 	}
 }

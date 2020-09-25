@@ -73,7 +73,7 @@ public class RewardData extends ResourceData<RewardData> {
 		}
 
 		// 触发监听
-		new GainRewardEventData(player, results, this, operationType).fireEventHandler();
+		player.submitEvent(GainRewardEventData.valueOf(results, this, operationType));
 		return results;
 	}
 	/**

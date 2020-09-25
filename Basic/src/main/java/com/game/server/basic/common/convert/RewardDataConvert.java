@@ -3,6 +3,7 @@ package com.game.server.basic.common.convert;
 import com.game.server.basic.common.data.RewardData;
 import org.qiunet.cfg.convert.BaseObjConvert;
 import org.qiunet.cfg.listener.CfgLoadCompleteEventData;
+import org.qiunet.listener.event.EventListener;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -12,8 +13,7 @@ import java.util.Queue;
  * @author qiunet
  * 2020-04-25 11:33
  **/
-public class RewardDataConvert extends BaseObjConvert<RewardData>
-	implements CfgLoadCompleteEventData.CfgLoadCompleteListener {
+public class RewardDataConvert extends BaseObjConvert<RewardData> {
 
 	private static final Queue<RewardData> list = new LinkedList<>();
 
@@ -29,7 +29,7 @@ public class RewardDataConvert extends BaseObjConvert<RewardData>
 		return type == RewardData.class;
 	}
 
-	@Override
+	@EventListener
 	public void loadComplete(CfgLoadCompleteEventData data) {
 		while (! list.isEmpty()) {
 			list.poll()._checkResourceWorthAndValid();
