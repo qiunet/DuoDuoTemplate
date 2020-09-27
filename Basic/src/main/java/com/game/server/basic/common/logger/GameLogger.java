@@ -15,14 +15,14 @@ public enum  GameLogger implements ILoggerType {
 	GAME_HANDLER("GameHandler"),
 	GAME_MONITOR("GameMonitor"),
 	;
-	private String loogerName;
+	private String loggerName;
 
-	GameLogger(String loogerName) {
-		this.loogerName = loogerName;
+	GameLogger(String loggerName) {
+		this.loggerName = loggerName;
 	}
 
 	@Override
 	public Logger getLogger() {
-		return LoggerFactory.getLogger(loogerName);
+		return LoggerFactory.getLogger(loggerName);
 	}
 }
