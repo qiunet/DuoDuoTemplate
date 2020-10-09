@@ -32,7 +32,7 @@ public enum RequestMonitor {
 		return true;
 	}
 
-	public void addReuest(long playerId, int requestId) {
+	public void addRequest(long playerId, int requestId) {
 		this.requestMonitor.add(playerId, requestId);
 	}
 }

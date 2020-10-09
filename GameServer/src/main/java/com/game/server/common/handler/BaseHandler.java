@@ -21,7 +21,7 @@ public abstract class BaseHandler<RequestData extends IpbRequestData> extends We
 	public void handler(PlayerActor playerActor, IWebSocketRequest<RequestData> context) throws Exception {
 		if (needAuth()) {
 			// 没有鉴权的请求. 监听意义不大. 况且不一定有playerId
-			RequestMonitor.instance.addReuest(playerActor.getPlayerId(), this.getProtocolID());
+			RequestMonitor.instance.addRequest(playerActor.getPlayerId(), this.getProtocolID());
 		}
 		this.handler0(playerActor, context);
 	}
