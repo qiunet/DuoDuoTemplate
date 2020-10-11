@@ -6,7 +6,7 @@ import com.game.server.basic.commondata.CommonDataService;
 import com.game.server.basic.commondata.enums.CommonDataObj;
 import com.game.server.basic.commondata.enums.CommonDataType;
 import com.game.server.basic.player.entity.PlayerBo;
-import org.qiunet.flash.handler.common.player.AbstractPlayerActor;
+import org.qiunet.flash.handler.common.player.AbstractMessageActor;
 import org.qiunet.flash.handler.context.request.data.pb.IpbResponseData;
 import org.qiunet.flash.handler.context.session.DSession;
 import org.qiunet.utils.timer.cd.CdTimer;
@@ -18,7 +18,7 @@ import java.util.concurrent.TimeUnit;
  * @author qiunet
  * 2020-04-15 21:01
  **/
-public class PlayerActor extends AbstractPlayerActor<PlayerActor> {
+public class PlayerActor extends AbstractMessageActor<PlayerActor> {
 	private CdTimer<CDType> cdTimer = new CdTimer<>();
 	private PlayerBo playerBo;
 
@@ -56,13 +56,17 @@ public class PlayerActor extends AbstractPlayerActor<PlayerActor> {
 		return playerBo;
 	}
 
-	@Override
-	protected String getIdent() {
-		return "PlayerActor["+getPlayerId()+"]";
+	public long getPlayerId(){
+		return getId();
 	}
 
 	@Override
-	public long getPlayerId() {
+	protected String getIdent() {
+		return "PlayerActor["+getId()+"]";
+	}
+
+	@Override
+	public long getId() {
 		if (playerBo == null) {
 			// 没有鉴权.时候bo为null
 			return 0;
@@ -70,7 +74,6 @@ public class PlayerActor extends AbstractPlayerActor<PlayerActor> {
 		return playerBo.getDo().getPlayerId();
 	}
 
-	@Override
 	public String getOpenId() {
 		return playerBo.getDo().getOpenId();
 	}

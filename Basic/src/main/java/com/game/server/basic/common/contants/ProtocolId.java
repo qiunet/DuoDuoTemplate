@@ -1,7 +1,11 @@
 package com.game.server.basic.common.contants;
 
+import org.qiunet.flash.handler.common.id.IProtocolId;
+
 /***
  * 协议id
+ *
+ * 0 - 999 为系统自留
  *
  * 请求id       = 模块ID * 100 + 1 起自增
  * 响应ID       = 模块ID * 100 + 请求ID * 1000 起自增
@@ -14,25 +18,18 @@ package com.game.server.basic.common.contants;
  * @author qiunet
  * 2020-04-25 15:16
  **/
-public class ProtocolId {
-	/***
-	 * 系统自留 一般为下行id
-	 * 模块 ID: 0 - 9
-	 */
-	public interface System {
-		/**1 上行协议有错误. 具体读取ErrorResponse 的desc**/
-		int PROTOCOL_ERROR = 1;
-		/** 404 */
-		int HANDLER_NOT_FIND = 404;
-		/** 500 **/
-		int SERVER_EXCEPTION = 500;
-	}
+public class ProtocolId implements IProtocolId {
 
 	/**
 	 * 登录的请求响应.
 	 * 模块: 10
 	 */
 	public interface Login {
+		/**
+		 * 1 上行协议有错误. 具体读取ErrorResponse 的desc
+		 **/
+		int PROTOCOL_ERROR = 1000000;
+
 		/**请求登录*/
 		int REQ_LOGIN = 1001;
 		/***响应登录*/

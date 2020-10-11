@@ -1,8 +1,10 @@
 package com.game.server;
 
+import com.game.server.basic.common.redis.RedisDataUtil;
 import com.game.server.common.context.StartupContext;
 import com.game.server.common.hook.ServerHook;
-import com.game.server.common.server.ServerConfig;
+import org.qiunet.cross.common.config.ServerConfig;
+import org.qiunet.cross.common.contants.ScannerParamKey;
 import org.qiunet.flash.handler.netty.server.BootstrapServer;
 import org.qiunet.flash.handler.netty.server.param.HttpBootstrapParams;
 import org.qiunet.utils.scanner.ClassScanner;
@@ -23,7 +25,9 @@ public class GameBootstrap {
 		switch (cmd) {
 			case "start":
 				BootstrapServer server = BootstrapServer.createBootstrap(hook);
-				ClassScanner.getInstance().scanner("com.game.server");
+				ClassScanner.getInstance()
+					.addParam(ScannerParamKey.SERVER_NODE_REDIS_INSTANCE, RedisDataUtil.getInstance())
+					.scanner("com.game.server");
 				server.httpListener(HttpBootstrapParams.custom()
 					.setPort(ServerConfig.getServerPort())
 					.setStartupContext(new StartupContext())
