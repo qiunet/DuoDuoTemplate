@@ -39,7 +39,7 @@ public class LoginHandler extends BaseHandler<LoginRequest> {
 			PlayerService.instance.register(loginBo);
 		}
 		PlayerBo playerBo = PlayerService.instance.getPlayerBo(loginBo.getDo().getPlayerId());
-		playerActor.auth(playerBo);
+		playerActor.setPlayerBo(playerBo);
 
 		new LoginLogEvent(playerActor).send();
 
