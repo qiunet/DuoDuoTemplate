@@ -6,7 +6,7 @@ import com.game.server.basic.commondata.CommonDataService;
 import com.game.server.basic.commondata.enums.CommonDataObj;
 import com.game.server.basic.commondata.enums.CommonDataType;
 import com.game.server.basic.player.entity.PlayerBo;
-import org.qiunet.flash.handler.common.player.AbstractUserActor;
+import org.qiunet.flash.handler.common.player.AbstractPlayerActor;
 import org.qiunet.flash.handler.common.player.event.AuthEventData;
 import org.qiunet.flash.handler.context.request.data.pb.IpbResponseData;
 import org.qiunet.flash.handler.context.session.DSession;
@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit;
  * @author qiunet
  * 2020-04-15 21:01
  **/
-public class PlayerActor extends AbstractUserActor<PlayerActor> {
+public class PlayerActor extends AbstractPlayerActor<PlayerActor> {
 	private CdTimer<CDType> cdTimer = new CdTimer<>();
 	private PlayerBo playerBo;
 	private long playerId;
@@ -32,6 +32,11 @@ public class PlayerActor extends AbstractUserActor<PlayerActor> {
 	@Override
 	public boolean isCrossStatus() {
 		return false;
+	}
+
+	@Override
+	public DSession crossSession() {
+		return null;
 	}
 
 	public void setPlayerBo(PlayerBo playerBo) {

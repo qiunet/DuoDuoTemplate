@@ -11,7 +11,7 @@ import org.qiunet.test.server.IServer;
  **/
 public enum  ServerType implements IServer {
 	/**websocket 服*/
-	WS_ONLINE(WebSocketClientParams.custom().setAddress("localhost", 8880).setUriIPath("/ws").build()),
+	WS_ONLINE(WebSocketClientParams.custom().setAddress("localhost", 8880).setUriPath("/ws").build()),
 	;
 
 	private IClientConfig config;
