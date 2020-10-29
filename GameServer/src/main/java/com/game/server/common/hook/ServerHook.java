@@ -4,7 +4,6 @@ import com.game.server.basic.common.logger.GameLogger;
 import org.qiunet.cfg.manager.CfgManagers;
 import org.qiunet.data.util.ServerConfig;
 import org.qiunet.flash.handler.netty.server.hook.Hook;
-import org.qiunet.listener.event.data.ServerShutdownEventData;
 import org.qiunet.utils.classLoader.ClassHotSwap;
 
 import java.nio.file.Paths;
@@ -43,8 +42,6 @@ public class ServerHook implements Hook {
 
 	@Override
 	public void shutdown() {
-		// 触发停服监听
-		ServerShutdownEventData.fireShutdownEventHandler();
 	}
 
 	@Override

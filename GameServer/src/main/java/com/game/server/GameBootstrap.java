@@ -7,6 +7,8 @@ import org.qiunet.cross.common.contants.ScannerParamKey;
 import org.qiunet.data.util.ServerConfig;
 import org.qiunet.flash.handler.netty.server.BootstrapServer;
 import org.qiunet.flash.handler.netty.server.param.HttpBootstrapParams;
+import org.qiunet.utils.data.IKeyValueData;
+import org.qiunet.utils.properties.PropertiesUtil;
 import org.qiunet.utils.scanner.ClassScanner;
 
 /***
@@ -35,11 +37,10 @@ public class GameBootstrap {
 					.build())
 					.await();
 				break;
-			case "stop":
-				BootstrapServer.sendHookMsg(hook.getHookPort(), hook.getShutdownMsg());
-				break;
 			default:
-				BootstrapServer.sendHookMsg(hook.getHookPort(), cmd);
+				IKeyValueData<Object, Object> keyValueData = PropertiesUtil.loadProperties(ServerConfig.PROPERTIES_FILE_NAME);
+				BootstrapServer.sendHookMsg(keyValueData.getInt(ServerConfig.HORT_PORT), hook.getShutdownMsg());
+				BootstrapServer.sendHookMsg(keyValueData.getInt(ServerConfig.HORT_PORT), cmd);
 		}
 	}
 }
