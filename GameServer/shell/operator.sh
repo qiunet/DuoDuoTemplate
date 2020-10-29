@@ -33,7 +33,7 @@ JAVA_OPTS="-server\
 CLASSPATH="."
 CLASSPATH="${CLASSPATH}:${JAVA_HOME}/lib/tools.jar"
 CLASSPATH="${CLASSPATH}:${GAME_HOME}/lib/*"
-CLASSPATH=${CLASSPATH}:"${GAME_HOME}/conf"
+CLASSPATH="${CLASSPATH}:${GAME_HOME}/conf"
 
 BOOTSTRAP_CLASS="com.game.server.GameBootstrap"
 
