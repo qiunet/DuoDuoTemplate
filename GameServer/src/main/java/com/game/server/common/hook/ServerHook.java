@@ -2,7 +2,7 @@ package com.game.server.common.hook;
 
 import com.game.server.basic.common.logger.GameLogger;
 import org.qiunet.cfg.manager.CfgManagers;
-import org.qiunet.cross.common.config.ServerConfig;
+import org.qiunet.data.util.ServerConfig;
 import org.qiunet.flash.handler.netty.server.hook.Hook;
 import org.qiunet.listener.event.data.ServerShutdownEventData;
 import org.qiunet.utils.classLoader.ClassHotSwap;
