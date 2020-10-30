@@ -10,7 +10,7 @@
 
 	<appender name="dailyFileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<fileNamePattern>${sysLogs.dir}/%d{yyyy-MM-dd}/Catalina.log_%d{yyyy-MM-dd}</fileNamePattern>
+			<fileNamePattern>${sysLogs.dir}/DuoDuo.log_%d{yyyy-MM-dd}</fileNamePattern>
 		</rollingPolicy>
 		<append>true</append>
 		<encoder>
