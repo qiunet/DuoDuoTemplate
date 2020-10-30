@@ -6,6 +6,8 @@
 	https://raw.githubusercontent.com/enricopulatzo/logback-XSD/master/src/main/xsd/logback.xsd"
 	debug="false" scan="true" scanPeriod="2 minute">
 
+	<property name="sysLogs.dir" value="${sysLogs.dir:-./logs}" />
+
 	<appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
 		<encoder>
 			<pattern>%level [%d{yyyy/MM/dd HH:mm:ss.SSS}] %logger - %msg%n</pattern>

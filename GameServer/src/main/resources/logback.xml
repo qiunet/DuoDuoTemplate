@@ -5,16 +5,18 @@
 	xsi:schemaLocation="http://ch.qos.logback/xml/ns/logback
 	https://raw.githubusercontent.com/enricopulatzo/logback-XSD/master/src/main/xsd/logback.xsd"
 	debug="false" scan="true" scanPeriod="2 minute">
-	
-		<appender name="dailyFileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
-			<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-				<fileNamePattern>${sysLogs.dir}/%d{yyyy-MM-dd}/Catalina.log_%d{yyyy-MM-dd}</fileNamePattern>
-			</rollingPolicy>
-			<append>true</append>
-			<encoder>
-				<pattern>%level [%d{yyyy/MM/dd HH:mm:ss.SSS}] %logger - %msg%n</pattern>
-			</encoder>
-		</appender>
+
+	<property name="sysLogs.dir" value="${sysLogs.dir:-./logs}" />
+
+	<appender name="dailyFileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${sysLogs.dir}/%d{yyyy-MM-dd}/Catalina.log_%d{yyyy-MM-dd}</fileNamePattern>
+		</rollingPolicy>
+		<append>true</append>
+		<encoder>
+			<pattern>%level [%d{yyyy/MM/dd HH:mm:ss.SSS}] %logger - %msg%n</pattern>
+		</encoder>
+	</appender>
 
 	<logger name="CommLogger" level="INFO" additivity="false">
 		<appender-ref ref="dailyFileAppender" />
