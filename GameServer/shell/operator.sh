@@ -13,6 +13,17 @@ GAME_SYS_LOGS=${GAME_HOME}/sysLogs
 # 热更新目录
 GAME_SWAP=${GAME_HOME}/classes
 
+red(){
+    echo -e "\033[31m\033[01m$1\033[0m"
+}
+
+if [ "${JAVA_HOME}" = "" ]; then
+        red "=================没有设置JAVA_HOME================="
+        red "=================没有设置JAVA_HOME================="
+        red "=================没有设置JAVA_HOME================="
+        exit 1
+fi
+
 if [[ ! -d ${GAME_LOGS} ]];then mkdir -p ${GAME_LOGS} ; fi
 if [[ ! -d ${GAME_SWAP} ]];then mkdir -p ${GAME_SWAP} ; fi
 if [[ ! -d ${GAME_SYS_LOGS} ]];then mkdir -p ${GAME_SYS_LOGS} ; fi
