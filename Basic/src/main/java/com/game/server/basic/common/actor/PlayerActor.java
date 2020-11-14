@@ -10,8 +10,8 @@ import org.qiunet.flash.handler.common.player.AbstractPlayerActor;
 import org.qiunet.flash.handler.common.player.event.AuthEventData;
 import org.qiunet.flash.handler.context.request.data.pb.IpbResponseData;
 import org.qiunet.flash.handler.context.session.DSession;
+import org.qiunet.function.cd.CdTimer;
 import org.qiunet.listener.event.EventManager;
-import org.qiunet.utils.timer.cd.CdTimer;
 
 import java.util.concurrent.TimeUnit;
 

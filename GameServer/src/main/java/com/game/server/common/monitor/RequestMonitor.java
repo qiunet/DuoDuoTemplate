@@ -2,9 +2,9 @@ package com.game.server.common.monitor;
 
 import com.game.server.basic.common.logger.GameLogger;
 import org.qiunet.flash.handler.handler.mapping.RequestHandlerMapping;
-import org.qiunet.utils.monitor.DefaultMonitor;
-import org.qiunet.utils.monitor.IMonitor;
-import org.qiunet.utils.monitor.IMonitorData;
+import org.qiunet.function.monitor.DefaultMonitor;
+import org.qiunet.function.monitor.IMonitor;
+import org.qiunet.function.monitor.IMonitorData;
 import org.slf4j.Logger;
 
 import java.util.concurrent.TimeUnit;

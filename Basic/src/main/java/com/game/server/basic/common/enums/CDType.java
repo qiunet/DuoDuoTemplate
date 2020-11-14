@@ -1,6 +1,7 @@
 package com.game.server.basic.common.enums;
 
-import org.qiunet.utils.timer.cd.ICdType;
+
+import org.qiunet.function.cd.ICdType;
 
 import java.util.concurrent.TimeUnit;
 
