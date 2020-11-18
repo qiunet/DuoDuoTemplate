@@ -39,6 +39,7 @@ JAVA_OPTS="-server\
  -DsysLogs.dir=${GAME_SYS_LOGS}\
  -XX:-OmitStackTraceInFastThrow\
  -XX:+HeapDumpOnOutOfMemoryError\
+ -Dfile.encoding=UTF-8\
  -XX:HeapDumpPath=dumps/"
 
 CLASSPATH="."
