@@ -39,11 +39,11 @@
 			<includes>
 				<include>config/**</include>
 				<include>*.xml</include>
+				<include>*.conf</include>
 				<include>*.properties</include>
 			</includes>
 			<excludes>
-				<exclude>db.properties</exclude>
-				<exclude>server.properties</exclude>
+				<exclude>server.conf</exclude>
 				<exclude>logback-test.xml</exclude>
 			</excludes>
 			<outputDirectory>conf</outputDirectory>
