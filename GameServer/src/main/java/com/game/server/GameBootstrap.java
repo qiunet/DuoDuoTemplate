@@ -7,8 +7,8 @@ import org.qiunet.cross.common.contants.ScannerParamKey;
 import org.qiunet.data.util.ServerConfig;
 import org.qiunet.flash.handler.netty.server.BootstrapServer;
 import org.qiunet.flash.handler.netty.server.param.HttpBootstrapParams;
+import org.qiunet.utils.config.properties.PropertiesUtil;
 import org.qiunet.utils.data.IKeyValueData;
-import org.qiunet.utils.properties.PropertiesUtil;
 import org.qiunet.utils.scanner.ClassScanner;
 
 /***
@@ -28,7 +28,7 @@ public class GameBootstrap {
 			case "start":
 				BootstrapServer server = BootstrapServer.createBootstrap(hook);
 				ClassScanner.getInstance()
-					.addParam(ScannerParamKey.SERVER_NODE_REDIS_INSTANCE, RedisDataUtil.getInstance())
+					.addParam(ScannerParamKey.SERVER_NODE_REDIS_INSTANCE_SUPPLIER, RedisDataUtil::getInstance)
 					.scanner("com.game.server");
 				server.httpListener(HttpBootstrapParams.custom()
 					.setPort(ServerConfig.getServerPort())
@@ -38,7 +38,7 @@ public class GameBootstrap {
 					.await();
 				break;
 			default:
-				IKeyValueData<Object, Object> keyValueData = PropertiesUtil.loadProperties(ServerConfig.PROPERTIES_FILE_NAME);
+				IKeyValueData<Object, Object> keyValueData = PropertiesUtil.loadProperties(ServerConfig.CONFIG_FILE_NAME);
 				BootstrapServer.sendHookMsg(keyValueData.getInt(ServerConfig.HORT_PORT), hook.getShutdownMsg());
 				BootstrapServer.sendHookMsg(keyValueData.getInt(ServerConfig.HORT_PORT), cmd);
 		}

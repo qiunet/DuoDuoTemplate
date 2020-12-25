@@ -2,7 +2,7 @@ package com.game.server.basic.common.redis;
 
 import org.qiunet.data.core.support.redis.BasePoolRedisUtil;
 import org.qiunet.data.core.support.redis.IRedisCaller;
-import org.qiunet.data.util.DbProperties;
+import org.qiunet.data.util.ServerConfig;
 import redis.clients.jedis.JedisCommands;
 
 /***
@@ -14,7 +14,7 @@ public class RedisDataUtil extends BasePoolRedisUtil {
 	private static final RedisDataUtil instance = new RedisDataUtil();
 
 	protected RedisDataUtil() {
-		super(DbProperties.getInstance(), "data");
+		super(ServerConfig.getInstance(), "data");
 	}
 
 	public static RedisDataUtil getInstance() {
