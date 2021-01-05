@@ -2,7 +2,6 @@ package com.game.server.basic.item.log;
 
 import com.game.server.basic.common.actor.PlayerActor;
 import com.game.server.basic.common.enums.OperationType;
-import com.game.server.basic.common.enums.ResOperationType;
 import com.game.server.basic.common.log.BasePlayerLogEvent;
 import com.game.server.basic.common.log.LogType;
 
@@ -13,11 +12,11 @@ import com.game.server.basic.common.log.LogType;
  * 2020-05-14 18:03
  ***/
 public class ItemLogEvent extends BasePlayerLogEvent {
-	private int itemId;
-	private int num;
-	private int currCount;
-	private OperationType operationType;
-	private ResOperationType resOperationType;
+	private final int itemId;
+	private final int num;
+	private final int currCount;
+	private final OperationType operationType;
+	private final ResOperationType resOperationType;
 
 	public ItemLogEvent(PlayerActor player, int itemId, int num, int currCount, OperationType operationType, ResOperationType resOperationType) {
 		super(LogType.ITEM, player);

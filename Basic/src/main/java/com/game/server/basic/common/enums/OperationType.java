@@ -1,5 +1,7 @@
 package com.game.server.basic.common.enums;
 
+import org.qiunet.function.base.IOperationType;
+
 import java.util.concurrent.TimeUnit;
 
 /***
@@ -8,12 +10,12 @@ import java.util.concurrent.TimeUnit;
  * @author qiunet
  * 2020-04-17 07:36
  **/
-public enum OperationType {
+public enum OperationType implements IOperationType {
 	SHOP_BUY(100, "商城购买", 10),
 	;
-	private int type;
+	private final int type;
 
-	private String desc;
+	private final String desc;
 	/**1分钟触发多少次, 会触发监控 像商城等. 需要减少
 	 * 少.**/
 	private int checkCount = 60;

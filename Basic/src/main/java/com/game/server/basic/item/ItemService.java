@@ -3,7 +3,6 @@ package com.game.server.basic.item;
 import com.game.server.basic.common.actor.PlayerActor;
 import com.game.server.basic.common.data.result.IRewardResult;
 import com.game.server.basic.common.enums.OperationType;
-import com.game.server.basic.common.enums.ResOperationType;
 import com.game.server.basic.item.entity.ItemBo;
 import com.game.server.basic.item.entity.ItemDo;
 import com.game.server.basic.item.log.ItemLogEvent;
@@ -15,7 +14,7 @@ import java.util.Map;
 
 public enum ItemService {
 	instance;
-	private static CacheDataListSupport<Long, Integer, ItemDo, ItemBo> dataSupport = new CacheDataListSupport<>(ItemDo.class, ItemBo::new);
+	private static final CacheDataListSupport<Long, Integer, ItemDo, ItemBo> dataSupport = new CacheDataListSupport<>(ItemDo.class, ItemBo::new);
 
 	/***
 	 * 获得一个 playerId -> ItemBo Map对象

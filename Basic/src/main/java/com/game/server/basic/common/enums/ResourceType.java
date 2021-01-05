@@ -5,7 +5,6 @@ import com.game.server.basic.common.cfg.resource.IResourceCfg;
 import com.game.server.basic.common.cfg.resource.ResourceDataCfg;
 import com.game.server.basic.common.cfg.resource.ResourceEquipCfg;
 import com.game.server.basic.common.cfg.resource.ResourceItemCfg;
-import com.game.server.basic.common.data.result.IRewardResult;
 import com.game.server.basic.equip.EquipService;
 import com.game.server.basic.item.ItemService;
 import com.google.common.base.Preconditions;
@@ -81,7 +80,7 @@ public enum ResourceType {
 		}
 	},
 	;
-	private int type;
+	private final int type;
 
 	ResourceType(int type) {
 		this.type = type;

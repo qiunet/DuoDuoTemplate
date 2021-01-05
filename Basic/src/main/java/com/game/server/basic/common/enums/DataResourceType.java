@@ -62,7 +62,7 @@ public enum  DataResourceType {
 		}
 	},
 
-	/**人民币代币**/
+	/**经验**/
 	EXP(3) {
 		@Override
 		public void addResource(PlayerActor player, OperationType operationType, int num) {
@@ -85,7 +85,7 @@ public enum  DataResourceType {
 	},
 	;
 
-	private int resourceId;
+	private final int resourceId;
 	DataResourceType(int resourceId) {
 		this.resourceId = resourceId;
 	}

@@ -1,9 +1,12 @@
 package com.game.server.basic.common.cfg.resource;
 
-import com.game.server.basic.common.data.ConditionData;
+import com.game.server.basic.common.actor.PlayerActor;
+import com.game.server.basic.common.enums.ResourceSubType;
 import com.game.server.basic.common.enums.ResourceType;
 import org.qiunet.cfg.annotation.Cfg;
+import org.qiunet.cfg.base.IAfterLoad;
 import org.qiunet.cfg.base.ISimpleMapCfg;
+import org.qiunet.function.reward.Rewards;
 
 /***
  *
@@ -11,13 +14,14 @@ import org.qiunet.cfg.base.ISimpleMapCfg;
  * 2020-04-25 20:46
  **/
 @Cfg("config/resource/resource_item.xd")
-public class ResourceItemCfg implements ISimpleMapCfg<Integer> , IResourceCfg{
+public class ResourceItemCfg implements ISimpleMapCfg<Integer> , IResourceCfg, IAfterLoad {
 	private int id;
 	private String name;
 	private int type;
-	private ConditionData recycle;
+	private ResourceSubType subType;
+	private Rewards<PlayerActor> recycle;
 
-	public ConditionData getRecycle() {
+	public Rewards<PlayerActor> getRecycle() {
 		return recycle;
 	}
 
@@ -37,5 +41,10 @@ public class ResourceItemCfg implements ISimpleMapCfg<Integer> , IResourceCfg{
 	@Override
 	public ResourceType type() {
 		return ResourceType.ITEM;
+	}
+
+	@Override
+	public void afterLoad() {
+
 	}
 }
