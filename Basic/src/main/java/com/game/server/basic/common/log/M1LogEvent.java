@@ -14,7 +14,7 @@ public class M1LogEvent extends BasePlayerLogEvent {
 	private ResOperationType type;
 	private long currNum;
 	private long num;
-	public M1LogEvent(PlayerActor player, OperationType operationType, ResOperationType type, int num, long currNum) {
+	public M1LogEvent(PlayerActor player, OperationType operationType, ResOperationType type, long num, long currNum) {
 		super(LogType.M1, player);
 
 		this.operationType = operationType;

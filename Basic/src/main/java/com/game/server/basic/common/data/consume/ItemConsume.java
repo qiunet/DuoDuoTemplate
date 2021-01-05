@@ -1,6 +1,7 @@
 package com.game.server.basic.common.data.consume;
 
 import com.game.server.basic.common.actor.PlayerActor;
+import com.game.server.basic.item.ItemService;
 import org.qiunet.function.consume.BaseConsume;
 import org.qiunet.function.consume.ConsumeConfig;
 import org.qiunet.function.consume.ConsumeContext;
@@ -27,12 +28,13 @@ public class ItemConsume extends BaseConsume<PlayerActor> {
 
 	@Override
 	protected ConsumeResult doVerify(ConsumeContext<PlayerActor> context) {
-		return null;
+		int itemCount = ItemService.instance.getItemCount(context.getObj(), cfgId);
+		return itemCount >= value ? ConsumeResult.SUCCESS : ConsumeResult.FAIL;
 	}
 
 	@Override
 	protected void doConsume(ConsumeContext<PlayerActor> context) {
-
+		ItemService.instance.deductFromPack(context.getObj(), cfgId, (int)value, context.getOperationType());
 	}
 
 	@Override

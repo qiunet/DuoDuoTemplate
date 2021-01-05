@@ -1,6 +1,7 @@
 package com.game.server.basic.common.data.consume;
 
 import com.game.server.basic.common.actor.PlayerActor;
+import com.game.server.basic.common.enums.DataResourceType;
 import org.qiunet.function.consume.BaseConsume;
 import org.qiunet.function.consume.ConsumeConfig;
 import org.qiunet.function.consume.ConsumeContext;
@@ -25,25 +26,21 @@ public class CurrencyConsume extends BaseConsume<PlayerActor> {
 		super(cfgId, value, banReplace);
 	}
 
-	public static CurrencyConsume valueOf(int cfgId, long value, boolean banReplace) {
-		return new CurrencyConsume(cfgId, value, banReplace);
-	}
-	public static CurrencyConsume valueOf(int cfgId, long value) {
-		return new CurrencyConsume(cfgId, value);
-	}
-
 	@Override
 	protected ConsumeResult doVerify(ConsumeContext<PlayerActor> context) {
-		return null;
+		DataResourceType dataResourceType = DataResourceType.parse(cfgId);
+		boolean pass = dataResourceType.getResourceNum(context.getObj()) >= value;
+		return pass ? ConsumeResult.SUCCESS : ConsumeResult.FAIL;
 	}
 
 	@Override
 	protected void doConsume(ConsumeContext<PlayerActor> context) {
-
+		DataResourceType dataResourceType = DataResourceType.parse(cfgId);
+		dataResourceType.deductResource(context.getObj(), context.getOperationType(), value);
 	}
 
 	@Override
 	public BaseConsume<PlayerActor> copy() {
-		return CurrencyConsume.valueOf(cfgId, value);
+		return new CurrencyConsume(cfgId, value);
 	}
 }

@@ -2,6 +2,7 @@ package com.game.server.basic.item.log;
 
 import com.game.server.basic.common.actor.PlayerActor;
 import com.game.server.basic.common.enums.OperationType;
+import com.game.server.basic.common.enums.ResOperationType;
 import com.game.server.basic.common.log.BasePlayerLogEvent;
 import com.game.server.basic.common.log.LogType;
 

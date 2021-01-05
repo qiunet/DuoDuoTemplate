@@ -1,8 +1,8 @@
 package com.game.server.basic.item;
 
 import com.game.server.basic.common.actor.PlayerActor;
-import com.game.server.basic.common.data.result.IRewardResult;
 import com.game.server.basic.common.enums.OperationType;
+import com.game.server.basic.common.enums.ResOperationType;
 import com.game.server.basic.item.entity.ItemBo;
 import com.game.server.basic.item.entity.ItemDo;
 import com.game.server.basic.item.log.ItemLogEvent;
@@ -34,7 +34,7 @@ public enum ItemService {
 		return getItemBoMap(playerId).get(itemId);
 	}
 
-	public List<IRewardResult> addToPack(PlayerActor player, int resourceId, int num, OperationType type) {
+	public void addToPack(PlayerActor player, int resourceId, int num, OperationType type) {
 		ItemBo itemBo = getItemBo(player.getPlayerId(), resourceId);
 		if (itemBo == null) {
 			ItemDo itemDo = new ItemDo(player.getPlayerId(), resourceId);
@@ -49,7 +49,6 @@ public enum ItemService {
 			itemBo.update();
 		}
 		new ItemLogEvent(player, resourceId, num, itemBo.getCount(), type, ResOperationType.ADD).send();
-		return null;
 	}
 
 	/**

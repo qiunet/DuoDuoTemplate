@@ -1,6 +1,7 @@
 package com.game.server.basic.common.data.reward;
 
 import com.game.server.basic.common.actor.PlayerActor;
+import com.game.server.basic.item.ItemService;
 import org.qiunet.function.reward.BaseReward;
 import org.qiunet.function.reward.RewardConfig;
 import org.qiunet.function.reward.RewardContext;
@@ -24,12 +25,12 @@ public class ItemReward extends BaseReward<PlayerActor> {
 
 	@Override
 	public RewardResult doVerify(RewardContext<PlayerActor> context) {
-		return null;
+		return RewardResult.SUCCESS;
 	}
 
 	@Override
 	public void grant(RewardContext<PlayerActor> context) {
-
+		ItemService.instance.addToPack(context.getPlayer(), cfgId, (int)value, context.getOperationType());
 	}
 
 	@Override

@@ -28,7 +28,13 @@ public class ResourceManager {
 		return instance;
 	}
 
+	/**
+	 * 获得cfgId对应的cfg
+	 * @param resourceId
+	 * @param <T>
+	 * @return
+	 */
 	public <T extends IResourceCfg> T getResourceCfg(int resourceId) {
-		return (T) ResourceType.parseByResourceId(resourceId).getResourceCfg(resourceId);
+		return (T) ResourceType.getCfgById(resourceId);
 	}
 }

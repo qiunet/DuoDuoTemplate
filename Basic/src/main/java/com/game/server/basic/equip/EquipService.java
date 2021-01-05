@@ -1,14 +1,12 @@
 package com.game.server.basic.equip;
 
 import com.game.server.basic.common.actor.PlayerActor;
-import com.game.server.basic.common.data.result.IRewardResult;
 import com.game.server.basic.common.enums.OperationType;
 import com.game.server.basic.equip.entity.EquipBo;
 import com.game.server.basic.equip.entity.EquipDo;
 import com.game.server.basic.equip.log.EquipAddLogEvent;
 import com.game.server.basic.equip.log.EquipDelLogEvent;
 import com.game.server.basic.id.enums.IDType;
-import com.google.common.collect.Lists;
 import org.qiunet.data.support.CacheDataListSupport;
 import org.qiunet.utils.date.DateUtil;
 
@@ -37,8 +35,7 @@ public enum EquipService {
 		return getEquipBoMap(playerId).get(id);
 	}
 
-	public List<IRewardResult> addToPack(PlayerActor player, int resourceId, int num, OperationType type) {
-		List<IRewardResult> list = Lists.newArrayListWithCapacity(num);
+	public void addToPack(PlayerActor player, int resourceId, int num, OperationType type) {
 		for (int i = 0; i < num; i++) {
 			EquipDo equipDo = new EquipDo();
 			equipDo.setId(IDType.EQUIP.generatorId(player.getPlayerId()));
@@ -46,11 +43,9 @@ public enum EquipService {
 			equipDo.setGainTime(DateUtil.currSeconds());
 			equipDo.setEquipId(resourceId);
 			EquipBo equipBo = equipDo.insert();
-			list.add(equipBo);
 
 			new EquipAddLogEvent(player, equipDo.getId(), resourceId, type).send();
 		}
-		return list;
 	}
 
 	/**

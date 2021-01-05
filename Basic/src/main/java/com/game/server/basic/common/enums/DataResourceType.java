@@ -17,14 +17,14 @@ public enum  DataResourceType {
 	/**普通金币**/
 	M1(CfgConstant.M1_RESOURCE_ID) {
 		@Override
-		public void addResource(PlayerActor player, OperationType operationType, int num) {
+		public void addResource(PlayerActor player, OperationType operationType, long num) {
 			Preconditions.checkArgument(num > 0);
 			player.getPlayerBo().getDo().setM1(getResourceNum(player) + num);
 			new M1LogEvent(player, operationType, ResOperationType.ADD, num, getResourceNum(player)).send();
 		}
 
 		@Override
-		public void deductResource(PlayerActor player, OperationType operationType, int num) {
+		public void deductResource(PlayerActor player, OperationType operationType, long num) {
 			Preconditions.checkArgument(num > 0);
 			Preconditions.checkArgument(getResourceNum(player) > num);
 
@@ -41,14 +41,14 @@ public enum  DataResourceType {
 	/**人民币代币**/
 	M2(CfgConstant.M2_RESOURCE_ID) {
 		@Override
-		public void addResource(PlayerActor player, OperationType operationType, int num) {
+		public void addResource(PlayerActor player, OperationType operationType, long num) {
 			Preconditions.checkArgument(num > 0);
 			player.getPlayerBo().getDo().setM2(getResourceNum(player) + num);
 			new M2LogEvent(player, operationType, ResOperationType.ADD, num, getResourceNum(player)).send();
 		}
 
 		@Override
-		public void deductResource(PlayerActor player, OperationType operationType, int num) {
+		public void deductResource(PlayerActor player, OperationType operationType, long num) {
 			Preconditions.checkArgument(num > 0);
 			Preconditions.checkArgument(getResourceNum(player) > num);
 
@@ -65,7 +65,7 @@ public enum  DataResourceType {
 	/**经验**/
 	EXP(3) {
 		@Override
-		public void addResource(PlayerActor player, OperationType operationType, int num) {
+		public void addResource(PlayerActor player, OperationType operationType, long num) {
 			Preconditions.checkArgument(num > 0);
 			player.getPlayerBo().getDo().setExp(getResourceNum(player) + num);
 
@@ -73,7 +73,7 @@ public enum  DataResourceType {
 		}
 
 		@Override
-		public void deductResource(PlayerActor player, OperationType operationType, int num) {
+		public void deductResource(PlayerActor player, OperationType operationType, long num) {
 			// do nothing
 			// 不会减经验
 		}
@@ -109,13 +109,13 @@ public enum  DataResourceType {
 	 * 增加资源
 	 * @param num
 	 */
-	public abstract void addResource(PlayerActor player, OperationType operationType, int num);
+	public abstract void addResource(PlayerActor player, OperationType operationType, long num);
 
 	/**
 	 * 扣减资源
 	 * @param num
 	 */
-	public abstract void deductResource(PlayerActor player, OperationType operationType, int num);
+	public abstract void deductResource(PlayerActor player, OperationType operationType, long num);
 
 	/**
 	 * 获得资源数

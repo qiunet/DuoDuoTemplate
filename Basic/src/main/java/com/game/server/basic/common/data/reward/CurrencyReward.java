@@ -1,6 +1,9 @@
 package com.game.server.basic.common.data.reward;
 
 import com.game.server.basic.common.actor.PlayerActor;
+import com.game.server.basic.common.enums.DataResourceType;
+import com.google.common.base.Preconditions;
+import org.qiunet.function.consume.ConsumeResult;
 import org.qiunet.function.reward.BaseReward;
 import org.qiunet.function.reward.RewardConfig;
 import org.qiunet.function.reward.RewardContext;
@@ -23,16 +26,19 @@ public class CurrencyReward extends BaseReward<PlayerActor> {
 
 	@Override
 	public RewardResult doVerify(RewardContext<PlayerActor> context) {
-		return null;
+		// 直接放入. 没有问题
+		return RewardResult.SUCCESS;
 	}
 
 	@Override
 	public void grant(RewardContext<PlayerActor> context) {
-
+		DataResourceType dataResourceType = DataResourceType.parse(cfgId);
+		dataResourceType.addResource(context.getPlayer(), context.getOperationType(), context.getMulti() * value);
 	}
 
 	@Override
 	public BaseReward<PlayerActor> copy(int multi) {
-		return null;
+		Preconditions.checkArgument(multi * value > 0);
+		return new CurrencyReward(cfgId, multi * value);
 	}
 }

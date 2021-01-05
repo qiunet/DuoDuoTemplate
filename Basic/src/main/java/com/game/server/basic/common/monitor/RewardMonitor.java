@@ -1,11 +1,11 @@
 package com.game.server.basic.common.monitor;
 
-import com.game.server.basic.bag.listener.GainRewardEventData;
 import com.game.server.basic.common.enums.OperationType;
 import com.game.server.basic.common.logger.GameLogger;
 import org.qiunet.function.monitor.DefaultMonitor;
 import org.qiunet.function.monitor.IMonitor;
 import org.qiunet.function.monitor.IMonitorData;
+import org.qiunet.function.reward.GainRewardEventData;
 import org.qiunet.listener.event.EventListener;
 import org.slf4j.Logger;
 
@@ -34,6 +34,6 @@ public class RewardMonitor {
 
 	@EventListener
 	public void onGainRewardData(GainRewardEventData data) {
-		rewardMonitor.add(data.getPlayerActor().getPlayerId(), data.getType());
+		rewardMonitor.add(data.getPlayer().getId(), (OperationType) data.getType());
 	}
 }
