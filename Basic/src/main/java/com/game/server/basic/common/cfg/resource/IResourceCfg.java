@@ -1,5 +1,6 @@
 package com.game.server.basic.common.cfg.resource;
 
+import com.game.server.basic.common.enums.ResourceSubType;
 import com.game.server.basic.common.enums.ResourceType;
 
 /***
@@ -10,4 +11,6 @@ import com.game.server.basic.common.enums.ResourceType;
 public interface IResourceCfg {
 
 	ResourceType type();
+
+	ResourceSubType subType();
 }

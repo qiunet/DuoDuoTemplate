@@ -15,6 +15,8 @@ public class ResourceDataCfg implements ISimpleMapCfg<Integer>, IResourceCfg {
 	private int id;
 	private String name;
 	private ResourceSubType subType;
+
+
 	@Override
 	public Integer getId() {
 		return id;
@@ -22,6 +24,11 @@ public class ResourceDataCfg implements ISimpleMapCfg<Integer>, IResourceCfg {
 
 	public String getName() {
 		return name;
+	}
+
+	@Override
+	public ResourceSubType subType() {
+		return subType;
 	}
 
 	@Override

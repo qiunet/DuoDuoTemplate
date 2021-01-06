@@ -14,6 +14,9 @@ import org.qiunet.function.reward.BaseReward;
 import org.qiunet.function.reward.RewardConfig;
 import org.qiunet.utils.exceptions.CustomException;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+
 /***
  *
  * @Author qiunet
@@ -56,11 +59,25 @@ public enum ResourceSubType implements IResourceSubType {
 		if (consumeClz == null) {
 			throw new CustomException("Not support ");
 		}
-		return null;
+		try {
+			Constructor<? extends BaseConsume> constructor = consumeClz.getConstructor(ConsumeConfig.class);
+			return (T) constructor.newInstance(consumeConfig);
+		} catch (Exception e) {
+			throw new CustomException("New instance for consume {} error", consumeClz.getName());
+		}
 	}
 
 	@Override
 	public <T extends BaseReward> T createRewardItem(RewardConfig rewardConfig) {
-		return null;
+		if (consumeClz == null) {
+			throw new CustomException("Not support ");
+		}
+
+		try {
+			Constructor<? extends BaseReward> constructor = rewardClz.getConstructor(RewardConfig.class);
+			return (T) constructor.newInstance(rewardConfig);
+		} catch (Exception e) {
+			throw new CustomException("New instance for reward {} error", rewardClz.getName());
+		}
 	}
 }

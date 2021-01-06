@@ -1,5 +1,6 @@
 package com.game.server.basic.common.cfg.resource;
 
+import com.game.server.basic.common.enums.ResourceSubType;
 import com.game.server.basic.common.enums.ResourceType;
 import org.qiunet.cfg.annotation.Cfg;
 import org.qiunet.cfg.base.ISimpleMapCfg;
@@ -12,8 +13,15 @@ import org.qiunet.cfg.base.ISimpleMapCfg;
 @Cfg("config/resource/resource_equip.xd")
 public class ResourceEquipCfg implements ISimpleMapCfg<Integer>, IResourceCfg {
 	private int id;
+	private ResourceSubType subType;
 	private String name;
 	private String attrs;
+
+	@Override
+	public ResourceSubType subType() {
+		return subType;
+	}
+
 	public String getName() {
 		return name;
 	}

@@ -6,6 +6,7 @@ import com.game.server.basic.common.enums.ResourceType;
 import org.qiunet.cfg.annotation.Cfg;
 import org.qiunet.cfg.base.IAfterLoad;
 import org.qiunet.cfg.base.ISimpleMapCfg;
+import org.qiunet.function.reward.RewardManager;
 import org.qiunet.function.reward.Rewards;
 
 /***
@@ -19,10 +20,11 @@ public class ResourceItemCfg implements ISimpleMapCfg<Integer> , IResourceCfg, I
 	private String name;
 	private int type;
 	private ResourceSubType subType;
-	private Rewards<PlayerActor> recycle;
+	private String recycle;
+	private Rewards<PlayerActor> recycleReward;
 
 	public Rewards<PlayerActor> getRecycle() {
-		return recycle;
+		return recycleReward;
 	}
 
 	public String getName() {
@@ -44,7 +46,12 @@ public class ResourceItemCfg implements ISimpleMapCfg<Integer> , IResourceCfg, I
 	}
 
 	@Override
-	public void afterLoad() {
+	public ResourceSubType subType() {
+		return subType;
+	}
 
+	@Override
+	public void afterLoad() {
+		this.recycleReward = RewardManager.instance.createRewards(recycle);
 	}
 }
