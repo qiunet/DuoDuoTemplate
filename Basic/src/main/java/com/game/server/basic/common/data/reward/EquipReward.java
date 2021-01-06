@@ -1,6 +1,7 @@
 package com.game.server.basic.common.data.reward;
 
 import com.game.server.basic.common.actor.PlayerActor;
+import com.game.server.basic.equip.EquipService;
 import org.qiunet.function.reward.BaseReward;
 import org.qiunet.function.reward.RewardConfig;
 import org.qiunet.function.reward.RewardContext;
@@ -25,16 +26,17 @@ public class EquipReward extends BaseReward<PlayerActor> {
 
 	@Override
 	public RewardResult doVerify(RewardContext<PlayerActor> context) {
-		return null;
+		// 背包限制
+		return RewardResult.SUCCESS;
 	}
 
 	@Override
 	public void grant(RewardContext<PlayerActor> context) {
-
+		EquipService.instance.addToPack(context.getPlayer(), cfgId, (int)value, context.getOperationType());
 	}
 
 	@Override
 	public BaseReward<PlayerActor> copy(int multi) {
-		return null;
+		return new EquipReward(cfgId, value);
 	}
 }
