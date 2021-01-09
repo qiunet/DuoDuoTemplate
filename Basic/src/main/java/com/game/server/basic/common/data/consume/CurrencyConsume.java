@@ -1,6 +1,7 @@
 package com.game.server.basic.common.data.consume;
 
 import com.game.server.basic.common.actor.PlayerActor;
+import com.game.server.basic.common.contants.GameStatus;
 import com.game.server.basic.common.enums.DataResourceType;
 import org.qiunet.function.consume.BaseConsume;
 import org.qiunet.function.consume.ConsumeConfig;
@@ -30,7 +31,7 @@ public class CurrencyConsume extends BaseConsume<PlayerActor> {
 	protected ConsumeResult doVerify(ConsumeContext<PlayerActor> context) {
 		DataResourceType dataResourceType = DataResourceType.parse(cfgId);
 		boolean pass = dataResourceType.getResourceNum(context.getObj()) >= value;
-		return pass ? ConsumeResult.SUCCESS : ConsumeResult.FAIL;
+		return pass ? ConsumeResult.SUCCESS : ConsumeResult.valueOf(GameStatus.CURRENCY_LACK, cfgId);
 	}
 
 	@Override

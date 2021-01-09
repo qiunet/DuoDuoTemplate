@@ -1,5 +1,7 @@
 package com.game.server.basic.common.enums;
 
+import com.baidu.bjf.remoting.protobuf.EnumReadable;
+import com.baidu.bjf.remoting.protobuf.annotation.Protobuf;
 import org.qiunet.function.base.IOperationType;
 
 import java.util.concurrent.TimeUnit;
@@ -10,7 +12,8 @@ import java.util.concurrent.TimeUnit;
  * @author qiunet
  * 2020-04-17 07:36
  **/
-public enum OperationType implements IOperationType {
+public enum OperationType implements EnumReadable, IOperationType {
+	@Protobuf(description = "商城购买")
 	SHOP_BUY(100, "商城购买", 10),
 	;
 	private final int type;
@@ -57,5 +60,10 @@ public enum OperationType implements IOperationType {
 
 	public long getCheckTimeMillis() {
 		return checkTimeMillis;
+	}
+
+	@Override
+	public int value() {
+		return type;
 	}
 }

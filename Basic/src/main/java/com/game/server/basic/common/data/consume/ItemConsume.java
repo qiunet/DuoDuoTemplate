@@ -1,6 +1,7 @@
 package com.game.server.basic.common.data.consume;
 
 import com.game.server.basic.common.actor.PlayerActor;
+import com.game.server.basic.common.contants.GameStatus;
 import com.game.server.basic.item.ItemService;
 import org.qiunet.function.consume.BaseConsume;
 import org.qiunet.function.consume.ConsumeConfig;
@@ -29,7 +30,7 @@ public class ItemConsume extends BaseConsume<PlayerActor> {
 	@Override
 	protected ConsumeResult doVerify(ConsumeContext<PlayerActor> context) {
 		int itemCount = ItemService.instance.getItemCount(context.getObj(), cfgId);
-		return itemCount >= value ? ConsumeResult.SUCCESS : ConsumeResult.FAIL;
+		return itemCount >= value ? ConsumeResult.SUCCESS : ConsumeResult.valueOf(GameStatus.ITEM_LACK, cfgId);
 	}
 
 	@Override

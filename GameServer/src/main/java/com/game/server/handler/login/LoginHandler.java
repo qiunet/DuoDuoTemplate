@@ -14,7 +14,7 @@ import com.game.server.handler.login.message.resp.LoginResponse;
 import org.qiunet.cfg.annotation.CfgWrapperAutoWired;
 import org.qiunet.cfg.wrapper.ISimpleMapCfgWrapper;
 import org.qiunet.flash.handler.common.annotation.RequestHandler;
-import org.qiunet.flash.handler.context.request.websocket.IWebSocketRequest;
+import org.qiunet.flash.handler.context.request.persistconn.IPersistConnRequest;
 
 /***
  *
@@ -30,7 +30,7 @@ public class LoginHandler extends BaseHandler<LoginRequest> {
 	private ISimpleMapCfgWrapper<Integer, ResourceDataCfg> dataResourceWrapper;
 
 	@Override
-	public void handler0(PlayerActor playerActor, IWebSocketRequest<LoginRequest> context) throws Exception {
+	public void handler0(PlayerActor playerActor, IPersistConnRequest<LoginRequest> context) throws Exception {
 		LoginRequest request = context.getRequestData();
 
 		LoginBo loginBo = LoginService.instance.getLoginBo(request.getOpenId());

@@ -2,10 +2,7 @@ package com.game.server.basic.common.data.reward;
 
 import com.game.server.basic.common.actor.PlayerActor;
 import com.game.server.basic.item.ItemService;
-import org.qiunet.function.reward.BaseReward;
-import org.qiunet.function.reward.RewardConfig;
-import org.qiunet.function.reward.RewardContext;
-import org.qiunet.function.reward.RewardResult;
+import org.qiunet.function.reward.*;
 
 /***
  * 物品奖励
@@ -13,7 +10,7 @@ import org.qiunet.function.reward.RewardResult;
  * @Author qiunet
  * @Date 2021/1/1 20:43
  **/
-public class ItemReward extends BaseReward<PlayerActor> {
+public class ItemReward extends BaseReward<PlayerActor> implements IRealReward {
 
 	public ItemReward(int cfgId, long value) {
 		super(cfgId, value);

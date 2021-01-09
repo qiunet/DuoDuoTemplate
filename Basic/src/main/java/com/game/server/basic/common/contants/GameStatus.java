@@ -12,7 +12,8 @@ import org.qiunet.flash.handler.context.status.IGameStatus;
 public enum  GameStatus implements IGameStatus, EnumReadable {
 	LOGIN_AUTH_ERROR(1001000, "登录鉴权失败"),
 
-	PLAYER_STATUS_EXAMPLE(1101000, "玩家的某个状态示例"),
+	CURRENCY_LACK(1101001, "货币{}不足"),
+	ITEM_LACK(2001001, "物品{}不足"),
 
 	;
 	private int status;

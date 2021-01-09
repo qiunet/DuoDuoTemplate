@@ -4,10 +4,7 @@ import com.game.server.basic.common.actor.PlayerActor;
 import com.game.server.basic.common.enums.DataResourceType;
 import com.google.common.base.Preconditions;
 import org.qiunet.function.consume.ConsumeResult;
-import org.qiunet.function.reward.BaseReward;
-import org.qiunet.function.reward.RewardConfig;
-import org.qiunet.function.reward.RewardContext;
-import org.qiunet.function.reward.RewardResult;
+import org.qiunet.function.reward.*;
 
 /***
  * 货币奖励
@@ -15,7 +12,7 @@ import org.qiunet.function.reward.RewardResult;
  * @Author qiunet
  * @Date 2021/1/3 20:44
  **/
-public class CurrencyReward extends BaseReward<PlayerActor> {
+public class CurrencyReward extends BaseReward<PlayerActor> implements IRealReward {
 	public CurrencyReward(int cfgId, long value) {
 		super(cfgId, value);
 	}
@@ -32,8 +29,6 @@ public class CurrencyReward extends BaseReward<PlayerActor> {
 
 	@Override
 	public void grant(RewardContext<PlayerActor> context) {
-		DataResourceType dataResourceType = DataResourceType.parse(cfgId);
-		dataResourceType.addResource(context.getPlayer(), context.getOperationType(), context.getMulti() * value);
 	}
 
 	@Override

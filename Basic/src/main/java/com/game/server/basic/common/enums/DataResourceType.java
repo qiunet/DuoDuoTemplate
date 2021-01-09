@@ -101,6 +101,10 @@ public enum  DataResourceType {
 		throw new EnumParseException(resourceId);
 	}
 
+	/**
+	 * 获得资源id
+	 * @return
+	 */
 	public int getResourceId() {
 		return resourceId;
 	}
