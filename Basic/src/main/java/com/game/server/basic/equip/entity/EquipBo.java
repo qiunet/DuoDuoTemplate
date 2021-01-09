@@ -29,4 +29,9 @@ public class EquipBo implements IEntityBo<EquipDo>, IRealReward {
 	public int getCfgId() {
 		return getDo().getEquipId();
 	}
+
+	@Override
+	public long getValue() {
+		return 1;
+	}
 }
