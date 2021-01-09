@@ -4,6 +4,7 @@ import com.game.server.basic.common.enums.ResourceSubType;
 import com.game.server.basic.common.enums.ResourceType;
 import org.qiunet.cfg.annotation.Cfg;
 import org.qiunet.cfg.base.ISimpleMapCfg;
+import org.qiunet.function.base.IResourceCfg;
 
 /***
  *

@@ -15,7 +15,6 @@ import org.qiunet.function.reward.RewardConfig;
 import org.qiunet.utils.exceptions.CustomException;
 
 import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
 
 /***
  *
@@ -26,19 +25,19 @@ public enum ResourceSubType implements IResourceSubType {
 	/**
 	 * 货币
  	 */
-	DATA_CURRENCY(CurrencyReward.class, CurrencyConsume.class),
+	DATA_CURRENCY(ResourceType.DATA, CurrencyReward.class, CurrencyConsume.class),
 	/**
 	 * 人物经验
 	 */
-	DATA_EXP (ExpReward.class, null),
+	DATA_EXP (ResourceType.DATA, ExpReward.class, null),
 	/**
 	 * 普通道具
 	 */
-	ITEM_NORMAL (ItemReward.class, ItemConsume.class),
+	ITEM_NORMAL (ResourceType.ITEM, ItemReward.class, ItemConsume.class),
 	/**
 	 * 普通装备
 	 */
-	EQUIP_NORMAL(EquipReward.class, EquipConsume.class),
+	EQUIP_NORMAL(ResourceType.ITEM, EquipReward.class, EquipConsume.class),
 	;
 	/**
 	 * 相关类型奖励的class
@@ -49,9 +48,17 @@ public enum ResourceSubType implements IResourceSubType {
 	 */
 	private final Class<? extends BaseConsume> consumeClz;
 
-	ResourceSubType(Class<? extends BaseReward> rewardClz, Class<? extends BaseConsume> consumeClz) {
-		this.rewardClz = rewardClz;
+	private final ResourceType resourceType;
+
+	ResourceSubType(ResourceType resourceType, Class<? extends BaseReward> rewardClz, Class<? extends BaseConsume> consumeClz) {
+		this.resourceType = resourceType;
 		this.consumeClz = consumeClz;
+		this.rewardClz = rewardClz;
+	}
+
+	@Override
+	public ResourceType resourceType() {
+		return resourceType;
 	}
 
 	@Override

@@ -1,25 +1,21 @@
 package com.game.server.basic.common.enums;
 
-import com.game.server.basic.common.actor.PlayerActor;
-import com.game.server.basic.common.cfg.resource.IResourceCfg;
 import com.game.server.basic.common.cfg.resource.ResourceDataCfg;
 import com.game.server.basic.common.cfg.resource.ResourceEquipCfg;
 import com.game.server.basic.common.cfg.resource.ResourceItemCfg;
-import com.game.server.basic.equip.EquipService;
-import com.game.server.basic.item.ItemService;
 import com.google.common.base.Preconditions;
 import org.qiunet.cfg.annotation.CfgWrapperAutoWired;
 import org.qiunet.cfg.wrapper.ISimpleMapCfgWrapper;
+import org.qiunet.function.base.IResourceCfg;
+import org.qiunet.function.base.IResourceType;
 import org.qiunet.utils.exceptions.EnumParseException;
-
-import java.util.List;
 
 /***
  * 资源类型
  * @author qiunet
  * 2020-04-25 09:50
  **/
-public enum ResourceType {
+public enum ResourceType implements IResourceType {
 	/**
 	 * 数据
 	 * 钱 经验 等等
@@ -40,6 +36,7 @@ public enum ResourceType {
 		this.type = type;
 	}
 
+	@Override
 	public int getType() {
 		return type;
 	}

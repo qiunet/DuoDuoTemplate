@@ -6,6 +6,7 @@ import com.game.server.basic.common.enums.ResourceType;
 import org.qiunet.cfg.annotation.Cfg;
 import org.qiunet.cfg.base.IAfterLoad;
 import org.qiunet.cfg.base.ISimpleMapCfg;
+import org.qiunet.function.base.IResourceCfg;
 import org.qiunet.function.reward.RewardManager;
 import org.qiunet.function.reward.Rewards;
 
