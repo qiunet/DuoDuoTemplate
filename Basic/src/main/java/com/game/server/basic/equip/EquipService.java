@@ -8,6 +8,7 @@ import com.game.server.basic.equip.log.EquipAddLogEvent;
 import com.game.server.basic.equip.log.EquipDelLogEvent;
 import com.game.server.basic.id.enums.IDType;
 import org.qiunet.data.support.CacheDataListSupport;
+import org.qiunet.function.reward.RewardContext;
 import org.qiunet.utils.date.DateUtil;
 
 import java.util.List;
@@ -15,7 +16,7 @@ import java.util.Map;
 
 public enum EquipService {
 	instance;
-	private static CacheDataListSupport<Long, Integer, EquipDo, EquipBo> dataSupport = new CacheDataListSupport<>(EquipDo.class, EquipBo::new);
+	private static final CacheDataListSupport<Long, Integer, EquipDo, EquipBo> dataSupport = new CacheDataListSupport<>(EquipDo.class, EquipBo::new);
 
 	/***
 	 * 获得一个 id -> EquipBo Map对象
@@ -35,7 +36,8 @@ public enum EquipService {
 		return getEquipBoMap(playerId).get(id);
 	}
 
-	public void addToPack(PlayerActor player, int resourceId, int num, OperationType type) {
+	public void addToPack(RewardContext<PlayerActor> context, int resourceId, int num) {
+		PlayerActor player = context.getPlayer();
 		for (int i = 0; i < num; i++) {
 			EquipDo equipDo = new EquipDo();
 			equipDo.setId(IDType.EQUIP.generatorId(player.getPlayerId()));
@@ -43,8 +45,9 @@ public enum EquipService {
 			equipDo.setGainTime(DateUtil.currSeconds());
 			equipDo.setEquipId(resourceId);
 			EquipBo equipBo = equipDo.insert();
+			context.getRealRewards().add(equipBo);
 
-			new EquipAddLogEvent(player, equipDo.getId(), resourceId, type).send();
+			new EquipAddLogEvent(player, equipDo.getId(), resourceId, context.getOperationType()).send();
 		}
 	}
 

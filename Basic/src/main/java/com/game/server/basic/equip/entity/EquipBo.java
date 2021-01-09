@@ -1,8 +1,9 @@
 package com.game.server.basic.equip.entity;
 
 import org.qiunet.data.support.IEntityBo;
+import org.qiunet.function.reward.IRealReward;
 
-public class EquipBo implements IEntityBo<EquipDo> {
+public class EquipBo implements IEntityBo<EquipDo>, IRealReward {
 	private final EquipDo aDo;
 
 	public EquipBo (EquipDo aDo) {
@@ -22,5 +23,10 @@ public class EquipBo implements IEntityBo<EquipDo> {
 	@Override
 	public void deserialize() {
 
+	}
+
+	@Override
+	public int getCfgId() {
+		return getDo().getEquipId();
 	}
 }

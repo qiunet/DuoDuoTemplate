@@ -32,7 +32,7 @@ public class EquipReward extends BaseReward<PlayerActor> {
 
 	@Override
 	public void grant(RewardContext<PlayerActor> context) {
-		EquipService.instance.addToPack(context.getPlayer(), cfgId, (int)value, context.getOperationType());
+		EquipService.instance.addToPack(context, cfgId, (int)value);
 	}
 
 	@Override
