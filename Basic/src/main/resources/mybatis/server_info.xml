@@ -6,6 +6,10 @@
 		SELECT * FROM server_info WHERE type = #{type};
 	</select>
 
+	<select id="selectAllServerInfoDo" parameterType="map" resultType="ServerInfoDo">
+		SELECT * FROM server_info;
+	</select>
+
 	<update id="updateServerInfoDo" parameterType="ServerInfoDo" >
 		UPDATE server_info SET `data` = #{data} WHERE type = #{type};
 	</update>

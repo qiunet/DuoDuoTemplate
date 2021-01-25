@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cache_entity key="activity_id"
+			  name="ActivityDo"
+			  packageName="com.game.server.basic.activity"
+			  xmlns="https://github.com/qiunet/DuoDuo/CacheEntity"
+			  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			  xsi:schemaLocation="https://github.com/qiunet/DuoDuo/CacheEntity
+			   https://raw.githubusercontent.com/qiunet/DuoDuo/master/ProjectInit/src/main/resources/xsd/CacheEntity.xsd"
+>
+	<field name="activity_id" type="int" comment="活动配置id" />
+	<field name="status" type="int" comment="状态"/>
+	<field name="start_dt" type="long" comment="开始时间." />
+	<field name="end_dt" type="long" comment="结束时间." />
+	<field name="open_times" type="int" comment="开启次数" />
+	<field name="last_end_dt" type="long" comment="最后的结束时间. 用来判断是否可以重开活动" />
+
+	<constructor>
+		<constructor_arg field="activity_id"/>
+	</constructor>
+</cache_entity>

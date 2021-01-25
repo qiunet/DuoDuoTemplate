@@ -6,6 +6,10 @@
 		SELECT * FROM player WHERE playerId = #{playerId};
 	</select>
 
+	<select id="selectAllPlayerDo" parameterType="map" resultType="PlayerDo">
+		SELECT * FROM player;
+	</select>
+
 	<update id="updatePlayerDo" parameterType="PlayerDo" >
 		UPDATE player SET `openId` = #{openId}, `name` = #{name}, `exp` = #{exp}, `level` = #{level}, `m1` = #{m1}, `m2` = #{m2} WHERE playerId = #{playerId};
 	</update>

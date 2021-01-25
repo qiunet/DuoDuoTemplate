@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="activity">
+
+	<select id="selectActivityDo" parameterType="map" resultType="ActivityDo">
+		SELECT * FROM activity WHERE activity_id = #{activity_id};
+	</select>
+
+	<select id="selectAllActivityDo" parameterType="map" resultType="ActivityDo">
+		SELECT * FROM activity;
+	</select>
+
+	<update id="updateActivityDo" parameterType="ActivityDo" >
+		UPDATE activity SET `status` = #{status}, `start_dt` = #{start_dt}, `end_dt` = #{end_dt}, `open_times` = #{open_times}, `last_end_dt` = #{last_end_dt} WHERE activity_id = #{activity_id};
+	</update>
+
+	<insert id="insertActivityDo" parameterType="ActivityDo" >
+		INSERT INTO activity (`activity_id`, `status`, `start_dt`, `end_dt`, `open_times`, `last_end_dt`) VALUES (#{activity_id}, #{status}, #{start_dt}, #{end_dt}, #{open_times}, #{last_end_dt});
+	</insert>
+
+	<delete id="deleteActivityDo" parameterType="map" >
+		DELETE FROM activity WHERE activity_id = #{activity_id};
+	</delete>
+</mapper>

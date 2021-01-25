@@ -6,6 +6,10 @@
 		SELECT * FROM guild WHERE guildId = #{guildId};
 	</select>
 
+	<select id="selectAllGuildDo" parameterType="map" resultType="GuildDo">
+		SELECT * FROM guild;
+	</select>
+
 	<update id="updateGuildDo" parameterType="GuildDo" >
 		UPDATE guild SET `name` = #{name}, `level` = #{level} WHERE guildId = #{guildId};
 	</update>

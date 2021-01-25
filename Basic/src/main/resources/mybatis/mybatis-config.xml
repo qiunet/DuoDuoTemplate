@@ -25,6 +25,7 @@
 		<setting name="lazyLoadTriggerMethods" value="equals,clone,hashCode,toString"/>
 	</settings>
 	<typeAliases>
+		<package name="com.game.server.basic.activity" />
 		<package name="com.game.server.basic.commondata" />
 		<package name="com.game.server.basic.equip" />
 		<package name="com.game.server.basic.id.global" />
@@ -40,6 +41,7 @@
     </plugins>
 	<mappers>
 		<mapper resource="mybatis/CreateTableMapper.xml"/>
+        <mapper resource="mybatis/activity.xml" />
         <mapper resource="mybatis/common_data.xml" />
         <mapper resource="mybatis/equip.xml" />
         <mapper resource="mybatis/global_id_builder.xml" />

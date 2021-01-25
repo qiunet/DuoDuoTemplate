@@ -6,6 +6,10 @@
 		SELECT * FROM global_id_builder WHERE type = #{type};
 	</select>
 
+	<select id="selectAllGlobalIdBuilderDo" parameterType="map" resultType="GlobalIdBuilderDo">
+		SELECT * FROM global_id_builder;
+	</select>
+
 	<update id="updateGlobalIdBuilderDo" parameterType="GlobalIdBuilderDo" >
 		UPDATE global_id_builder SET `idVal` = #{idVal} WHERE type = #{type};
 	</update>

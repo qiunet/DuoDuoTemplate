@@ -12,7 +12,7 @@ import org.qiunet.data.core.support.db.Table;
 @Alias("LoginDo")
 @Table(name = "login")
 public class LoginDo extends CacheEntity<String, LoginBo> {
-	@Column(comment = "玩家openId account", jdbcType = ColumnJdbcType.VARCHAR190, isKey = true)
+	@Column(comment = "玩家openId account", isKey = true, jdbcType = ColumnJdbcType.VARCHAR190)
 	private String openId;
 	@Column(comment = "玩家id")
 	private long playerId;

@@ -6,6 +6,10 @@
 		SELECT * FROM common_data WHERE playerId = #{playerId};
 	</select>
 
+	<select id="selectAllCommonDataDo" parameterType="map" resultType="CommonDataDo">
+		SELECT * FROM common_data;
+	</select>
+
 	<update id="updateCommonDataDo" parameterType="CommonDataDo" >
 		UPDATE common_data SET `cType` = #{cType}, `updateTime` = #{updateTime}, `value` = #{value}  WHERE playerId = #{playerId} AND type = #{type};
 	</update>

@@ -1,9 +1,9 @@
 package com.game.server.basic.guild.entity;
 
 import org.apache.ibatis.type.Alias;
+import org.qiunet.data.redis.entity.RedisEntity;
 import org.qiunet.data.core.support.db.Column;
 import org.qiunet.data.core.support.db.Table;
-import org.qiunet.data.redis.entity.RedisEntity;
 /**
 * *
 * 对象为自动创建 不要修改

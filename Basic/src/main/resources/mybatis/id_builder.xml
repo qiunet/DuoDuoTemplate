@@ -6,6 +6,10 @@
 		SELECT * FROM id_builder WHERE playerId = #{playerId};
 	</select>
 
+	<select id="selectAllIdBuilderDo" parameterType="map" resultType="IdBuilderDo">
+		SELECT * FROM id_builder;
+	</select>
+
 	<update id="updateIdBuilderDo" parameterType="IdBuilderDo" >
 		UPDATE id_builder SET `idVal` = #{idVal}  WHERE playerId = #{playerId} AND type = #{type};
 	</update>

@@ -6,6 +6,10 @@
 		SELECT * FROM equip WHERE playerId = #{playerId};
 	</select>
 
+	<select id="selectAllEquipDo" parameterType="map" resultType="EquipDo">
+		SELECT * FROM equip;
+	</select>
+
 	<update id="updateEquipDo" parameterType="EquipDo" >
 		UPDATE equip SET `equipId` = #{equipId}, `pos` = #{pos}, `gainTime` = #{gainTime}  WHERE playerId = #{playerId} AND id = #{id};
 	</update>

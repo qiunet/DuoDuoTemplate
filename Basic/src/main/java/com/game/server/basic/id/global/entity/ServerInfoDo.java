@@ -12,7 +12,7 @@ import org.qiunet.data.core.support.db.Table;
 @Alias("ServerInfoDo")
 @Table(name = "server_info", comment="存储服务器相关的信息.比如开服时间等")
 public class ServerInfoDo extends CacheEntity<String, ServerInfoBo> {
-	@Column(comment = "类型", jdbcType = ColumnJdbcType.VARCHAR190, isKey = true)
+	@Column(comment = "类型", isKey = true, jdbcType = ColumnJdbcType.VARCHAR190)
 	private String type;
 	@Column(comment = "值")
 	private String data;

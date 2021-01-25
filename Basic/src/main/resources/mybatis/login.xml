@@ -6,6 +6,10 @@
 		SELECT * FROM login WHERE openId = #{openId};
 	</select>
 
+	<select id="selectAllLoginDo" parameterType="map" resultType="LoginDo">
+		SELECT * FROM login;
+	</select>
+
 	<update id="updateLoginDo" parameterType="LoginDo" >
 		UPDATE login SET `playerId` = #{playerId}, `token` = #{token} WHERE openId = #{openId};
 	</update>

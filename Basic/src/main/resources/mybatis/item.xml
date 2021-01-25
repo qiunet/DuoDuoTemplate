@@ -6,6 +6,10 @@
 		SELECT * FROM item WHERE playerId = #{playerId};
 	</select>
 
+	<select id="selectAllItemDo" parameterType="map" resultType="ItemDo">
+		SELECT * FROM item;
+	</select>
+
 	<update id="updateItemDo" parameterType="ItemDo" >
 		UPDATE item SET `count` = #{count}  WHERE playerId = #{playerId} AND itemId = #{itemId};
 	</update>
