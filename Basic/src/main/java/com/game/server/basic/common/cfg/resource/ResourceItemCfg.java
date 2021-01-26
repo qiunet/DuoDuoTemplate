@@ -15,7 +15,7 @@ import org.qiunet.function.reward.Rewards;
  * @author qiunet
  * 2020-04-25 20:46
  **/
-@Cfg("config/resource/resource_item.xd")
+@Cfg("config/resource_item.xd")
 public class ResourceItemCfg implements ISimpleMapCfg<Integer> , IResourceCfg, IAfterLoad {
 	private int id;
 	private String name;

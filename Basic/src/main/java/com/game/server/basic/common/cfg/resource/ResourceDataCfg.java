@@ -11,7 +11,7 @@ import org.qiunet.function.base.IResourceCfg;
  * @author qiunet
  * 2020-04-25 20:46
  **/
-@Cfg("config/resource/resource_data.xd")
+@Cfg("config/resource_data.xd")
 public class ResourceDataCfg implements ISimpleMapCfg<Integer>, IResourceCfg {
 	private int id;
 	private String name;

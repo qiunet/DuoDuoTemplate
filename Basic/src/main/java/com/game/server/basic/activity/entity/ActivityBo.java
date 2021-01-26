@@ -1,5 +1,6 @@
 package com.game.server.basic.activity.entity;
 
+import com.game.server.basic.activity.enums.ActivityStatus;
 import org.qiunet.data.support.IEntityBo;
 
 public class ActivityBo implements IEntityBo<ActivityDo>{
@@ -12,6 +13,10 @@ public class ActivityBo implements IEntityBo<ActivityDo>{
 
 	public ActivityDo getDo(){
 		return aDo;
+	}
+
+	public ActivityStatus getStatus(){
+		return ActivityStatus.parse(aDo.getStatus());
 	}
 
 	@Override
